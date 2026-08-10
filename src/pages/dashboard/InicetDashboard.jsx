@@ -1,9 +1,10 @@
 import React from "react";
+import InicetDashboardHero from "../../components/dashboard/inicet/InicetDashboardHero";
 
 function InicetDashboard() {
   return (
     <div>
-      <h1>INICET Dashboard</h1>
+      <InicetDashboardHero />
     </div>
   );
 }

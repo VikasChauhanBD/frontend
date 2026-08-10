@@ -80,7 +80,7 @@ function NeetpgUpdates() {
           </span>
 
           <h2 className="neetpg-updates-title">
-            Important <span>NEET PG</span> Dates & Updates
+            Important <span>NEET PG Dates & Updates</span>
           </h2>
 
           <p className="neetpg-updates-description">

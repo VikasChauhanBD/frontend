@@ -37,7 +37,10 @@
 }
 
 .neetpg-updates-title span {
-  color: #155dfc;
+  background: linear-gradient(90deg, #155dfc, #7c3aed);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
 .neetpg-updates-description {

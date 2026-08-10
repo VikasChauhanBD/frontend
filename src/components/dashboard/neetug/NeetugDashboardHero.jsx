@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
-import "./InicetDashboardHero.css";
+import "./NeetugDashboardHero.css";
 import {
   FiClipboard,
   FiTrendingUp,
@@ -37,39 +37,33 @@ const CARDS = [
   },
 ];
 
-const PERIODS = [
-  { id: "jul-2026", label: "Jul", value: "2026" },
-  { id: "jan-2026", label: "Jan", value: "2026" },
-  { id: "jul-2025", label: "Jul", value: "2025" },
-  { id: "jan-2025", label: "Jan", value: "2025" },
-];
+const YEARS = ["2024", "2025"];
 
-function InicetDashboardHero() {
+function NeetugDashboardHero() {
   const rootRef = useRef(null);
   const cardsRef = useRef([]);
-  const ringRef = useRef(null);
-  const ring2Ref = useRef(null);
-  const particleRef = useRef([]);
+  const waveRef = useRef([]);
+  const glowRef = useRef([]);
 
   const overlayRef = useRef(null);
   const modalRef = useRef(null);
 
   const [activeCard, setActiveCard] = useState(null);
-  const [selectedPeriod, setSelectedPeriod] = useState(null);
+  const [selectedYear, setSelectedYear] = useState(null);
 
   // Entrance animation + ambient background motion
   useEffect(() => {
     const ctx = gsap.context(() => {
       const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
 
-      tl.from(".inid-hero-eyebrow", { opacity: 0, y: 14, duration: 0.6 })
+      tl.from(".nugd-hero-eyebrow", { opacity: 0, y: 14, duration: 0.6 })
         .from(
-          ".inid-hero-title .inid-hero-title-line",
+          ".nugd-hero-title .nugd-hero-title-line",
           { opacity: 0, y: 26, duration: 0.75, stagger: 0.08 },
           "-=0.35",
         )
         .from(
-          ".inid-hero-subtitle",
+          ".nugd-hero-subtitle",
           { opacity: 0, y: 16, duration: 0.6 },
           "-=0.4",
         )
@@ -85,45 +79,30 @@ function InicetDashboardHero() {
           "-=0.3",
         );
 
-      // Ambient rotating orbit rings — slow, continuous, opposite directions
-      if (ringRef.current) {
-        gsap.to(ringRef.current, {
-          rotation: 360,
-          duration: 42,
+      // Drifting horizontal wave bands — each scrolls sideways at its own pace
+      waveRef.current.forEach((el, i) => {
+        if (!el) return;
+        gsap.set(el, { xPercent: 0 });
+        gsap.to(el, {
+          xPercent: i % 2 === 0 ? -50 : 50,
+          duration: 16 + i * 5,
           ease: "none",
           repeat: -1,
-          transformOrigin: "50% 50%",
         });
-      }
-      if (ring2Ref.current) {
-        gsap.to(ring2Ref.current, {
-          rotation: -360,
-          duration: 58,
-          ease: "none",
-          repeat: -1,
-          transformOrigin: "50% 50%",
-        });
-      }
+      });
 
-      // Drifting particle field — soft up/down/side float, staggered
-      particleRef.current.forEach((el, i) => {
+      // Pulsing glow orbs — scale/opacity breathing, no position drift
+      glowRef.current.forEach((el, i) => {
         if (!el) return;
         gsap.to(el, {
-          x: i % 3 === 0 ? 18 : i % 3 === 1 ? -14 : 10,
-          y: i % 2 === 0 ? -22 : 20,
-          duration: 5 + (i % 5) * 1.3,
+          scale: 1.25,
+          opacity: 0.7,
+          duration: 3.2 + i * 0.9,
           ease: "sine.inOut",
           repeat: -1,
           yoyo: true,
-          delay: i * 0.15,
-        });
-        gsap.to(el, {
-          opacity: 0.25,
-          duration: 3 + (i % 4),
-          ease: "sine.inOut",
-          repeat: -1,
-          yoyo: true,
-          delay: i * 0.2,
+          delay: i * 0.4,
+          transformOrigin: "50% 50%",
         });
       });
     }, rootRef);
@@ -140,7 +119,7 @@ function InicetDashboardHero() {
 
   const openModal = (card) => {
     setActiveCard(card);
-    setSelectedPeriod(null);
+    setSelectedYear(null);
   };
 
   const closeModal = () => {
@@ -173,13 +152,13 @@ function InicetDashboardHero() {
         { opacity: 1, y: 0, scale: 1, duration: 0.4, ease: "back.out(1.6)" },
       );
       gsap.fromTo(
-        ".inid-hero-period-btn",
+        ".nugd-hero-year-btn",
         { opacity: 0, y: 10 },
         {
           opacity: 1,
           y: 0,
           duration: 0.35,
-          stagger: 0.06,
+          stagger: 0.08,
           delay: 0.1,
           ease: "power2.out",
         },
@@ -187,8 +166,8 @@ function InicetDashboardHero() {
     }
   }, [activeCard]);
 
-  const handlePeriodSelect = (period, e) => {
-    setSelectedPeriod(period);
+  const handleYearSelect = (year, e) => {
+    setSelectedYear(year);
     gsap.fromTo(
       e.currentTarget,
       { scale: 0.92 },
@@ -197,53 +176,75 @@ function InicetDashboardHero() {
   };
 
   return (
-    <div className="inid-hero-root" ref={rootRef}>
+    <div className="nugd-hero-root" ref={rootRef}>
       {/* Ambient light background */}
-      <div className="inid-hero-bg" aria-hidden="true">
-        <span className="inid-hero-ring inid-hero-ring-a" ref={ringRef} />
-        <span className="inid-hero-ring inid-hero-ring-b" ref={ring2Ref} />
-        <div className="inid-hero-particles">
-          {Array.from({ length: 14 }).map((_, i) => (
-            <span
-              key={i}
-              className={`inid-hero-particle inid-hero-particle-${(i % 4) + 1}`}
-              ref={(el) => (particleRef.current[i] = el)}
-            />
-          ))}
-        </div>
-        <div className="inid-hero-grid" />
+      <div className="nugd-hero-bg" aria-hidden="true">
+        <svg
+          className="nugd-hero-waves"
+          viewBox="0 0 2400 400"
+          preserveAspectRatio="none"
+        >
+          <path
+            ref={(el) => (waveRef.current[0] = el)}
+            className="nugd-hero-wave nugd-hero-wave-a"
+            d="M0,260 C200,200 400,320 600,260 C800,200 1000,320 1200,260 C1400,200 1600,320 1800,260 C2000,200 2200,320 2400,260 L2400,400 L0,400 Z"
+          />
+          <path
+            ref={(el) => (waveRef.current[1] = el)}
+            className="nugd-hero-wave nugd-hero-wave-b"
+            d="M0,300 C220,350 420,250 640,300 C860,350 1060,250 1280,300 C1500,350 1700,250 1920,300 C2140,350 2340,250 2400,300 L2400,400 L0,400 Z"
+          />
+          <path
+            ref={(el) => (waveRef.current[2] = el)}
+            className="nugd-hero-wave nugd-hero-wave-c"
+            d="M0,340 C260,300 460,370 700,340 C940,310 1140,370 1380,340 C1620,310 1820,370 2060,340 C2200,320 2320,350 2400,340 L2400,400 L0,400 Z"
+          />
+        </svg>
+        <span
+          className="nugd-hero-glow nugd-hero-glow-a"
+          ref={(el) => (glowRef.current[0] = el)}
+        />
+        <span
+          className="nugd-hero-glow nugd-hero-glow-b"
+          ref={(el) => (glowRef.current[1] = el)}
+        />
+        <span
+          className="nugd-hero-glow nugd-hero-glow-c"
+          ref={(el) => (glowRef.current[2] = el)}
+        />
+        <div className="nugd-hero-grid" />
       </div>
 
-      <div className="inid-hero-content">
-        <p className="inid-hero-eyebrow">INI-CET COUNSELING</p>
-        <h1 className="inid-hero-title">
-          <span className="inid-hero-title-line">Your admission vitals,</span>
-          <span className="inid-hero-title-line inid-hero-title-accent">
+      <div className="nugd-hero-content">
+        <p className="nugd-hero-eyebrow">NEET&nbsp;UG COUNSELING</p>
+        <h1 className="nugd-hero-title">
+          <span className="nugd-hero-title-line">Your admission vitals,</span>
+          <span className="nugd-hero-title-line nugd-hero-title-accent">
             tracked live.
           </span>
         </h1>
-        <p className="inid-hero-subtitle">
+        <p className="nugd-hero-subtitle">
           Allotments, closing ranks, seat matrix and cost of study — pick a
-          card, choose a round, see the numbers.
+          card, choose a year, see the numbers.
         </p>
 
-        <div className="inid-hero-cards">
+        <div className="nugd-hero-cards">
           {CARDS.map((card, i) => (
             <button
               key={card.id}
-              className="inid-hero-card"
+              className="nugd-hero-card"
               ref={(el) => (cardsRef.current[i] = el)}
               onMouseEnter={(e) => handleCardEnter(e.currentTarget)}
               onMouseLeave={(e) => handleCardLeave(e.currentTarget)}
               onClick={() => openModal(card)}
               type="button"
             >
-              <span className="inid-hero-card-icon">
+              <span className="nugd-hero-card-icon">
                 <card.Icon />
               </span>
-              <span className="inid-hero-card-title">{card.title}</span>
-              <span className="inid-hero-card-desc">{card.desc}</span>
-              <span className="inid-hero-card-cta">
+              <span className="nugd-hero-card-title">{card.title}</span>
+              <span className="nugd-hero-card-desc">{card.desc}</span>
+              <span className="nugd-hero-card-cta">
                 View data
                 <FiArrowRight />
               </span>
@@ -254,12 +255,12 @@ function InicetDashboardHero() {
 
       {activeCard && (
         <div
-          className="inid-hero-overlay"
+          className="nugd-hero-overlay"
           ref={overlayRef}
           onClick={closeModal}
         >
           <div
-            className="inid-hero-modal"
+            className="nugd-hero-modal"
             ref={modalRef}
             onClick={(e) => e.stopPropagation()}
             role="dialog"
@@ -267,7 +268,7 @@ function InicetDashboardHero() {
             aria-label={activeCard.title}
           >
             <button
-              className="inid-hero-modal-close"
+              className="nugd-hero-modal-close"
               onClick={closeModal}
               aria-label="Close"
               type="button"
@@ -275,36 +276,33 @@ function InicetDashboardHero() {
               <FiX />
             </button>
 
-            <span className="inid-hero-modal-icon">
+            <span className="nugd-hero-modal-icon">
               <activeCard.Icon />
             </span>
 
-            <h2 className="inid-hero-modal-title">{activeCard.title}</h2>
-            <p className="inid-hero-modal-hint">Select round</p>
+            <h2 className="nugd-hero-modal-title">{activeCard.title}</h2>
+            <p className="nugd-hero-modal-hint">Select year</p>
 
-            <div className="inid-hero-period-list">
-              {PERIODS.map((period) => (
+            <div className="nugd-hero-year-list">
+              {YEARS.map((year) => (
                 <button
-                  key={period.id}
+                  key={year}
                   type="button"
                   className={
-                    "inid-hero-period-btn" +
-                    (selectedPeriod?.id === period.id
-                      ? " inid-hero-period-btn-active"
-                      : "")
+                    "nugd-hero-year-btn" +
+                    (selectedYear === year ? " nugd-hero-year-btn-active" : "")
                   }
-                  onClick={(e) => handlePeriodSelect(period, e)}
+                  onClick={(e) => handleYearSelect(year, e)}
                 >
-                  <span className="inid-hero-period-label">{period.label}</span>
-                  <span className="inid-hero-period-value">{period.value}</span>
+                  <span className="nugd-hero-year-label">Year</span>
+                  <span className="nugd-hero-year-value">{year}</span>
                 </button>
               ))}
             </div>
 
-            {selectedPeriod && (
-              <p className="inid-hero-modal-footnote">
-                Showing {activeCard.title.toLowerCase()} for{" "}
-                {selectedPeriod.label} {selectedPeriod.value}.
+            {selectedYear && (
+              <p className="nugd-hero-modal-footnote">
+                Showing {activeCard.title.toLowerCase()} for {selectedYear}.
               </p>
             )}
           </div>
@@ -314,4 +312,4 @@ function InicetDashboardHero() {
   );
 }
 
-export default InicetDashboardHero;
+export default NeetugDashboardHero;

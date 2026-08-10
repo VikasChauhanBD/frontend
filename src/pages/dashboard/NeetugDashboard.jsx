@@ -1,9 +1,10 @@
 import React from "react";
+import NeetugDashboardHero from "../../components/dashboard/neetug/NeetugDashboardHero";
 
 function NeetugDashboard() {
   return (
     <div>
-      <h1>Neetug Dashboard</h1>
+      <NeetugDashboardHero />
     </div>
   );
 }

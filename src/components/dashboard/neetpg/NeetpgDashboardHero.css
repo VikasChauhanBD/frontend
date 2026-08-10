@@ -338,6 +338,10 @@
 /* -------------------------- Responsive --------------------- */
 
 @media (max-width: 868px) {
+  .npgd-hero-root {
+    padding: 60px 16px;
+  }
+
   .npgd-hero-title {
     font-size: 32px;
   }
@@ -356,12 +360,10 @@
 }
 
 @media (max-width: 568px) {
-  .npgd-hero-root {
-    padding: 72px 16px 60px;
-  }
   .npgd-hero-cards {
     grid-template-columns: 1fr;
   }
+
   .npgd-hero-year-list {
     flex-direction: column;
   }

@@ -19,7 +19,16 @@
   background: #ffffff;
 }
 
-/* eyebrow tag */
+.npgd-info-header-center {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.npgd-info-header-center .npgd-info-para {
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .npgd-info-eyebrow {
   display: inline-flex;
   align-items: center;
@@ -49,7 +58,6 @@
   box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.25);
 }
 
-/* heading tier */
 .npgd-info-heading {
   margin: 0 0 12px;
   font-size: 38px;
@@ -59,7 +67,13 @@
   letter-spacing: -0.01em;
 }
 
-/* para/desc tier */
+.npgd-info-heading-accent {
+  background: linear-gradient(90deg, #155dfc, #7c3aed);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
 .npgd-info-para {
   margin: 0 0 40px;
   max-width: 640px;
@@ -79,8 +93,6 @@
 .npgd-info-header-row .npgd-info-para {
   margin-bottom: 32px;
 }
-
-/* ---------------- Results: ticket/scorecard steps ---------------- */
 
 .npgd-info-ticket {
   position: relative;
@@ -183,8 +195,6 @@
   color: #f59e0b;
 }
 
-/* ---------------- Specialties table ---------------- */
-
 .npgd-info-table-wrap {
   overflow-x: auto;
   background: #ffffff;
@@ -264,8 +274,6 @@
   color: #64748b;
   background: #f1f5f9;
 }
-
-/* ---------------- Counselling journey timeline ---------------- */
 
 .npgd-info-timeline {
   position: relative;
@@ -390,6 +398,10 @@
 /* -------------------------- Responsive --------------------- */
 
 @media (max-width: 868px) {
+  .npgd-info-section {
+    padding: 60px 16px;
+  }
+
   .npgd-info-heading {
     font-size: 32px;
   }
@@ -404,10 +416,6 @@
 }
 
 @media (max-width: 560px) {
-  .npgd-info-section {
-    padding: 52px 16px;
-  }
-
   .npgd-info-step {
     padding: 14px 18px;
   }

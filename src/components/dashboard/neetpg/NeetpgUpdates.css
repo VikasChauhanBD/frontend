@@ -10,8 +10,6 @@
   margin: 0 auto;
 }
 
-/* ================= HEADER ================= */
-
 .neetpg-updates-header {
   margin: 0 auto 60px;
   text-align: center;
@@ -33,7 +31,7 @@
 .neetpg-updates-title {
   margin: 0 0 16px;
   color: #0f172a;
-  font-size: 40px;
+  font-size: 38px;
   line-height: 1.2;
   font-weight: 700;
 }
@@ -49,8 +47,6 @@
   font-size: 17px;
   line-height: 1.7;
 }
-
-/* ================= TIMELINE ================= */
 
 .neetpg-updates-timeline {
   position: relative;
@@ -68,8 +64,6 @@
   background: linear-gradient(to bottom, #155dfc, #7c3aed, #dbe4f0);
 }
 
-/* ================= ITEM ================= */
-
 .neetpg-update-item {
   position: relative;
   display: flex;
@@ -81,8 +75,6 @@
   margin-bottom: 0;
 }
 
-/* ================= MARKER ================= */
-
 .neetpg-update-marker {
   position: relative;
   z-index: 2;
@@ -93,12 +85,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
-
   background: #ffffff;
   color: #155dfc;
-
   border: 2px solid #dbe4f0;
-
   box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
 }
 
@@ -108,8 +97,6 @@
   border-color: #155dfc;
   box-shadow: 0 8px 24px rgba(21, 93, 252, 0.25);
 }
-
-/* ================= CARD ================= */
 
 .neetpg-update-card {
   flex: 1;
@@ -134,8 +121,6 @@
   border-color: rgba(21, 93, 252, 0.25);
   background: linear-gradient(135deg, #ffffff 0%, #f8fbff 100%);
 }
-
-/* ================= CARD TOP ================= */
 
 .neetpg-update-top {
   display: flex;
@@ -169,16 +154,12 @@
   color: #7c3aed;
 }
 
-/* ================= DATE ================= */
-
 .neetpg-update-date {
   margin-bottom: 5px;
   color: #f59e0b;
   font-size: 14px;
   font-weight: 600;
 }
-
-/* ================= EVENT ================= */
 
 .neetpg-update-event {
   margin: 0;
@@ -188,8 +169,6 @@
   font-weight: 600;
 }
 
-/* ================= REFERENCE ================= */
-
 .neetpg-updates-reference {
   display: flex;
   align-items: center;
@@ -197,7 +176,6 @@
   margin: 60px auto 0;
   padding: 22px 24px;
   border-radius: 16px;
-
   background: #0f172a;
   box-shadow: 0 15px 40px rgba(15, 23, 42, 0.15);
 }
@@ -207,11 +185,9 @@
   width: 48px;
   height: 48px;
   border-radius: 12px;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   background: rgba(245, 158, 11, 0.15);
   color: #f59e0b;
 }
@@ -248,19 +224,14 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-
   padding: 11px 17px;
   border-radius: 9px;
-
   background: #f59e0b;
   color: #0f172a;
-
   text-decoration: none;
   font-size: 14px;
   font-weight: 600;
-
   white-space: nowrap;
-
   transition:
     background 0.25s ease,
     color 0.25s ease,
@@ -281,7 +252,7 @@
   }
 
   .neetpg-updates-title {
-    font-size: 34px;
+    font-size: 32px;
   }
 
   .neetpg-updates-description {

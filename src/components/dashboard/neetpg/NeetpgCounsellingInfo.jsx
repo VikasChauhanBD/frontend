@@ -205,19 +205,24 @@ function NeetpgCounsellingInfo() {
 
   return (
     <div className="npgd-info-root" ref={rootRef}>
-      <section className="npgd-info-section npgd-info-bg-light npgd-info-results-section">
+      <section className="npgd-info-section npgd-info-bg-white">
         <div className="npgd-info-section-inner">
-          <span className="npgd-info-eyebrow npgd-info-reveal">
-            <span className="npgd-info-eyebrow-dot" />
-            Results Declared
-          </span>
-          <h2 className="npgd-info-heading npgd-info-reveal">
-            How to Check NEET PG 2025 Results?
-          </h2>
-          <p className="npgd-info-para npgd-info-reveal">
-            Follow these steps to check your NEET PG 2025 results and download
-            your scorecard.
-          </p>
+          <div className="npgd-info-header-center">
+            <span className="npgd-info-eyebrow npgd-info-reveal">
+              <span className="npgd-info-eyebrow-dot" />
+              Results Declared
+            </span>
+            <h2 className="npgd-info-heading npgd-info-reveal">
+              How to Check{" "}
+              <span className="npgd-info-heading-accent">
+                NEET PG 2025 Results?
+              </span>
+            </h2>
+            <p className="npgd-info-para npgd-info-reveal">
+              Follow these steps to check your NEET PG 2025 results and download
+              your scorecard.
+            </p>
+          </div>
 
           <div className="npgd-info-ticket npgd-info-reveal">
             <ol className="npgd-info-steps">
@@ -241,18 +246,24 @@ function NeetpgCounsellingInfo() {
         </div>
       </section>
 
-      <section className="npgd-info-section npgd-info-bg-white npgd-info-specialties-section">
+      <section className="npgd-info-section npgd-info-bg-light">
         <div className="npgd-info-section-inner">
-          <span className="npgd-info-eyebrow npgd-info-reveal">
-            <span className="npgd-info-eyebrow-dot" />
-            Choose Wisely
-          </span>
-          <h2 className="npgd-info-heading npgd-info-reveal">
-            Popular NEET PG 2025 Specialties
-          </h2>
-          <p className="npgd-info-para npgd-info-reveal">
-            Top specialties with highest demand and career opportunities.
-          </p>
+          <div className="npgd-info-header-center">
+            {" "}
+            <span className="npgd-info-eyebrow npgd-info-reveal">
+              <span className="npgd-info-eyebrow-dot" />
+              Choose Wisely
+            </span>
+            <h2 className="npgd-info-heading npgd-info-reveal">
+              Popular{" "}
+              <span className="npgd-info-heading-accent">
+                NEET PG 2025 Specialties
+              </span>
+            </h2>
+            <p className="npgd-info-para npgd-info-reveal">
+              Top specialties with highest demand and career opportunities.
+            </p>
+          </div>
 
           <div className="npgd-info-table-wrap npgd-info-reveal">
             <table className="npgd-info-table">
@@ -285,19 +296,25 @@ function NeetpgCounsellingInfo() {
         </div>
       </section>
 
-      <section className="npgd-info-section npgd-info-bg-light npgd-info-process-section">
+      <section className="npgd-info-section npgd-info-bg-white">
         <div className="npgd-info-section-inner">
-          <span className="npgd-info-eyebrow npgd-info-reveal">
-            <span className="npgd-info-eyebrow-dot" />
-            Your Path to Admission
-          </span>
-          <h2 className="npgd-info-heading npgd-info-reveal">
-            NEET PG 2025 Counselling Process
-          </h2>
-          <p className="npgd-info-para npgd-info-reveal">
-            Complete step-by-step guide for NEET PG 2025 counselling
-            registration.
-          </p>
+          <div className="npgd-info-header-center">
+            {" "}
+            <span className="npgd-info-eyebrow npgd-info-reveal">
+              <span className="npgd-info-eyebrow-dot" />
+              Your Path to Admission
+            </span>
+            <h2 className="npgd-info-heading npgd-info-reveal">
+              NEET PG 2025{" "}
+              <span className="npgd-info-heading-accent">
+                Counselling Process
+              </span>
+            </h2>
+            <p className="npgd-info-para npgd-info-reveal">
+              Complete step-by-step guide for NEET PG 2025 counselling
+              registration.
+            </p>
+          </div>
 
           <div className="npgd-info-timeline npgd-info-reveal">
             {JOURNEY.map((block) => (

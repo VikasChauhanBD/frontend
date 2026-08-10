@@ -10,8 +10,6 @@
   position: relative;
 }
 
-/* Sidebar */
-
 .dashboard-sidebar {
   position: sticky;
   top: 100px;
@@ -26,11 +24,13 @@
   flex-direction: column;
   gap: 8px;
   flex-shrink: 0;
+  z-index: 100;
 }
 
 .dashboard-sidebar h2 {
   font-size: 28px;
   color: #0f172a;
+  margin-bottom: 12px;
 }
 
 .dashboard-sidebar a {
@@ -60,24 +60,89 @@
   min-width: 0;
 }
 
-/* -------------------- Responsive ------------------- */
+.dashboard-sidebar-toggle {
+  display: none;
+}
+
+.dashboard-sidebar-overlay {
+  display: none;
+}
+
+/* -------------------------- Responsive --------------------- */
 
 @media (max-width: 868px) {
-  .dashboard-body {
-    flex-direction: column;
+  .dashboard-sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 280px;
+    height: 100vh;
+    padding: 100px 18px 25px;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    overflow-y: auto;
+    background: #ffffff;
+    border-right: 1px solid #e2e8f0;
+    box-shadow: 10px 0 35px rgba(15, 23, 42, 0.15);
+    z-index: 1001;
   }
 
-  .dashboard-sidebar {
-    position: static;
+  .dashboard-sidebar.sidebar-open {
+    transform: translateX(0);
+  }
+
+  .dashboard-sidebar-toggle {
+    display: flex;
+    position: fixed;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1002;
+    width: 42px;
+    height: 72px;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 0 22px 22px 0;
+    background: #f59e0b;
+    color: #0f172a;
+    cursor: pointer;
+    box-shadow: 4px 4px 15px rgba(15, 23, 42, 0.15);
+    transition:
+      left 0.3s ease,
+      background 0.3s ease,
+      color 0.3s ease;
+  }
+
+  .dashboard-sidebar-toggle:hover {
+    background: #155dfc;
+    color: #ffffff;
+  }
+
+  .dashboard-sidebar-toggle.sidebar-toggle-open {
+    left: 280px;
+  }
+
+  .dashboard-sidebar-overlay {
+    display: block;
+    position: fixed;
+    inset: 0;
+    background: rgba(15, 23, 42, 0.45);
+    z-index: 1000;
+  }
+
+  .dashboard-content {
     width: 100%;
-    height: auto;
-    border-right: none;
-    border-bottom: 1px solid #e2e8f0;
-    flex-direction: row;
-    overflow-x: auto;
-    overflow-y: hidden;
-    padding: 12px;
-    gap: 10px;
+  }
+}
+
+@media (max-width: 568px) {
+  .dashboard-sidebar {
+    width: 260px;
+  }
+
+  .dashboard-sidebar-toggle.sidebar-toggle-open {
+    left: 260px;
   }
 
   .dashboard-sidebar h2 {
@@ -85,10 +150,6 @@
   }
 
   .dashboard-sidebar a {
-    white-space: nowrap;
-  }
-
-  .dashboard-content {
-    padding: 20px;
+    padding: 13px 14px;
   }
 }

@@ -433,7 +433,10 @@ const InicetClosingRanks2025Page = () => {
           <div className="inicet-cr25-modal-box">
             <div className="inicet-cr25-modal-header">
               <h3 className="inicet-cr25-modal-title">Show / Hide Columns</h3>
-              <button onClick={() => setShowColModal(false)}>
+              <button
+                onClick={() => setShowColModal(false)}
+                className="inicet-cr25-modal-close-btn"
+              >
                 <X className="inicet-cr25-modal-close-icon" />
               </button>
             </div>

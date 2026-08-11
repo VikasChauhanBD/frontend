@@ -180,18 +180,24 @@
 .inicet-cr25-page-root {
   display: flex;
   min-height: 100vh;
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
   background: linear-gradient(180deg, #f8fafc 0%, #f3f0ff 100%);
 }
 .inicet-cr25-content-wrapper {
   flex: 1 1 0%;
   display: flex;
   flex-direction: column;
+  min-width: 0;
+  max-width: 100%;
 }
 
 /* ── Generic icon ─────────────────────────────────────────────────────── */
 .inicet-cr25-icon-sm {
   width: 1rem;
   height: 1rem;
+  color: #ffffff;
 }
 
 /* ── Column visibility modal ─────────────────────────────────────────── */
@@ -234,10 +240,15 @@
   font-weight: 700;
   color: #ffffff;
 }
+.inicet-cr25-modal-close-btn {
+  background: none;
+  border: none;
+}
 .inicet-cr25-modal-close-icon {
   width: 1.25rem;
   height: 1.25rem;
   color: #ffffff;
+  cursor: pointer;
 }
 .inicet-cr25-modal-body {
   padding: 1.1rem;
@@ -401,8 +412,10 @@
   color: #ede9fe;
   font-weight: 500;
 }
+
+/* Desktop-first: visible by default, hidden on mobile below */
 .inicet-cr25-records-count {
-  display: none;
+  display: block;
   color: #ffffff;
   font-size: 0.75rem;
   line-height: 1rem;
@@ -410,11 +423,6 @@
   background-color: rgba(255, 255, 255, 0.18);
   padding: 0.35rem 0.75rem;
   border-radius: 9999px;
-}
-@media (min-width: 768px) {
-  .inicet-cr25-records-count {
-    display: block;
-  }
 }
 
 /* ── Error banner ─────────────────────────────────────────────────────── */
@@ -438,7 +446,6 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  overflow-x: auto;
   flex-wrap: wrap;
 }
 .inicet-cr25-pill-group {
@@ -543,16 +550,14 @@
 .inicet-cr25-filters-section > * + * {
   margin-top: 1rem;
 }
+
+/* Desktop-first: row layout by default, stacked on mobile below */
 .inicet-cr25-filters-row {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   gap: 0.75rem;
 }
-@media (min-width: 768px) {
-  .inicet-cr25-filters-row {
-    flex-direction: row;
-  }
-}
+
 .inicet-cr25-search-wrapper {
   flex: 1 1 0%;
   position: relative;
@@ -628,16 +633,14 @@
   border-top: 1px solid #eef2f7;
   padding-top: 0.85rem;
 }
+
+/* Desktop-first: 4 columns by default, 2 columns on mobile below */
 .inicet-cr25-adv-filters-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 0.75rem;
 }
-@media (min-width: 768px) {
-  .inicet-cr25-adv-filters-grid {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-  }
-}
+
 .inicet-cr25-rank-inputs {
   display: flex;
   gap: 0.5rem;
@@ -702,6 +705,9 @@
 /* ── Table ────────────────────────────────────────────────────────────── */
 .inicet-cr25-table-wrapper {
   flex: 1 1 0%;
+  min-width: 0;
+  width: 100%;
+  max-width: 100%;
   overflow: auto;
   box-shadow: 0 6px 20px rgba(15, 23, 42, 0.06);
   background-color: #ffffff;
@@ -711,6 +717,7 @@
   border-collapse: separate;
   border-spacing: 0;
 }
+
 .inicet-cr25-table-head {
   background-image: linear-gradient(to right, #ede9fe, #dbeafe);
   border-bottom: 2px solid #ddd6fe;
@@ -878,6 +885,8 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.6rem;
 }
 .inicet-cr25-pagination-info {
   font-size: 0.8rem;
@@ -888,6 +897,7 @@
 .inicet-cr25-pagination-controls {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
 }
 .inicet-cr25-pagination-controls > * + * {
   margin-left: 0.3rem;
@@ -943,4 +953,47 @@
 }
 .inicet-cr25-page-num-inactive:hover {
   background-color: #f5f3ff;
+}
+
+/* ── Horizontal scroll on narrower viewports ────────────────────────── */
+@media (max-width: 1200px) {
+  .inicet-cr25-table-wrapper {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .inicet-cr25-data-table {
+    min-width: 1200px;
+  }
+}
+
+/* ── Mobile overrides (desktop-first convention) ─────────────────────── */
+@media (max-width: 768px) {
+  .inicet-cr25-records-count {
+    display: none;
+  }
+  .inicet-cr25-filters-row {
+    flex-direction: column;
+  }
+  .inicet-cr25-adv-filters-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .inicet-cr25-pill-group {
+    border-right: none;
+    padding-right: 0;
+    margin-right: 0;
+  }
+  .inicet-cr25-columns-btn {
+    margin-left: 0;
+  }
+  .inicet-cr25-cs-wrapper {
+    min-width: 0;
+    flex: 1 1 140px;
+  }
+  .inicet-cr25-pagination-row {
+    justify-content: center;
+    text-align: center;
+  }
+  .inicet-cr25-pagination-controls {
+    justify-content: center;
+  }
 }

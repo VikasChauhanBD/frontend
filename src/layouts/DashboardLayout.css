@@ -70,6 +70,12 @@
 
 /* -------------------------- Responsive --------------------- */
 
+@media (max-width: 1024px) {
+  .dashboard-sidebar {
+    width: 200px;
+  }
+}
+
 @media (max-width: 868px) {
   .dashboard-sidebar {
     position: fixed;

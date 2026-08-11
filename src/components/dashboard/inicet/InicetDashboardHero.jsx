@@ -1,14 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import "./InicetDashboardHero.css";
-import {
-  FiClipboard,
-  FiTrendingUp,
-  FiGrid,
-  FiDollarSign,
-  FiArrowRight,
-  FiX,
-} from "react-icons/fi";
+import { FiClipboard, FiTrendingUp, FiArrowRight, FiX } from "react-icons/fi";
 
 const CARDS = [
   {
@@ -23,25 +16,48 @@ const CARDS = [
     desc: "Compare the last rank admitted, category-wise.",
     Icon: FiTrendingUp,
   },
+];
+
+const ALLOTMENTS_PERIODS = [
   {
-    id: "seat-matrix",
-    title: "Seat Matrix",
-    desc: "See how many seats each institute is offering.",
-    Icon: FiGrid,
+    id: "jul-2026",
+    label: "Jul",
+    value: "2026",
+    link: "/dashboard/inicet-allotments-july-2026",
   },
   {
-    id: "fee-stipend-bond",
-    title: "Fee, Stipend & Bond",
-    desc: "Tuition, monthly stipend and bond terms, side by side.",
-    Icon: FiDollarSign,
+    id: "jan-2026",
+    label: "Jan",
+    value: "2026",
+    link: "/dashboard/inicet-allotments-jan-2026",
+  },
+  {
+    id: "jul-2025",
+    label: "Jul",
+    value: "2025",
+    link: "/dashboard/inicet-allotments-july-2025",
+  },
+  {
+    id: "jan-2025",
+    label: "Jan",
+    value: "2025",
+    link: "/dashboard/inicet-allotments-jan-2025",
   },
 ];
 
-const PERIODS = [
-  { id: "jul-2026", label: "Jul", value: "2026" },
-  { id: "jan-2026", label: "Jan", value: "2026" },
-  { id: "jul-2025", label: "Jul", value: "2025" },
-  { id: "jan-2025", label: "Jan", value: "2025" },
+const CLOSING_RANK_PERIODS = [
+  {
+    id: "2026",
+    label: "Year",
+    value: "2026",
+    link: "/dashboard/inicet-closing-ranks-2026",
+  },
+  {
+    id: "2025",
+    label: "Year",
+    value: "2025",
+    link: "/dashboard/inicet-closing-ranks-2025",
+  },
 ];
 
 function InicetDashboardHero() {
@@ -50,27 +66,38 @@ function InicetDashboardHero() {
   const ringRef = useRef(null);
   const ring2Ref = useRef(null);
   const particleRef = useRef([]);
-
   const overlayRef = useRef(null);
   const modalRef = useRef(null);
 
   const [activeCard, setActiveCard] = useState(null);
   const [selectedPeriod, setSelectedPeriod] = useState(null);
 
-  // Entrance animation + ambient background motion
   useEffect(() => {
     const ctx = gsap.context(() => {
       const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
 
-      tl.from(".inid-hero-eyebrow", { opacity: 0, y: 14, duration: 0.6 })
+      tl.from(".inid-hero-eyebrow", {
+        opacity: 0,
+        y: 14,
+        duration: 0.6,
+      })
         .from(
           ".inid-hero-title .inid-hero-title-line",
-          { opacity: 0, y: 26, duration: 0.75, stagger: 0.08 },
+          {
+            opacity: 0,
+            y: 26,
+            duration: 0.75,
+            stagger: 0.08,
+          },
           "-=0.35",
         )
         .from(
           ".inid-hero-subtitle",
-          { opacity: 0, y: 16, duration: 0.6 },
+          {
+            opacity: 0,
+            y: 16,
+            duration: 0.6,
+          },
           "-=0.4",
         )
         .from(
@@ -85,7 +112,6 @@ function InicetDashboardHero() {
           "-=0.3",
         );
 
-      // Ambient rotating orbit rings — slow, continuous, opposite directions
       if (ringRef.current) {
         gsap.to(ringRef.current, {
           rotation: 360,
@@ -95,6 +121,7 @@ function InicetDashboardHero() {
           transformOrigin: "50% 50%",
         });
       }
+
       if (ring2Ref.current) {
         gsap.to(ring2Ref.current, {
           rotation: -360,
@@ -105,9 +132,9 @@ function InicetDashboardHero() {
         });
       }
 
-      // Drifting particle field — soft up/down/side float, staggered
       particleRef.current.forEach((el, i) => {
         if (!el) return;
+
         gsap.to(el, {
           x: i % 3 === 0 ? 18 : i % 3 === 1 ? -14 : 10,
           y: i % 2 === 0 ? -22 : 20,
@@ -117,6 +144,7 @@ function InicetDashboardHero() {
           yoyo: true,
           delay: i * 0.15,
         });
+
         gsap.to(el, {
           opacity: 0.25,
           duration: 3 + (i % 4),
@@ -132,10 +160,21 @@ function InicetDashboardHero() {
   }, []);
 
   const handleCardEnter = (el) => {
-    gsap.to(el, { y: -8, scale: 1.02, duration: 0.35, ease: "power2.out" });
+    gsap.to(el, {
+      y: -8,
+      scale: 1.02,
+      duration: 0.35,
+      ease: "power2.out",
+    });
   };
+
   const handleCardLeave = (el) => {
-    gsap.to(el, { y: 0, scale: 1, duration: 0.4, ease: "power2.out" });
+    gsap.to(el, {
+      y: 0,
+      scale: 1,
+      duration: 0.4,
+      ease: "power2.out",
+    });
   };
 
   const openModal = (card) => {
@@ -144,6 +183,11 @@ function InicetDashboardHero() {
   };
 
   const closeModal = () => {
+    if (!modalRef.current || !overlayRef.current) {
+      setActiveCard(null);
+      return;
+    }
+
     gsap.to(modalRef.current, {
       opacity: 0,
       y: 18,
@@ -151,6 +195,7 @@ function InicetDashboardHero() {
       duration: 0.28,
       ease: "power2.in",
     });
+
     gsap.to(overlayRef.current, {
       opacity: 0,
       duration: 0.28,
@@ -159,22 +204,40 @@ function InicetDashboardHero() {
     });
   };
 
-  // Animate modal in whenever it mounts
   useEffect(() => {
     if (activeCard && overlayRef.current && modalRef.current) {
       gsap.fromTo(
         overlayRef.current,
         { opacity: 0 },
-        { opacity: 1, duration: 0.3, ease: "power2.out" },
+        {
+          opacity: 1,
+          duration: 0.3,
+          ease: "power2.out",
+        },
       );
+
       gsap.fromTo(
         modalRef.current,
-        { opacity: 0, y: 26, scale: 0.92 },
-        { opacity: 1, y: 0, scale: 1, duration: 0.4, ease: "back.out(1.6)" },
+        {
+          opacity: 0,
+          y: 26,
+          scale: 0.92,
+        },
+        {
+          opacity: 1,
+          y: 0,
+          scale: 1,
+          duration: 0.4,
+          ease: "back.out(1.6)",
+        },
       );
+
       gsap.fromTo(
         ".inid-hero-period-btn",
-        { opacity: 0, y: 10 },
+        {
+          opacity: 0,
+          y: 10,
+        },
         {
           opacity: 1,
           y: 0,
@@ -189,19 +252,33 @@ function InicetDashboardHero() {
 
   const handlePeriodSelect = (period, e) => {
     setSelectedPeriod(period);
+
     gsap.fromTo(
       e.currentTarget,
       { scale: 0.92 },
-      { scale: 1, duration: 0.35, ease: "back.out(3)" },
+      {
+        scale: 1,
+        duration: 0.35,
+        ease: "back.out(3)",
+      },
     );
+
+    setTimeout(() => {
+      window.location.href = period.link;
+    }, 250);
   };
+
+  const currentPeriods =
+    activeCard?.id === "closing-ranks"
+      ? CLOSING_RANK_PERIODS
+      : ALLOTMENTS_PERIODS;
 
   return (
     <div className="inid-hero-root" ref={rootRef}>
-      {/* Ambient light background */}
       <div className="inid-hero-bg" aria-hidden="true">
         <span className="inid-hero-ring inid-hero-ring-a" ref={ringRef} />
         <span className="inid-hero-ring inid-hero-ring-b" ref={ring2Ref} />
+
         <div className="inid-hero-particles">
           {Array.from({ length: 14 }).map((_, i) => (
             <span
@@ -211,17 +288,21 @@ function InicetDashboardHero() {
             />
           ))}
         </div>
+
         <div className="inid-hero-grid" />
       </div>
 
       <div className="inid-hero-content">
         <p className="inid-hero-eyebrow">INI-CET COUNSELING</p>
+
         <h1 className="inid-hero-title">
           <span className="inid-hero-title-line">Your admission vitals,</span>
+
           <span className="inid-hero-title-line inid-hero-title-accent">
             tracked live.
           </span>
         </h1>
+
         <p className="inid-hero-subtitle">
           Allotments, closing ranks, seat matrix and cost of study — pick a
           card, choose a round, see the numbers.
@@ -241,8 +322,11 @@ function InicetDashboardHero() {
               <span className="inid-hero-card-icon">
                 <card.Icon />
               </span>
+
               <span className="inid-hero-card-title">{card.title}</span>
+
               <span className="inid-hero-card-desc">{card.desc}</span>
+
               <span className="inid-hero-card-cta">
                 View data
                 <FiArrowRight />
@@ -280,10 +364,15 @@ function InicetDashboardHero() {
             </span>
 
             <h2 className="inid-hero-modal-title">{activeCard.title}</h2>
-            <p className="inid-hero-modal-hint">Select round</p>
+
+            <p className="inid-hero-modal-hint">
+              {activeCard.id === "closing-ranks"
+                ? "Select year"
+                : "Select round"}
+            </p>
 
             <div className="inid-hero-period-list">
-              {PERIODS.map((period) => (
+              {currentPeriods.map((period) => (
                 <button
                   key={period.id}
                   type="button"
@@ -296,6 +385,7 @@ function InicetDashboardHero() {
                   onClick={(e) => handlePeriodSelect(period, e)}
                 >
                   <span className="inid-hero-period-label">{period.label}</span>
+
                   <span className="inid-hero-period-value">{period.value}</span>
                 </button>
               ))}
@@ -303,7 +393,7 @@ function InicetDashboardHero() {
 
             {selectedPeriod && (
               <p className="inid-hero-modal-footnote">
-                Showing {activeCard.title.toLowerCase()} for{" "}
+                Opening {activeCard.title.toLowerCase()} for{" "}
                 {selectedPeriod.label} {selectedPeriod.value}.
               </p>
             )}

@@ -33,6 +33,9 @@ import NeetpgDashboard from "../pages/dashboard/NeetpgDashboard";
 import NeetugDashboard from "../pages/dashboard/NeetugDashboard";
 import InicetDashboard from "../pages/dashboard/InicetDashboard";
 
+// Data Pages
+import InicetClosingRanks2025Page from "../pages/inicetDataPages/inicet2025/InicetClosingRanks2025Page";
+
 function AppRoutes() {
   return (
     <Routes>
@@ -86,6 +89,11 @@ function AppRoutes() {
         <Route path="neet-ug" element={<NeetugDashboard />} />
         <Route path="inicet" element={<InicetDashboard />} />
       </Route>
+
+      <Route
+        path="/dashboard/inicet-closing-ranks-2025"
+        element={<InicetClosingRanks2025Page />}
+      />
     </Routes>
   );
 }

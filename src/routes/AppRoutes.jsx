@@ -36,6 +36,7 @@ import InicetDashboard from "../pages/dashboard/InicetDashboard";
 // Data Pages
 import InicetClosingRanks2025Page from "../pages/inicetDataPages/inicet2025/InicetClosingRanks2025Page";
 import InicetClosingRanks2026Page from "../pages/inicetDataPages/inicet2026/InicetClosingRanks2026Page";
+import InicetAllotmentsJuly2026Page from "../pages/inicetDataPages/inicet2026/InicetAllotmentsJuly2026Page";
 
 function AppRoutes() {
   return (
@@ -98,6 +99,10 @@ function AppRoutes() {
       <Route
         path="/dashboard/inicet-closing-ranks-2026"
         element={<InicetClosingRanks2026Page />}
+      />
+      <Route
+        path="/dashboard/inicet-allotments-july-2026"
+        element={<InicetAllotmentsJuly2026Page />}
       />
     </Routes>
   );

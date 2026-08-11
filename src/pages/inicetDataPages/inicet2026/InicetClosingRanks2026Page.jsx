@@ -537,7 +537,7 @@ const InicetClosingRanks2026Page = () => {
               <div>
                 <h1 className="inicet-cr26-app-title">INICET Closing Ranks</h1>
                 <p className="inicet-cr26-app-subtitle">
-                  JAN & JUL 2025 Sessions
+                  JAN & JUL 2026 Sessions
                 </p>
               </div>
             </div>
@@ -550,7 +550,7 @@ const InicetClosingRanks2026Page = () => {
         {dataError && (
           <div className="inicet-cr26-error-banner">
             ⚠️ Data not found. Add{" "}
-            <code>/data/inicetData/inicet_closing_ranks_2025.csv</code> to
+            <code>/data/inicetData/inicet_closing_ranks_2026.csv</code> to
             enable this page.
           </div>
         )}
@@ -760,7 +760,7 @@ const InicetClosingRanks2026Page = () => {
                     className="inicet-cr26-table-empty"
                   >
                     {dataError
-                      ? "CSV not found — add /data/inicetData/inicet_closing_ranks_2025.csv to enable."
+                      ? "CSV not found — add /data/inicetData/inicet_closing_ranks_2026.csv to enable."
                       : "No data found. Try adjusting your filters."}
                   </td>
                 </tr>

@@ -1,21 +1,21 @@
-.neetpg-updates {
+.neetug-updates {
   width: 100%;
   padding: 80px 20px;
   overflow: hidden;
 }
 
-.neetpg-updates-container {
+.neetug-updates-container {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
 }
 
-.neetpg-updates-header {
+.neetug-updates-header {
   margin: 0 auto 60px;
   text-align: center;
 }
 
-.neetpg-updates-eyebrow {
+.neetug-updates-eyebrow {
   display: inline-flex;
   align-items: center;
   gap: 7px;
@@ -28,7 +28,7 @@
   font-weight: 600;
 }
 
-.neetpg-updates-title {
+.neetug-updates-title {
   margin: 0 0 16px;
   color: #0f172a;
   font-size: 38px;
@@ -36,14 +36,14 @@
   font-weight: 700;
 }
 
-.neetpg-updates-title span {
+.neetug-updates-title span {
   background: linear-gradient(90deg, #155dfc, #7c3aed);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
 }
 
-.neetpg-updates-description {
+.neetug-updates-description {
   margin: 0 auto;
   max-width: 680px;
   color: #334155;
@@ -51,14 +51,14 @@
   line-height: 1.7;
 }
 
-.neetpg-updates-timeline {
+.neetug-updates-timeline {
   position: relative;
   width: 100%;
   margin: 0 auto;
   padding: 10px 0 20px;
 }
 
-.neetpg-updates-line {
+.neetug-updates-line {
   position: absolute;
   top: 0;
   bottom: 0;
@@ -67,18 +67,18 @@
   background: linear-gradient(to bottom, #155dfc, #7c3aed, #dbe4f0);
 }
 
-.neetpg-update-item {
+.neetug-update-item {
   position: relative;
   display: flex;
   gap: 25px;
   margin-bottom: 24px;
 }
 
-.neetpg-update-item:last-child {
+.neetug-update-item:last-child {
   margin-bottom: 0;
 }
 
-.neetpg-update-marker {
+.neetug-update-marker {
   position: relative;
   z-index: 2;
   flex: 0 0 56px;
@@ -94,14 +94,14 @@
   box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
 }
 
-.neetpg-update-item.is-highlight .neetpg-update-marker {
+.neetug-update-item.is-highlight .neetug-update-marker {
   background: #155dfc;
   color: #ffffff;
   border-color: #155dfc;
   box-shadow: 0 8px 24px rgba(21, 93, 252, 0.25);
 }
 
-.neetpg-update-card {
+.neetug-update-card {
   flex: 1;
   padding: 20px 24px;
   border: 1px solid #e2e8f0;
@@ -114,18 +114,18 @@
     border-color 0.3s ease;
 }
 
-.neetpg-update-card:hover {
+.neetug-update-card:hover {
   transform: translateY(-3px);
   border-color: #cbd5e1;
   box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
 }
 
-.neetpg-update-item.is-highlight .neetpg-update-card {
+.neetug-update-item.is-highlight .neetug-update-card {
   border-color: rgba(21, 93, 252, 0.25);
   background: linear-gradient(135deg, #ffffff 0%, #f8fbff 100%);
 }
 
-.neetpg-update-top {
+.neetug-update-top {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -133,38 +133,38 @@
   margin-bottom: 10px;
 }
 
-.neetpg-update-number {
+.neetug-update-number {
   font-size: 13px;
   font-weight: 700;
   color: #94a3b8;
   letter-spacing: 0.08em;
 }
 
-.neetpg-update-status {
+.neetug-update-status {
   padding: 5px 10px;
   border-radius: 20px;
   font-size: 11px;
   font-weight: 600;
 }
 
-.neetpg-update-status.completed {
+.neetug-update-status.completed {
   background: #e5edfe;
   color: #155dfc;
 }
 
-.neetpg-update-status.upcoming {
+.neetug-update-status.upcoming {
   background: #f1e9fd;
   color: #7c3aed;
 }
 
-.neetpg-update-date {
+.neetug-update-date {
   margin-bottom: 5px;
   color: #f59e0b;
   font-size: 14px;
   font-weight: 600;
 }
 
-.neetpg-update-event {
+.neetug-update-event {
   margin: 0;
   color: #0f172a;
   font-size: 19px;
@@ -172,7 +172,7 @@
   font-weight: 600;
 }
 
-.neetpg-updates-reference {
+.neetug-updates-reference {
   display: flex;
   align-items: center;
   gap: 18px;
@@ -183,7 +183,7 @@
   box-shadow: 0 15px 40px rgba(15, 23, 42, 0.15);
 }
 
-.neetpg-reference-icon {
+.neetug-reference-icon {
   flex: 0 0 48px;
   width: 48px;
   height: 48px;
@@ -195,11 +195,11 @@
   color: #f59e0b;
 }
 
-.neetpg-reference-content {
+.neetug-reference-content {
   flex: 1;
 }
 
-.neetpg-reference-label {
+.neetug-reference-label {
   display: block;
   margin-bottom: 4px;
   color: #f59e0b;
@@ -209,21 +209,21 @@
   letter-spacing: 0.06em;
 }
 
-.neetpg-reference-content h3 {
+.neetug-reference-content h3 {
   margin: 0 0 5px;
   color: #ffffff;
   font-size: 18px;
   font-weight: 600;
 }
 
-.neetpg-reference-content p {
+.neetug-reference-content p {
   margin: 0;
   color: #ffffff;
   font-size: 16px;
   line-height: 1.5;
 }
 
-.neetpg-reference-btn {
+.neetug-reference-btn {
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -241,7 +241,7 @@
     transform 0.25s ease;
 }
 
-.neetpg-reference-btn:hover {
+.neetug-reference-btn:hover {
   background: #155dfc;
   color: #ffffff;
   transform: translateY(-2px);
@@ -250,84 +250,84 @@
 /* -------------------------- Responsive --------------------- */
 
 @media (max-width: 868px) {
-  .neetpg-updates {
+  .neetug-updates {
     padding: 60px 16px;
   }
 
-  .neetpg-updates-title {
+  .neetug-updates-title {
     font-size: 32px;
   }
 
-  .neetpg-updates-description {
+  .neetug-updates-description {
     font-size: 16px;
   }
 
-  .neetpg-updates-reference {
+  .neetug-updates-reference {
     align-items: flex-start;
   }
 
-  .neetpg-reference-btn {
+  .neetug-reference-btn {
     margin-left: auto;
   }
 }
 
 @media (max-width: 568px) {
-  .neetpg-updates-header {
+  .neetug-updates-header {
     margin-bottom: 40px;
   }
 
-  .neetpg-updates-title {
+  .neetug-updates-title {
     font-size: 28px;
   }
 
-  .neetpg-updates-description {
+  .neetug-updates-description {
     font-size: 15px;
   }
 
-  .neetpg-updates-line {
+  .neetug-updates-line {
     left: 21px;
   }
 
-  .neetpg-update-item {
+  .neetug-update-item {
     gap: 15px;
   }
 
-  .neetpg-update-marker {
+  .neetug-update-marker {
     flex: 0 0 42px;
     width: 42px;
     height: 42px;
   }
 
-  .neetpg-update-marker svg {
+  .neetug-update-marker svg {
     width: 17px;
     height: 17px;
   }
 
-  .neetpg-update-card {
+  .neetug-update-card {
     padding: 16px;
   }
 
-  .neetpg-update-event {
+  .neetug-update-event {
     font-size: 16px;
   }
 
-  .neetpg-update-date {
+  .neetug-update-date {
     font-size: 13px;
   }
 
-  .neetpg-update-status {
+  .neetug-update-status {
     font-size: 10px;
     padding: 4px 8px;
   }
 
-  .neetpg-updates-reference {
+  .neetug-updates-reference {
     flex-direction: column;
     align-items: flex-start;
     padding: 20px;
     margin-top: 45px;
   }
 
-  .neetpg-reference-btn {
+  .neetug-reference-btn {
     margin-left: 0;
     width: 100%;
     justify-content: center;

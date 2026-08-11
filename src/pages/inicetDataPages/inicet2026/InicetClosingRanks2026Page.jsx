@@ -668,7 +668,7 @@ const InicetClosingRanks2026Page = () => {
                 onClick={() => setShowAdv(!showAdv)}
                 className="inicet-cr26-filter-toggle-btn"
               >
-                <Filter className="inicet-cr26-icon-sm" />{" "}
+                <Filter className="inicet-cr26-icon-fl" />{" "}
                 {showAdv ? "Hide" : "More"} Filters
                 <ChevronDown
                   className={`inicet-cr26-filter-toggle-icon ${showAdv ? "inicet-cr26-rotate-open" : ""}`}

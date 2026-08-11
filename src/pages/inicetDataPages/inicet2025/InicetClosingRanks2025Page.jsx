@@ -24,14 +24,14 @@ const COL_DEFS = [
   { key: "Bond Years", label: "Bond Yrs" },
   { key: "Bond Penalty", label: "Bond Penalty" },
   { key: "Beds", label: "Beds" },
-  { key: "CR JAN 2026 0", label: "JAN R0" },
-  { key: "CR JAN 2026 1", label: "JAN R1" },
-  { key: "CR JAN 2026 2", label: "JAN R2" },
-  { key: "CR JAN 2026 3", label: "JAN R3" },
-  { key: "CR JUL 2026 0", label: "JUL R0" },
-  { key: "CR JUL 2026 1", label: "JUL R1" },
-  { key: "CR JUL 2026 2", label: "JUL R2" },
-  { key: "CR JUL 2026 3", label: "JUL R3" },
+  { key: "CR JAN 2025 0", label: "JAN R0" },
+  { key: "CR JAN 2025 1", label: "JAN R1" },
+  { key: "CR JAN 2025 2", label: "JAN R2" },
+  { key: "CR JAN 2025 3", label: "JAN R3" },
+  { key: "CR JUL 2025 0", label: "JUL R0" },
+  { key: "CR JUL 2025 1", label: "JUL R1" },
+  { key: "CR JUL 2025 2", label: "JUL R2" },
+  { key: "CR JUL 2025 3", label: "JUL R3" },
 ];
 
 const DEFAULT_VIS = {
@@ -45,27 +45,27 @@ const DEFAULT_VIS = {
   "Bond Years": false,
   "Bond Penalty": false,
   Beds: false,
-  "CR JAN 2026 0": true,
-  "CR JAN 2026 1": true,
-  "CR JAN 2026 2": true,
-  "CR JAN 2026 3": true,
-  "CR JUL 2026 0": true,
-  "CR JUL 2026 1": true,
-  "CR JUL 2026 2": true,
-  "CR JUL 2026 3": true,
+  "CR JAN 2025 0": true,
+  "CR JAN 2025 1": true,
+  "CR JAN 2025 2": true,
+  "CR JAN 2025 3": true,
+  "CR JUL 2025 0": true,
+  "CR JUL 2025 1": true,
+  "CR JUL 2025 2": true,
+  "CR JUL 2025 3": true,
 };
 
 const JAN_RANK_COLS = [
-  "CR JAN 2026 0",
-  "CR JAN 2026 1",
-  "CR JAN 2026 2",
-  "CR JAN 2026 3",
+  "CR JAN 2025 0",
+  "CR JAN 2025 1",
+  "CR JAN 2025 2",
+  "CR JAN 2025 3",
 ];
 const JUL_RANK_COLS = [
-  "CR JUL 2026 0",
-  "CR JUL 2026 1",
-  "CR JUL 2026 2",
-  "CR JUL 2026 3",
+  "CR JUL 2025 0",
+  "CR JUL 2025 1",
+  "CR JUL 2025 2",
+  "CR JUL 2025 3",
 ];
 const ALL_RANK_COLS = [...JAN_RANK_COLS, ...JUL_RANK_COLS];
 
@@ -273,14 +273,14 @@ const InicetClosingRanks2025Page = () => {
         "Bond Years": g(7),
         "Bond Penalty": g(8),
         Beds: g(9),
-        "CR JAN 2026 0": g(10),
-        "CR JAN 2026 1": g(11),
-        "CR JAN 2026 2": g(12),
-        "CR JAN 2026 3": g(13),
-        "CR JUL 2026 0": g(14),
-        "CR JUL 2026 1": g(15),
-        "CR JUL 2026 2": g(16),
-        "CR JUL 2026 3": g(17),
+        "CR JAN 2025 0": g(10),
+        "CR JAN 2025 1": g(11),
+        "CR JAN 2025 2": g(12),
+        "CR JAN 2025 3": g(13),
+        "CR JUL 2025 0": g(14),
+        "CR JUL 2025 1": g(15),
+        "CR JUL 2025 2": g(16),
+        "CR JUL 2025 3": g(17),
       };
     });
   };
@@ -465,21 +465,21 @@ const InicetClosingRanks2025Page = () => {
                   ],
                 },
                 {
-                  label: "JAN 2026 Closing Ranks",
+                  label: "JAN 2025 Closing Ranks",
                   keys: [
-                    "CR JAN 2026 0",
-                    "CR JAN 2026 1",
-                    "CR JAN 2026 2",
-                    "CR JAN 2026 3",
+                    "CR JAN 2025 0",
+                    "CR JAN 2025 1",
+                    "CR JAN 2025 2",
+                    "CR JAN 2025 3",
                   ],
                 },
                 {
-                  label: "JUL 2026 Closing Ranks",
+                  label: "JUL 2025 Closing Ranks",
                   keys: [
-                    "CR JUL 2026 0",
-                    "CR JUL 2026 1",
-                    "CR JUL 2026 2",
-                    "CR JUL 2026 3",
+                    "CR JUL 2025 0",
+                    "CR JUL 2025 1",
+                    "CR JUL 2025 2",
+                    "CR JUL 2025 3",
                   ],
                 },
               ].map((group) => (
@@ -668,7 +668,7 @@ const InicetClosingRanks2025Page = () => {
                 onClick={() => setShowAdv(!showAdv)}
                 className="inicet-cr25-filter-toggle-btn"
               >
-                <Filter className="inicet-cr25-icon-sm" />{" "}
+                <Filter className="inicet-cr25-icon-fl" />{" "}
                 {showAdv ? "Hide" : "More"} Filters
                 <ChevronDown
                   className={`inicet-cr25-filter-toggle-icon ${showAdv ? "inicet-cr25-rotate-open" : ""}`}
@@ -831,44 +831,44 @@ const InicetClosingRanks2025Page = () => {
                         {item.Beds || "—"}
                       </td>
                     )}
-                    {colVis["CR JAN 2026 0"] && (
+                    {colVis["CR JAN 2025 0"] && (
                       <td className="inicet-cr25-td-rank-jan">
-                        <RankCell val={item["CR JAN 2026 0"]} />
+                        <RankCell val={item["CR JAN 2025 0"]} />
                       </td>
                     )}
-                    {colVis["CR JAN 2026 1"] && (
+                    {colVis["CR JAN 2025 1"] && (
                       <td className="inicet-cr25-td-rank-jan">
-                        <RankCell val={item["CR JAN 2026 1"]} />
+                        <RankCell val={item["CR JAN 2025 1"]} />
                       </td>
                     )}
-                    {colVis["CR JAN 2026 2"] && (
+                    {colVis["CR JAN 2025 2"] && (
                       <td className="inicet-cr25-td-rank-jan">
-                        <RankCell val={item["CR JAN 2026 2"]} />
+                        <RankCell val={item["CR JAN 2025 2"]} />
                       </td>
                     )}
-                    {colVis["CR JAN 2026 3"] && (
+                    {colVis["CR JAN 2025 3"] && (
                       <td className="inicet-cr25-td-rank-jan">
-                        <RankCell val={item["CR JAN 2026 3"]} />
+                        <RankCell val={item["CR JAN 2025 3"]} />
                       </td>
                     )}
-                    {colVis["CR JUL 2026 0"] && (
+                    {colVis["CR JUL 2025 0"] && (
                       <td className="inicet-cr25-td-rank-jul">
-                        <RankCell val={item["CR JUL 2026 0"]} />
+                        <RankCell val={item["CR JUL 2025 0"]} />
                       </td>
                     )}
-                    {colVis["CR JUL 2026 1"] && (
+                    {colVis["CR JUL 2025 1"] && (
                       <td className="inicet-cr25-td-rank-jul">
-                        <RankCell val={item["CR JUL 2026 1"]} />
+                        <RankCell val={item["CR JUL 2025 1"]} />
                       </td>
                     )}
-                    {colVis["CR JUL 2026 2"] && (
+                    {colVis["CR JUL 2025 2"] && (
                       <td className="inicet-cr25-td-rank-jul">
-                        <RankCell val={item["CR JUL 2026 2"]} />
+                        <RankCell val={item["CR JUL 2025 2"]} />
                       </td>
                     )}
-                    {colVis["CR JUL 2026 3"] && (
+                    {colVis["CR JUL 2025 3"] && (
                       <td className="inicet-cr25-td-rank-jul">
-                        <RankCell val={item["CR JUL 2026 3"]} />
+                        <RankCell val={item["CR JUL 2025 3"]} />
                       </td>
                     )}
                   </tr>

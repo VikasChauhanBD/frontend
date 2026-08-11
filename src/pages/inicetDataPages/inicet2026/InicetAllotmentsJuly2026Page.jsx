@@ -497,7 +497,7 @@ const InicetAllotmentsJuly2026Page = () => {
                 onClick={() => setShowAdv(!showAdv)}
                 className="inicet-jul26-filter-toggle-btn"
               >
-                <Filter className="inicet-jul26-icon-sm" />{" "}
+                <Filter className="inicet-jul26-icon-fl" />{" "}
                 {showAdv ? "Hide" : "More"} Filters
                 <ChevronDown
                   className={`inicet-jul26-filter-toggle-icon ${showAdv ? "inicet-jul26-rotate-open" : ""}`}

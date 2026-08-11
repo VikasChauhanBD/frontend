@@ -227,6 +227,12 @@
   color: #ffffff;
 }
 
+.inicet-cr25-icon-fl {
+  width: 1rem;
+  height: 1rem;
+  color: #7c3aed;
+}
+
 /* ── Column visibility modal ─────────────────────────────────────────── */
 .inicet-cr25-modal-overlay {
   position: fixed;

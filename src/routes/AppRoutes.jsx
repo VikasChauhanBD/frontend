@@ -47,6 +47,7 @@ import PgFeesStipendBond2025Page from "../pages/neetpgDataPages/neetpg2025/PgFee
 
 // NEET UG Data Pages
 import UgFeesStipendBond2025Page from "../pages/neetugDataPages/neetug2025/UgFeesStipendBond2025Page";
+import UgSeatMatrix2025Page from "../pages/neetugDataPages/neetug2025/UgSeatMatrix2025Page";
 
 function AppRoutes() {
   return (
@@ -144,6 +145,18 @@ function AppRoutes() {
         path="/dashboard/neetug-fee-stipend-bond-2025"
         element={<UgFeesStipendBond2025Page />}
       />
+      <Route
+        path="/dashboard/neetug-seat-matrix-2025"
+        element={<UgSeatMatrix2025Page />}
+      />
+      {/* <Route
+        path="/dashboard/neetug-closing-ranks-2025"
+        element={<UgFeesStipendBond2025Page />}
+      />
+       <Route
+        path="/dashboard/neetug-allotments-2025"
+        element={<UgFeesStipendBond2025Page />}
+      /> */}
     </Routes>
   );
 }

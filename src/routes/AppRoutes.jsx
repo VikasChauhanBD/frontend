@@ -37,6 +37,7 @@ import InicetDashboard from "../pages/dashboard/InicetDashboard";
 import InicetClosingRanks2025Page from "../pages/inicetDataPages/inicet2025/InicetClosingRanks2025Page";
 import InicetClosingRanks2026Page from "../pages/inicetDataPages/inicet2026/InicetClosingRanks2026Page";
 import InicetAllotmentsJuly2026Page from "../pages/inicetDataPages/inicet2026/InicetAllotmentsJuly2026Page";
+import InicetAllotmentsJan2026Page from "../pages/inicetDataPages/inicet2026/InicetAllotmentsJan2026Page";
 
 function AppRoutes() {
   return (
@@ -92,6 +93,7 @@ function AppRoutes() {
         <Route path="inicet" element={<InicetDashboard />} />
       </Route>
 
+      {/* ================= Protected Data Route ================= */}
       <Route
         path="/dashboard/inicet-closing-ranks-2025"
         element={<InicetClosingRanks2025Page />}
@@ -103,6 +105,10 @@ function AppRoutes() {
       <Route
         path="/dashboard/inicet-allotments-july-2026"
         element={<InicetAllotmentsJuly2026Page />}
+      />
+      <Route
+        path="/dashboard/inicet-allotments-jan-2026"
+        element={<InicetAllotmentsJan2026Page />}
       />
     </Routes>
   );

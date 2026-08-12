@@ -224,7 +224,7 @@ const InicetAllotmentsJuly2026Page = () => {
   };
 
   useEffect(() => {
-    fetch("/data/inicet/inicet_july_2026_session.csv")
+    fetch("/data/inicet/inicet_allotments_july_2026.csv")
       .then((r) => {
         if (!r.ok) throw new Error(`HTTP error! status: ${r.status}`);
         return r.text();

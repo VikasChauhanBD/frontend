@@ -119,7 +119,6 @@
   color: #334155;
 }
 
-/* ── RankCell ─────────────────────────────────────────────────────────── */
 .inicet-cr25-rank-empty {
   color: #cbd5e1;
 }
@@ -162,7 +161,6 @@
   background-color: #f1f5f9;
 }
 
-/* ── Loading state ────────────────────────────────────────────────────── */
 .inicet-cr25-loading-screen {
   display: flex;
   min-height: 100vh;
@@ -202,7 +200,6 @@
   font-weight: 500;
 }
 
-/* ── Page root ────────────────────────────────────────────────────────── */
 .inicet-cr25-page-root {
   display: flex;
   min-height: 100vh;
@@ -220,7 +217,6 @@
   max-width: 100%;
 }
 
-/* ── Generic icon ─────────────────────────────────────────────────────── */
 .inicet-cr25-icon-sm {
   width: 1rem;
   height: 1rem;
@@ -233,7 +229,6 @@
   color: #7c3aed;
 }
 
-/* ── Column visibility modal ─────────────────────────────────────────── */
 .inicet-cr25-modal-overlay {
   position: fixed;
   top: 0;
@@ -426,7 +421,6 @@
   box-shadow: 0 6px 14px rgba(124, 58, 237, 0.38);
 }
 
-/* ── Header ───────────────────────────────────────────────────────────── */
 .inicet-cr25-app-header {
   background-image: linear-gradient(120deg, #7c3aed, #155dfc 60%, #4338ca);
   color: #ffffff;
@@ -476,7 +470,6 @@
   font-weight: 500;
 }
 
-/* Desktop-first: visible by default, hidden on mobile below */
 .inicet-cr25-records-count {
   display: block;
   color: #ffffff;
@@ -488,7 +481,6 @@
   border-radius: 9999px;
 }
 
-/* ── Error banner ─────────────────────────────────────────────────────── */
 .inicet-cr25-error-banner {
   background-color: #fffbeb;
   border-bottom: 1px solid #fde68a;
@@ -499,7 +491,6 @@
   font-weight: 500;
 }
 
-/* ── Session / Round pills ────────────────────────────────────────────── */
 .inicet-cr25-pills-section {
   background-color: #ffffff;
   border-bottom: 1px solid #eef2f7;
@@ -619,7 +610,6 @@
   box-shadow: 0 6px 14px rgba(245, 158, 11, 0.38);
 }
 
-/* ── Search + Filters ─────────────────────────────────────────────────── */
 .inicet-cr25-filters-section {
   background-color: #ffffff;
   border-bottom: 1px solid #eef2f7;
@@ -630,7 +620,6 @@
   margin-top: 1rem;
 }
 
-/* Desktop-first: row layout by default, stacked on mobile below */
 .inicet-cr25-filters-row {
   display: flex;
   flex-direction: row;
@@ -715,13 +704,11 @@
   transform: rotate(180deg);
 }
 
-/* ── Advanced filters ─────────────────────────────────────────────────── */
 .inicet-cr25-adv-filters {
   border-top: 1px solid #eef2f7;
   padding-top: 0.85rem;
 }
 
-/* Desktop-first: 4 columns by default, 2 columns on mobile below */
 .inicet-cr25-adv-filters-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -796,7 +783,6 @@
   margin-left: 0.3rem;
 }
 
-/* ── Table ────────────────────────────────────────────────────────────── */
 .inicet-cr25-table-wrapper {
   flex: 1 1 0%;
   min-width: 0;
@@ -875,7 +861,6 @@
   background-color: #faf5ff;
 }
 
-/* ── Table cells ──────────────────────────────────────────────────────── */
 .inicet-cr25-td-center {
   padding: 0.75rem;
   text-align: center;
@@ -998,7 +983,6 @@
   background-color: rgba(240, 253, 250, 0.45);
 }
 
-/* ── Pagination ───────────────────────────────────────────────────────── */
 .inicet-cr25-pagination {
   background-color: #ffffff;
   border-top: 1px solid #eef2f7;

@@ -119,7 +119,6 @@
   color: #334155;
 }
 
-/* ── AI Rank cell styling ────────────────────────────────────────────── */
 .inicet-jul26-rank-empty {
   color: #cbd5e1;
 }
@@ -162,7 +161,6 @@
   background-color: #f1f5f9;
 }
 
-/* ── Loading state ────────────────────────────────────────────────────── */
 .inicet-jul26-loading-screen {
   display: flex;
   min-height: 100vh;
@@ -202,7 +200,6 @@
   font-weight: 500;
 }
 
-/* ── Page root ────────────────────────────────────────────────────────── */
 .inicet-jul26-page-root {
   display: flex;
   min-height: 100vh;
@@ -220,7 +217,6 @@
   max-width: 100%;
 }
 
-/* ── Generic icon ─────────────────────────────────────────────────────── */
 .inicet-jul26-icon-sm {
   width: 1rem;
   height: 1rem;
@@ -233,7 +229,6 @@
   color: #7c3aed;
 }
 
-/* ── Column visibility modal ─────────────────────────────────────────── */
 .inicet-jul26-modal-overlay {
   position: fixed;
   top: 0;
@@ -426,7 +421,6 @@
   box-shadow: 0 6px 14px rgba(124, 58, 237, 0.38);
 }
 
-/* ── Header ───────────────────────────────────────────────────────────── */
 .inicet-jul26-app-header {
   background-image: linear-gradient(120deg, #7c3aed, #155dfc 60%, #4338ca);
   color: #ffffff;
@@ -488,7 +482,6 @@
   border-radius: 9999px;
 }
 
-/* ── Error banner ─────────────────────────────────────────────────────── */
 .inicet-jul26-error-banner {
   background-color: #fffbeb;
   border-bottom: 1px solid #fde68a;
@@ -499,7 +492,6 @@
   font-weight: 500;
 }
 
-/* ── Stats cards ──────────────────────────────────────────────────────── */
 .inicet-jul26-stats-section {
   background-color: #ffffff;
   border-bottom: 1px solid #eef2f7;
@@ -568,7 +560,6 @@
   font-weight: 500;
 }
 
-/* ── Search + Filters ─────────────────────────────────────────────────── */
 .inicet-jul26-filters-section {
   background-color: #ffffff;
   border-bottom: 1px solid #eef2f7;
@@ -579,7 +570,6 @@
   margin-top: 1rem;
 }
 
-/* Desktop-first: row layout by default, stacked on mobile below */
 .inicet-jul26-filters-row {
   display: flex;
   flex-direction: row;
@@ -689,7 +679,6 @@
   transform: rotate(180deg);
 }
 
-/* ── Advanced filters ─────────────────────────────────────────────────── */
 .inicet-jul26-adv-filters {
   border-top: 1px solid #eef2f7;
   padding-top: 0.85rem;
@@ -748,7 +737,6 @@
   margin-left: 0.3rem;
 }
 
-/* ── Table ────────────────────────────────────────────────────────────── */
 .inicet-jul26-table-wrapper {
   flex: 1 1 0%;
   min-width: 0;
@@ -814,7 +802,6 @@
   background-color: #faf5ff;
 }
 
-/* ── Table cells ──────────────────────────────────────────────────────── */
 .inicet-jul26-td-center {
   padding: 0.75rem;
   text-align: center;
@@ -910,7 +897,6 @@
   white-space: nowrap;
 }
 
-/* ── Pagination ───────────────────────────────────────────────────────── */
 .inicet-jul26-pagination {
   background-color: #ffffff;
   border-top: 1px solid #eef2f7;

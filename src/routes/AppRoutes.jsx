@@ -43,6 +43,7 @@ import InicetAllotmentsJan2025Page from "../pages/inicetDataPages/inicet2025/Ini
 
 // NEET PG Data Pages
 import PgFeesStipendBond2024Page from "../pages/neetpgDataPages/neetpg2024/PgFeesStipendBond2024Page";
+import PgFeesStipendBond2025Page from "../pages/neetpgDataPages/neetpg2025/PgFeesStipendBond2025Page";
 
 function AppRoutes() {
   return (
@@ -127,8 +128,12 @@ function AppRoutes() {
 
       {/* NEET PG */}
       <Route
-        path="/dashboard/neetpg-allotments-2024"
+        path="/dashboard/neetpg-fee-stipend-bond-2024"
         element={<PgFeesStipendBond2024Page />}
+      />
+      <Route
+        path="/dashboard/neetpg-fee-stipend-bond-2025"
+        element={<PgFeesStipendBond2025Page />}
       />
     </Routes>
   );

@@ -15,7 +15,6 @@
   pointer-events: none;
 }
 
-/* Drifting wave bands, anchored to the bottom of the section */
 .nugd-hero-waves {
   position: absolute;
   left: 0;
@@ -40,7 +39,6 @@
   fill: rgba(245, 158, 11, 0.06);
 }
 
-/* Pulsing glow orbs — breathe in place, no drifting */
 .nugd-hero-glow {
   position: absolute;
   border-radius: 50%;
@@ -310,18 +308,18 @@
   color: #334155;
 }
 
-.nugd-hero-year-list {
-  display: flex;
+.nugd-hero-period-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   gap: 12px;
 }
 
-.nugd-hero-year-btn {
-  flex: 1;
+.nugd-hero-period-btn {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 2px;
-  padding: 16px 10px;
+  padding: 14px 10px;
   background: #f8fafc;
   border: 1.5px solid #e2e8f0;
   border-radius: 14px;
@@ -332,17 +330,17 @@
     transform 0.2s ease;
 }
 
-.nugd-hero-year-btn:hover {
+.nugd-hero-period-btn:hover {
   border-color: #cfe0ff;
   background: #eaf1ff;
 }
 
-.nugd-hero-year-btn-active {
+.nugd-hero-period-btn-active {
   border-color: #f59e0b;
   background: #f59e0b;
 }
 
-.nugd-hero-year-label {
+.nugd-hero-period-label {
   font-size: 11px;
   font-weight: 600;
   letter-spacing: 0.08em;
@@ -350,7 +348,7 @@
   color: #334155;
 }
 
-.nugd-hero-year-value {
+.nugd-hero-period-value {
   font-size: 20px;
   font-weight: 700;
   color: #0f172a;
@@ -390,10 +388,6 @@
 @media (max-width: 568px) {
   .nugd-hero-cards {
     grid-template-columns: 1fr;
-  }
-
-  .nugd-hero-year-list {
-    flex-direction: column;
   }
 }
 

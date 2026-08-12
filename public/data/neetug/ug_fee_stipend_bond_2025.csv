@@ -1,0 +1,711 @@
+State,Institute,Course,Quota,Fee,Beds,Bond Years,Bond Penalty,Stipend Year 1
+Delhi,"ESI, Basaidarpur, Delhi",MBBS,AI,100000,Info Not Available,1,500000,26300
+Uttar Pradesh,"ESIC MedCollHosp,Noida",MBBS,AI,100000,Info Not Available,1,500000,26300
+Gujarat,"ESIC Med Coll, Naroda",MBBS,AI,100000,Info Not Available,1,500000,26300
+Maharashtra,"ESI, Andheri, Mumbai",MBBS,AI,100000,Info Not Available,1,500000,26300
+Punjab,"ESIC MedCollHosp,Ludhiana",MBBS,AI,100000,Info Not Available,1,500000,26300
+Haryana,"Pt Neki Ram Sharma GovtMedColl, Bhiwani",MBBS,AI,61410,Info Not Available,5,2577090,17000
+Rajasthan,"GMC, Jaisalmer",MBBS,AI,96029,Info Not Available,2,1000000,20000
+Kerala,"GMC, Wayanad",MBBS,AI,23150,Info Not Available,0,0,27300
+Haryana,"Maharishi Chyawan Med Coll,Koriawas",MBBS,AI,61410,Info Not Available,5,2577090,17000
+Kerala,"GMC, Kasaragod",MBBS,AI,23150,Info Not Available,0,0,27300
+Rajasthan,"GMC, Tonk",MBBS,AI,96029,Info Not Available,2,1000000,20000
+Madhya Pradesh,"GMC, Sheopur",MBBS,AI,100000,Info Not Available,1,1000000,13409
+Madhya Pradesh,"GMC, Singrauli",MBBS,AI,100000,Info Not Available,1,1000000,13409
+Assam,"Pragjyotishpur Med Coll,Guwahati",MBBS,AI,8400,Info Not Available,5,3000000,36225
+Odisha,"Government MedColl&Hosp, Phulbani",MBBS,AI,22000,Info Not Available,2,2500000,42075
+Odisha,"Pabitra Mohan Pradhan MedColl&Hosp,Talcher",MBBS,AI,22000,Info Not Available,2,2500000,42075
+Telangana,"GMC, Kodangal",MBBS,AI,14000,Info Not Available,0,0,25960
+Odisha,"Government Med Coll, Sundargarh",MBBS,AI,22000,500,2,2500000,42075
+Odisha,"Government Med Coll, Keonjhar",MBBS,AI,22000,430,2,2500000,42075
+Odisha,"Pt Raghunath Med Coll,Baripada",MBBS,AI,22000,563,2,2500000,42075
+Odisha,"SCB, Cuttack",MBBS,AI,22000,2106,2,2500000,42075
+Odisha,"VIMSAR, Burla",MBBS,AI,22000,1071,2,2500000,42075
+Odisha,"Sri Jagannath Med Coll, Puri",MBBS,AI,22000,Info Not Available,2,2500000,42075
+Odisha,"Govt Med Coll, Balasore",MBBS,AI,22000,360,2,2500000,42075
+Odisha,"Govt Med Coll, Balangir",MBBS,AI,22000,300,2,2500000,42075
+Odisha,"MKCG, Berhampur",MBBS,AI,22000,1140,2,2500000,42075
+Odisha,"Saheed Laxman Nayak, Koraput",MBBS,AI,22000,300,2,2500000,42075
+Odisha,Government Med Coll Bhawanipatna,MBBS,AI,22000,340,2,2500000,42075
+Odisha,"Govt Med Coll and Hosp, Jajpur",MBBS,AI,22000,420,2,2500000,42075
+Andaman and Nicobar Islands,"Andaman & NicobarIMS,PortBlair",MBBS,AI,59500,545,1,1000000,32500
+Andhra Pradesh,"ACSR Govt Med Coll, Nellore",MBBS,AI,15000,355,0,0,25906
+Andhra Pradesh,"Andhra Med Coll, Vizag",MBBS,AI,15000,1030,0,0,25906
+Andhra Pradesh,"Govt Med Coll, Ananthapuram",MBBS,AI,15000,500,0,0,25906
+Andhra Pradesh,"Government Med Coll, Eluru",MBBS,AI,15000,400,0,0,25906
+Andhra Pradesh,Govt Med Coll Machilipatnam,MBBS,AI,15000,553,0,0,25906
+Andhra Pradesh,"Government Med Coll, Nandyal",MBBS,AI,15000,Info Not Available,0,0,25906
+Andhra Pradesh,"Government Medical College, Paderu",MBBS,AI,15000,Info Not Available,0,0,25906
+Andhra Pradesh,"Govt Med Coll, Rajamahendravaram",MBBS,AI,15000,250,0,0,25906
+Andhra Pradesh,Government Med Coll Vizianagaram,MBBS,AI,15000,400,0,0,25906
+Andhra Pradesh,"Govt Siddhartha, Vijaywada",MBBS,AI,15000,707,0,0,25906
+Andhra Pradesh,"Guntur Med Coll, Guntur",MBBS,AI,15000,1170,0,0,25906
+Andhra Pradesh,"Kurnool Med Coll, Kurnool",MBBS,AI,15000,1150,0,0,25906
+Andhra Pradesh,"Rajiv Gandhi IMS, Kadapa",MBBS,AI,15000,715,0,0,25906
+Andhra Pradesh,"Rajiv Gandhi IMS, Srikakulam",MBBS,AI,15000,532,0,0,25906
+Andhra Pradesh,"Rajiv Gandhi IMS, Ongole",MBBS,AI,15000,500,0,0,25906
+Andhra Pradesh,"Rangaraya Med Coll, Kakinada",MBBS,AI,15000,1450,0,0,25906
+Andhra Pradesh,"SV Med Coll, Tirupati",MBBS,AI,15000,940,0,0,25906
+Andhra Pradesh,SVIMS-Sri Padmavathi,MBBS,AI,67900,1337,0,0,25906
+Arunachal Pradesh,"Tomo Riba IHMS, Naharlagun",MBBS,AI,33000,500,1,1000000,25000
+Assam,"Gauhati Med Coll, Guwahati",MBBS,AI,6400,2185,5,3000000,36225
+Assam,"Silchar Med Coll, Silchar",MBBS,AI,6400,1256,5,3000000,36225
+Assam,"Assam Med Coll, Dibrugarh",MBBS,AI,6400,1365,5,3000000,36225
+Assam,"Jorhat Med Coll, Jorhat",MBBS,AI,6400,814,5,3000000,36225
+Assam,"Fakhruddin Ali Ahmed, Barpeta",MBBS,AI,6400,470,5,3000000,36225
+Assam,"Lakhimpur Med Coll, Lakhimpur",MBBS,AI,6400,500,5,3000000,36225
+Assam,"Tezpur Med Coll, Tezpur",MBBS,AI,6400,500,5,3000000,36225
+Assam,"Diphu Med Coll, Assam",MBBS,AI,6400,416,5,3000000,36225
+Assam,"Dhubri Medical College, Dhubri",MBBS,AI,6400,Info Not Available,5,3000000,36225
+Assam,"Nalbari Medical College, Nalbari",MBBS,AI,6400,Info Not Available,5,3000000,36225
+Assam,Nagaon Medical College,MBBS,AI,6400,Info Not Available,5,3000000,36225
+Assam,Kokrajhar Medical College,MBBS,AI,6400,Info Not Available,5,3000000,36225
+Assam,Tinsukia Med Coll & Hosp,MBBS,AI,6400,440,5,3000000,36225
+Bihar,"AN Magadh, Gaya",MBBS,AI,9500,425,Info Not Available,Info not available,20000
+Bihar,"Darbhanga, Lehriasarai",MBBS,AI,9500,1030,Info Not Available,Info not available,20000
+Bihar,"Govt Med Coll, Bettiah",MBBS,AI,9500,470,Info Not Available,Info not available,20000
+Bihar,"Government Med Coll, Purnea",MBBS,AI,9500,Info Not Available,Info Not Available,Info not available,20000
+Bihar,"IGIMS, Patna",MBBS,AI,81667,1062,Info Not Available,Info not available,Info not available
+Bihar,"Jannayak Karpoori Med,Madhepura",MBBS,AI,9500,500,Info Not Available,Info not available,20000
+Bihar,"Jawaharlal Nehru, Bhagalpur",MBBS,AI,9500,800,Info Not Available,Info not available,20000
+Telangana,"ESIC Med Coll,Sanath Nagar",MBBS,AI,100000,690,1,500000,26300
+Bihar,"Nalanda Med Coll, Patna",MBBS,AI,9500,750,Info Not Available,Info not available,20000
+Bihar,"Patna Med Coll, Patna",MBBS,AI,9500,1748,Info Not Available,Info not available,20000
+Bihar,"Sri Krishna, Muzzafarpur",MBBS,AI,9500,610,Info Not Available,Info not available,20000
+Bihar,"Vardhman IMS, Nalanda",MBBS,AI,9500,640,Info Not Available,Info not available,20000
+Chandigarh,"GMC, Chandigarh",MBBS,AI,24979,967,0,0,Info not available
+Chhattisgarh,"Govt Med Coll, Ambikapur",MBBS,AI,50000,785,1,2500000,15900
+Chhattisgarh,"CCM Govt Medical College, Durg",MBBS,AI,50000,750,1,2500000,15900
+Chhattisgarh,"CIMS, Bilaspur",MBBS,AI,50000,550,1,2500000,15900
+Chhattisgarh,"Govt Med Coll, Rajnandgaon",MBBS,AI,50000,650,1,2500000,15900
+Chhattisgarh,"Govt Med Coll, Kanker",MBBS,AI,50000,350,1,2500000,15900
+Chhattisgarh,"Government Med Coll, Korba",MBBS,AI,50000,Info Not Available,1,2500000,15900
+Chhattisgarh,"Government Med Coll, Mahasamund",MBBS,AI,50000,Info Not Available,1,2500000,15900
+Chhattisgarh,"BaliramKashyap NDMC, Jagdalpur",MBBS,AI,50000,500,1,2500000,15900
+Chhattisgarh,"Pt JNM Med Coll, Raipur",MBBS,AI,50000,1246,1,2500000,15900
+Chhattisgarh,"Lakhi Ram Agrawal, Raigarh",MBBS,AI,50000,650,1,2500000,15900
+Dadra and Nagar Haveli,"NAMO MERI Govt MedColl,Silvassa",MBBS,AI,53000,650,2,4000000,Info not available
+Delhi,"Dr BSA Med Coll, Delhi",MBBS,AI,75000,510,1,1500000,26000
+Rajasthan,"ESIC Med Coll, Alwar",MBBS,AI,100000,Info Not Available,1,500000,26300
+Delhi,"Lady Hardinge, Delhi",MBBS,AI,1665,877,1,1500000,24000
+Delhi,"MAMC, Delhi",MBBS,AI,2095,2800,1,1500000,23000
+Delhi,"NDMC Med College, Delhi",MBBS,AI,105500,980,1,1500000,26000
+Delhi,"ABVIMS (Dr RML Hosp), Delhi",MBBS,AI,41000,1626,1,1500000,30070
+Delhi,"UCMS, Delhi",MBBS,AI,31340,1000,1,1500000,28000
+Delhi,"VMMC, Delhi",MBBS,AI,41000,1550,1,1500000,26300
+Goa,"Goa Med Coll, Panaji",MBBS,AI,154050,1160,1,1000000,30000
+Gujarat,"BJMC, Ahmedabad",MBBS,AI,25000,1557,1,2000000,21840
+Gujarat,"Govt Med Coll, Surat",MBBS,AI,25000,1150,1,2000000,21840
+Gujarat,"Medical College, Baroda",MBBS,AI,25000,1250,1,2000000,21840
+Gujarat,"MP Shah, Jamnagar",MBBS,AI,25000,1250,1,2000000,21840
+Gujarat,"PDU Med Coll, Rajkot",MBBS,AI,25000,750,1,2000000,21840
+Gujarat,"Govt Med Coll, Bhavnagar",MBBS,AI,25000,720,1,2000000,21840
+Gujarat,"GMERS Medical College, Navsari",MBBS,AI,375000,360,1,200000,21840
+Gujarat,"GMERS Medical College, Rajpipla",MBBS,AI,375000,Info Not Available,1,200000,21840
+Gujarat,"Govt Med College (GMERS), Morbi",MBBS,AI,375000,360,1,200000,21840
+Gujarat,"Govt Med Coll (GMERS), Panchmahal",MBBS,AI,375000,Info Not Available,1,200000,21840
+Gujarat,"Govt Med Coll (GMERS), Porbandar",MBBS,AI,375000,330,1,200000,21840
+Haryana,"BPS Govt Med Coll, Sonepat",MBBS,AI,61410,506,5,2577090,17000
+Haryana,"Kalpana Chawala Govt MC,Karnal",MBBS,AI,61410,500,5,2577090,17000
+Haryana,"Pt BD Sharma, Rohtak",MBBS,AI,61410,2080,5,2577090,17000
+Haryana,"SHKM, Nalhar",MBBS,AI,61410,500,5,2577090,17000
+Haryana,"AB Vajpay GovtMedColl,Faridabad",MBBS,AI,61410,Info Not Available,5,2577090,17000
+Karnataka,"ESI, Bangalore",MBBS,AI,100000,530,1,500000,26300
+Himachal Pradesh,"RPG, Tanda",MBBS,AI,50000,802,Info Not Available,Info not available,20000
+Himachal Pradesh,"Govt Med Coll, Nahan",MBBS,AI,50000,313,Info Not Available,Info not available,20000
+Himachal Pradesh,"DrRadhakrishnan GovtColl,Hamirpur",MBBS,AI,50000,Info Not Available,Info Not Available,Info not available,20000
+Himachal Pradesh,"IGMC, Shimla",MBBS,AI,50000,1031,Info Not Available,Info not available,20000
+Himachal Pradesh,"Govt Med Coll, Chamba",MBBS,AI,50000,380,Info Not Available,Info not available,20000
+Karnataka,"ESIC Med Coll,Gulbarga",MBBS,AI,100000,480,1,500000,26300
+Jammu and Kashmir,"Government Med Coll,Anantnag",MBBS,AI,34214,62,0,0,Info not available
+Jammu and Kashmir,"Gove Med Coll, Jammu",MBBS,AI,26250,1700,0,0,Info not available
+Jammu and Kashmir,"Government Medical Coll,Kathua",MBBS,AI,26250,Info Not Available,0,0,Info not available
+Jammu and Kashmir,"Government Med Coll,Rajouri",MBBS,AI,26250,300,0,0,Info not available
+Jammu and Kashmir,"Government Med Coll, Udhampur",MBBS,AI,27060,300,0,0,Info not available
+Jammu and Kashmir,"Government Med Coll, Baramulla",MBBS,AI,37636,300,0,0,Info not available
+Jammu and Kashmir,"Government Med Coll, Handwara",MBBS,AI,34215,Info Not Available,0,0,Info not available
+Jammu and Kashmir,"Govt Med Coll, Srinagar",MBBS,AI,26250,2150,0,0,Info not available
+Jammu and Kashmir,"Government Medical Coll, Doda",MBBS,AI,26250,Info Not Available,0,0,Info not available
+Jammu and Kashmir,"Sher-I-Kashmir, Srinagar",MBBS,AI,36400,Info Not Available,0,0,Info not available
+Jharkhand,"Shaheed Nirmal Mahto, Dhanbad",MBBS,AI,7400,560,Info Not Available,Info not available,17500
+Jharkhand,"Palamu Medical College, Palamu",MBBS,AI,9200,Info Not Available,Info Not Available,Info not available,17500
+Jharkhand,"Hazaribagh Med Coll,Hazaribagh",MBBS,AI,9180,340,Info Not Available,Info not available,17500
+Jharkhand,"Rajendra IMS, Ranchi",MBBS,AI,17500,1754,Info Not Available,Info not available,17500
+Jharkhand,"MGM Med Coll, Jamshedpur",MBBS,AI,9130,540,Info Not Available,Info not available,17500
+Jharkhand,"Dumka Medical Coll,Dighi Dumka",MBBS,AI,20100,Info Not Available,Info Not Available,Info not available,17500
+West Bengal,"ESI, Joka, Kolkata",MBBS,AI,100000,470,1,500000,26300
+Karnataka,"Bangalore Med Coll, Bangalore",MBBS,AI,64350,1993,1,1500000,30000
+Karnataka,"Belagavi IMS, Belagavi",MBBS,AI,64350,1000,1,1500000,30000
+Karnataka,"Bidar IMS, Bidar",MBBS,AI,64350,500,1,1500000,30000
+Karnataka,"Chamrajanagar IMS, Karnataka",MBBS,AI,64350,750,1,1500000,30000
+Karnataka,Chikkaballapura Inst Of Med Sci,MBBS,AI,64350,300,1,1500000,30000
+Karnataka,Chikkamagaluru Inst of Med Sci,MBBS,AI,64350,Info Not Available,1,1500000,30000
+Karnataka,Chitradurga Medical College,MBBS,AI,64350,500,1,1500000,30000
+Karnataka,"Gadag IMS, Gadag",MBBS,AI,64350,850,1,1500000,30000
+Karnataka,"Gulbarga IMS, Gulbarga",MBBS,AI,64350,873,1,1500000,30000
+Karnataka,"Hassan IMS, Hassan",MBBS,AI,64350,150,1,1500000,30000
+Karnataka,"Haveri Inst of Med Sci, Haveri",MBBS,AI,64350,330,1,1500000,30000
+Karnataka,"KIMS, Hubli",MBBS,AI,64350,1200,1,1500000,30000
+Karnataka,Karwar Inst of Med Sciences,MBBS,AI,64350,650,1,1500000,30000
+Karnataka,Kodagu Inst of Med Sciences,MBBS,AI,64350,600,1,1500000,30000
+Karnataka,"Koppal Inst of MS, Koppal",MBBS,AI,64350,Info Not Available,1,1500000,30000
+Karnataka,"Mandya IMS, Mandya",MBBS,AI,64350,850,1,1500000,30000
+Karnataka,"Mysore Med Coll, Mysore",MBBS,AI,64350,1050,1,1500000,30000
+Karnataka,"Raichur IMS, Raichur",MBBS,AI,64350,500,1,1500000,30000
+Karnataka,"Shimoga IMS, Shimoga",MBBS,AI,64350,950,1,1500000,30000
+Bihar,"ESIC Med Coll, Patna",MBBS,AI,100000,Info Not Available,1,500000,26300
+Karnataka,"Shri Atal Bihari Vajpayee, BLR",MBBS,AI,64350,956,1,1500000,30000
+Karnataka,"VIMS, Bellary",MBBS,AI,64350,1295,1,1500000,30000
+Karnataka,"Yadgiri Inst of Med Sci,Yadgiri",MBBS,AI,64350,450,1,1500000,30000
+Kerala,"Academy of Med Sci, Pariyaram",MBBS,AI,23150,1752,0,0,27300
+Kerala,"Govt Med Coll, Ernakulam",MBBS,AI,23150,700,0,0,27300
+Kerala,"Government Med Coll, Idukki",MBBS,AI,23150,Info Not Available,0,0,27300
+Kerala,"Government Medical Coll, Konni",MBBS,AI,23150,500,0,0,27300
+Kerala,"Govt Med Coll, Kottayam",MBBS,AI,23150,2094,0,0,27300
+Kerala,"Govt Med Coll, Kozhikode",MBBS,AI,23150,3025,0,0,27300
+Kerala,"Govt Med Coll, Manjeri",MBBS,AI,23150,500,0,0,27300
+Kerala,"Govt Med Coll, Thrissur",MBBS,AI,23150,1400,0,0,27300
+Kerala,"Govt Med Coll, Palakkad",MBBS,AI,23150,Info Not Available,0,0,27300
+Kerala,"Medical College, Trivandrum",MBBS,AI,23150,2126,0,0,27300
+Kerala,"TD Med Coll, Allepey",MBBS,AI,23150,1050,0,0,27300
+Madhya Pradesh,"Atal Bihari Vajpayee, Vidisha",MBBS,AI,100000,300,1,1000000,13409
+Madhya Pradesh,"Bundelkhand Med Coll, Sagar",MBBS,AI,100000,750,1,1000000,13409
+Madhya Pradesh,"Gaja Raja Med Coll, Gwalior",MBBS,AI,100000,1100,1,1000000,13409
+Madhya Pradesh,"Gandhi Med Coll, Bhopal",MBBS,AI,100000,1135,1,1000000,13409
+Madhya Pradesh,"Govt Med Coll, Chhindwara",MBBS,AI,100000,600,1,1000000,13409
+Madhya Pradesh,"Govt Med Coll, Datia",MBBS,AI,100000,540,1,1000000,13409
+Madhya Pradesh,"Govt Med Coll, Ratlam",MBBS,AI,100000,300,1,1000000,13409
+Madhya Pradesh,"Government Med Coll, Satna",MBBS,AI,100000,Info Not Available,1,1000000,13409
+Madhya Pradesh,"Govt Med Coll, Shivpuri",MBBS,AI,100000,520,1,1000000,13409
+Madhya Pradesh,"MGM Med Coll, Indore",MBBS,AI,100000,1300,1,1000000,13409
+Madhya Pradesh,"NSC Bose Med Coll, Jabalpur",MBBS,AI,100000,1150,1,1000000,13409
+Madhya Pradesh,"SSMC, Rewa",MBBS,AI,100000,1140,1,1000000,13409
+Madhya Pradesh,"Govt Med Coll, Khandwa",MBBS,AI,100000,Info Not Available,1,1000000,13409
+Madhya Pradesh,"Govt Med Coll, Shahdol, MP",MBBS,AI,100000,300,1,1000000,13409
+Madhya Pradesh,"Govt Med Coll, Seoni",MBBS,AI,100000,650,1,1000000,13409
+Madhya Pradesh,"Govt Med Coll, Mandsaur",MBBS,AI,100000,564,1,1000000,13409
+Madhya Pradesh,"Govt Med Coll, Neemuch",MBBS,AI,100000,Info Not Available,1,1000000,13409
+Maharashtra,"BJMC, Pune",MBBS,AI,158600,1296,1,1000000,18000
+Maharashtra,"VMMC, Solapur",MBBS,AI,158600,763,1,1000000,18000
+Maharashtra,"Govt Med Coll, Nanded",MBBS,AI,158600,750,1,1000000,18000
+Maharashtra,"Government Med Coll, Gadchiroli",MBBS,AI,158600,26,1,1000000,18000
+Maharashtra,"Govt Med Coll, Baramati",MBBS,AI,158600,310,1,1000000,18000
+Maharashtra,Government Med Coll Ratnagiri,MBBS,AI,158600,Info Not Available,1,1000000,18000
+Maharashtra,"Govt Med Coll, Akola",MBBS,AI,158600,840,1,1000000,18000
+Maharashtra,"Govt Med Coll, Alibag",MBBS,AI,158600,420,1,1000000,18000
+Maharashtra,"Government Med Coll, Ambernath",MBBS,AI,158600,Info Not Available,1,1000000,18000
+Maharashtra,"Government Med Coll, Amravati",MBBS,AI,158600,430,1,1000000,18000
+Maharashtra,"Govt Med Coll, Aurangabad",MBBS,AI,158600,1177,1,1000000,18000
+Maharashtra,"Government Med Coll, Bhandara",MBBS,AI,158600,482,1,1000000,18000
+Maharashtra,"Government Med Coll, Buldhana",MBBS,AI,158600,420,1,1000000,18000
+Maharashtra,"Govt Med Coll, Chandrapur",MBBS,AI,158600,650,1,1000000,18000
+Maharashtra,"Govt Med Coll, Gondia",MBBS,AI,158600,500,1,1000000,18000
+Maharashtra,"Government Med Coll, Hingoli",MBBS,AI,158600,Info Not Available,1,1000000,18000
+Maharashtra,"Govt Med Coll, Jalgaon",MBBS,AI,158600,441,1,1000000,18000
+Maharashtra,"Government Med Coll, Jalna",MBBS,AI,158600,430,1,1000000,18000
+Maharashtra,"Govt Med Coll, Latur",MBBS,AI,158600,750,1,1000000,18000
+Maharashtra,"Govt Med Coll, Miraj",MBBS,AI,158600,725,1,1000000,18000
+Maharashtra,"Govt Med Coll, Mumbai",MBBS,AI,158600,1026,1,1000000,18000
+Maharashtra,"Govt Med Coll, Nagpur",MBBS,AI,158600,1866,1,1000000,18000
+Maharashtra,"Govt Med Coll, Nandurbar",MBBS,AI,158600,315,1,1000000,18000
+Maharashtra,"Government Med Coll, Osmanabad",MBBS,AI,158600,430,1,1000000,18000
+Maharashtra,"Government Med Coll, Parbhani",MBBS,AI,158600,450,1,1000000,18000
+Maharashtra,"Govt Med Coll, Satara",MBBS,AI,158600,361,1,1000000,18000
+Maharashtra,"Government Med Coll, Sindhudurg",MBBS,AI,158600,Info Not Available,1,1000000,18000
+Maharashtra,"Government Med Coll, Washim",MBBS,AI,158600,448,1,1000000,18000
+Maharashtra,"Grant Med Coll, Mumbai",MBBS,AI,158600,2844,1,1000000,18000
+Maharashtra,"HBT & RN Cooper, Mumbai",MBBS,AI,158600,940,1,1000000,18000
+Maharashtra,"Indira Gandhi MedColl, Nagpur",MBBS,AI,158600,822,1,1000000,18000
+Maharashtra,"Lokmanya Tilak, Sion, Mumbai",MBBS,AI,158600,1462,1,1000000,18000
+Maharashtra,"MPGIMER, Nashik",MBBS,AI,158600,Info Not Available,1,1000000,18000
+Maharashtra,"MGIMS, Wardha",MBBS,AI,169410,1000,1,1000000,18000
+Maharashtra,"Rajarshee CSM Govt MC,Kolhapur",MBBS,AI,158600,665,1,1000000,18000
+Maharashtra,"Rajiv Gandhi MC & CSMH, Thane",MBBS,AI,158600,500,1,1000000,18000
+Maharashtra,"Seth GS, Mumbai",MBBS,AI,158600,2250,1,1000000,18000
+Maharashtra,"Shri VR Naik Govt, Yavatmal",MBBS,AI,158600,756,1,1000000,18000
+Maharashtra,"Sri Bhausaheb, Dhule",MBBS,AI,158600,545,1,1000000,18000
+Maharashtra,"SRTT, Ambajogai",MBBS,AI,158600,518,1,1000000,18000
+Maharashtra,"Topiwala, Mumbai",MBBS,AI,158600,1300,1,1000000,18000
+Manipur,"JNIMS, Imphal",MBBS,AI,6000,643,Info Not Available,Info not available,Info not available
+Manipur,"RIMS, Imphal",MBBS,AI,3000,1074,Info Not Available,Info not available,Info not available
+Manipur,"Govt Med Coll, Churachandpur",MBBS,AI,6000,Info Not Available,Info Not Available,Info not available,Info not available
+Meghalaya,"NEIGRIHMS, Shillong",MBBS,AI,16600,594,Info Not Available,Info not available,Info not available
+Mizoram,"Zoram Med Coll, Mizoram",MBBS,AI,49150,474,1,1000000,Info not available
+Nagaland,NIMSR Kohima,MBBS,AI,60000,Info Not Available,Info Not Available,Info not available,Info not available
+Pondicherry,"IGMC & RI, Pondicherry",MBBS,AI,73700,750,0,0,20000
+Punjab,"DrBRAmbedkar State IMS,Mohali",MBBS,AI,192000,420,1,200000,15000
+Punjab,"Govt Med Coll, Amritsar",MBBS,AI,192000,951,1,200000,15000
+Punjab,"Govt Med Coll, Patiala",MBBS,AI,192000,1130,1,200000,15000
+Punjab,"Guru Govind Singh, Faridkot",MBBS,AI,192000,1000,1,200000,15000
+Rajasthan,"SNMC, Jodhpur",MBBS,AI,96100,3101,2,1000000,20000
+Rajasthan,"Government Med Coll, Alwar",MBBS,AI,96029,Info Not Available,2,1000000,20000
+Rajasthan,"Govt Med Coll, Barmer",MBBS,AI,96029,Info Not Available,2,1000000,20000
+Rajasthan,"Govt Med Coll, Bharatpur",MBBS,AI,96029,Info Not Available,2,1000000,20000
+Rajasthan,"Govt Med Coll, Bhilwara",MBBS,AI,96029,Info Not Available,2,1000000,20000
+Rajasthan,Government Medical College Bundi,MBBS,AI,96029,Info Not Available,2,1000000,20000
+Rajasthan,"Government Med Coll,Chittorgarh",MBBS,AI,96029,Info Not Available,2,1000000,20000
+Rajasthan,"Govt Med Coll, Churu",MBBS,AI,96029,Info Not Available,2,1000000,20000
+Rajasthan,"Government Med Coll, Dausa",MBBS,AI,96029,Info Not Available,2,1000000,20000
+Rajasthan,"Government Med Coll, Dholpur",MBBS,AI,96029,Info Not Available,2,1000000,20000
+Rajasthan,"Govt Med Coll, Dungapur",MBBS,AI,96029,700,2,1000000,20000
+Rajasthan,"Government Med Coll, Hanumangarh",MBBS,AI,96029,Info Not Available,2,1000000,20000
+Rajasthan,"Govt Med Coll, Jhunjhunu",MBBS,AI,96029,Info Not Available,2,1000000,20000
+Rajasthan,"Govt Med Coll, Kota",MBBS,AI,96100,2581,2,1000000,20000
+Rajasthan,"Government Med Coll, Karauli",MBBS,AI,96029,Info Not Available,2,1000000,20000
+Rajasthan,"Govt Med Coll, Pali",MBBS,AI,96029,Info Not Available,2,1000000,20000
+Rajasthan,"Government Med Coll, Sirohi",MBBS,AI,96029,300,2,1000000,20000
+Rajasthan,"JLNMC, Ajmer",MBBS,AI,96075,1428,2,1000000,20000
+Rajasthan,"Govt Med Coll, Sri Ganganagar",MBBS,AI,96029,Info Not Available,2,1000000,20000
+Rajasthan,"Govt Med Coll, Banswara",MBBS,AI,96029,Info Not Available,2,1000000,20000
+Rajasthan,"SP Med Coll, Bikaner",MBBS,AI,96100,Info Not Available,2,1000000,20000
+Rajasthan,"Govt Med Coll, Baran",MBBS,AI,96029,Info Not Available,2,1000000,20000
+Rajasthan,"SMS, Jaipur",MBBS,AI,96100,5702,2,1000000,20000
+Haryana,"ESI Med Coll, Faridabad",MBBS,AI,100000,Info Not Available,1,500000,26300
+Rajasthan,"RNT, Udaipur",MBBS,AI,96029,2206,2,1000000,20000
+Rajasthan,"Govt Med Coll, Nagaur",MBBS,AI,96029,Info Not Available,2,1000000,20000
+Rajasthan,"Govt Med Coll, Sawai Madhopur",MBBS,AI,96029,Info Not Available,2,1000000,20000
+Rajasthan,"Jhalawar Med Coll, Jhalawar",MBBS,AI,96029,Info Not Available,2,1000000,20000
+Rajasthan,"RUHS, Jaipur",MBBS,AI,96029,300,2,1000000,20000
+Rajasthan,"Shri Kalyan MedColl,Sikar",MBBS,AI,96029,Info Not Available,2,1000000,20000
+Tamil Nadu,"ESI PGIMSR, KK Nagar, Chennai",MBBS,AI,100000,470,1,500000,26300
+Tamil Nadu,Chengalpattu Med Coll,MBBS,AI,18073,700,0,0,27315
+Tamil Nadu,Coimbatore Med Coll,MBBS,AI,18073,1182,0,0,27315
+Tamil Nadu,Govt Dharmapuri Med Coll,MBBS,AI,18073,500,0,0,27315
+Tamil Nadu,"Govt Erode Med Coll,Perundurai",MBBS,AI,18073,600,0,0,27315
+Tamil Nadu,"Govt Med Coll, Ariyalur",MBBS,AI,18073,1132,0,0,27315
+Tamil Nadu,"Govt Med Coll, Dindigul",MBBS,AI,18073,901,0,0,27315
+Tamil Nadu,"Govt Med Coll, Kallakurichi",MBBS,AI,18073,Info Not Available,0,0,27315
+Tamil Nadu,"Govt Med Coll, Karur",MBBS,AI,18073,700,0,0,27315
+Tamil Nadu,"Govt Med Coll, Krishnagiri",MBBS,AI,18073,Info Not Available,0,0,27315
+Tamil Nadu,"Govt Med Coll, Nagapattinam",MBBS,AI,18073,Info Not Available,0,0,27315
+Tamil Nadu,"Govt Med Coll, Namakkal",MBBS,AI,18073,700,0,0,27315
+Tamil Nadu,"Govt Med Coll, Nilgiris",MBBS,AI,18073,421,0,0,27315
+Tamil Nadu,"Govt Med Coll, Omandurar",MBBS,AI,18073,750,0,0,27315
+Tamil Nadu,"Govt Med Coll, Pudukottai",MBBS,AI,18073,Info Not Available,0,0,27315
+Tamil Nadu,"Govt Med Coll, Ramanathapuram",MBBS,AI,18073,Info Not Available,0,0,27315
+Tamil Nadu,"Govt Med Coll, Thiruvallur",MBBS,AI,18073,Info Not Available,0,0,27315
+Tamil Nadu,"Govt Med Coll, Tiruppur",MBBS,AI,18073,1170,0,0,27315
+Tamil Nadu,"Govt Med Coll, Virudhunagar",MBBS,AI,18073,Info Not Available,0,0,27315
+Tamil Nadu,Govt Sivagangai Med Coll,MBBS,AI,18073,Info Not Available,0,0,27315
+Tamil Nadu,Govt Thiruvannamalai Med Coll,MBBS,AI,18073,500,0,0,27315
+Tamil Nadu,Govt Vellore Med Coll,MBBS,AI,18073,2858,0,0,27315
+Tamil Nadu,Govt Villupuram Med Coll,MBBS,AI,18073,670,0,0,27315
+Tamil Nadu,"KAPV Med Coll, Trichy",MBBS,AI,18073,2500,0,0,27315
+Tamil Nadu,Kanyakumari Med Coll,MBBS,AI,18073,840,0,0,27315
+Tamil Nadu,"Kilpauk Med Coll, Chennai",MBBS,AI,18073,1700,0,0,27315
+Tamil Nadu,"Madras Med Coll, Chennai",MBBS,AI,18073,7285,0,0,27315
+Tamil Nadu,"Madurai Med Coll, Madurai",MBBS,AI,18073,3518,0,0,27315
+Tamil Nadu,"Mohan Kumaramangalam, Salem",MBBS,AI,18073,1642,0,0,27315
+Tamil Nadu,"Rajah Muthiah MC, Annamalai",MBBS,AI,18073,1400,0,0,27315
+Tamil Nadu,"Stanley Med Coll, Chennai",MBBS,AI,18073,1661,0,0,27315
+Tamil Nadu,Thanjavur Med Coll,MBBS,AI,18073,1466,0,0,27315
+Tamil Nadu,Govt Theni Med Coll,MBBS,AI,18073,940,0,0,27315
+Tamil Nadu,Govt Thiruvarur Med Coll,MBBS,AI,18073,555,0,0,27315
+Tamil Nadu,Govt Thoothukudi Med Coll,MBBS,AI,18073,1212,0,0,27315
+Tamil Nadu,Tirunelveli Med Coll,MBBS,AI,18073,1737,0,0,27315
+Tamil Nadu,"Govt Med Coll & ESI,Coimbatore",MBBS,AI,18073,300,0,0,27315
+Telangana,"Gandhi Med Coll, Secunderabad",MBBS,AI,14000,1200,0,0,25960
+Telangana,Govt Med Coll Jangaon,MBBS,AI,14000,Info Not Available,0,0,25960
+Telangana,Govt Med Coll Narsampet,MBBS,AI,14000,Info Not Available,0,0,25960
+Telangana,"GovtMedColl,BhadradriKothagudem",MBBS,AI,14000,350,0,0,25960
+Telangana,"Government Med Coll, Jagtial",MBBS,AI,14000,Info Not Available,0,0,25960
+Telangana,"Government Med Coll, Bhupalpally",MBBS,AI,14000,Info Not Available,0,0,25960
+Telangana,"Govt Med Coll, Jogulamba",MBBS,AI,14000,Info Not Available,0,0,25960
+Telangana,"Government Med Coll, Kamareddy",MBBS,AI,14000,Info Not Available,0,0,25960
+Telangana,"Government Med Coll, Karimnagar",MBBS,AI,14000,500,0,0,25960
+Telangana,"Government Med Coll, Khammam",MBBS,AI,14000,750,0,0,25960
+Telangana,"Govt Med Coll, Kumuram Bheem",MBBS,AI,14000,330,0,0,25960
+Telangana,"Government Med Coll,Mahabubabad",MBBS,AI,14000,Info Not Available,0,0,25960
+Telangana,"Govt Med Coll, Mahabubnagar",MBBS,AI,14000,900,0,0,25960
+Telangana,"Government Med Coll, Mancherial",MBBS,AI,14000,350,0,0,25960
+Telangana,"Govt Med Coll, Mulugu",MBBS,AI,14000,Info Not Available,0,0,25960
+Telangana,"Govt Med Coll, Nagarkurnool",MBBS,AI,14000,Info Not Available,0,0,25960
+Telangana,"Govt Med Coll, Nalgonda",MBBS,AI,14000,580,0,0,25960
+Telangana,"Govt Med Coll, Narayanpet",MBBS,AI,14000,Info Not Available,0,0,25960
+Telangana,"Government Med Coll, Nirmal",MBBS,AI,14000,Info Not Available,0,0,25960
+Telangana,"Govt Med Coll, Nizamabad",MBBS,AI,14000,500,0,0,25960
+Telangana,"Govt Med Coll, Rajanna Sircilla",MBBS,AI,14000,330,0,0,25960
+Telangana,"Government Med Coll, Ramagundam",MBBS,AI,14000,350,0,0,25960
+Telangana,"Government Med Coll, Sangareddy",MBBS,AI,14000,Info Not Available,0,0,25960
+Telangana,"Govt Med Coll, Siddipet",MBBS,AI,14000,780,0,0,25960
+Kerala,"Govt Med Coll, Kollam",MBBS,AI,23150,500,0,0,27300
+Telangana,"Govt Med Coll, Suryapet",MBBS,AI,14000,580,0,0,25960
+Telangana,"Government Med Coll, Vikarabad",MBBS,AI,14000,Info Not Available,0,0,25960
+Telangana,"Government Med Coll, Wanaparthy",MBBS,AI,14000,605,0,0,25960
+Telangana,"Govt Med Coll, Maheshwaram",MBBS,AI,14000,Info Not Available,0,0,25960
+Telangana,"Govt Med Coll, Medak",MBBS,AI,14000,250,0,0,25960
+Telangana,"Govt Med Coll, Quthbullapur",MBBS,AI,14000,Info Not Available,0,0,25960
+Telangana,"Govt Med Coll, Yadadri",MBBS,AI,14000,Info Not Available,0,0,25960
+Telangana,"Kakatiya Med Coll, Warangal",MBBS,AI,14000,1150,0,0,25960
+Telangana,"Osmania Med Coll, Hyderabad",MBBS,AI,14000,4800,0,0,25960
+Telangana,"Rajiv Gandhi IMS, Adilabad",MBBS,AI,14000,Info Not Available,0,0,25960
+Tripura,"Agartala Med Coll, Agartala",MBBS,AI,59500,580,5,2000000,20500
+Uttar Pradesh,"Auto. State Med Coll, Kushinagar",MBBS,AI,24000,Info Not Available,2,1000000,12000
+Uttar Pradesh,"Govt Med Coll, Auraiya",MBBS,AI,24000,Info Not Available,2,1000000,12000
+Uttar Pradesh,"Auton. State Med Coll, Etah",MBBS,AI,24000,330,2,1000000,12000
+Uttar Pradesh,"Auton. State Med Coll,Fatehpur",MBBS,AI,24000,Info Not Available,2,1000000,12000
+Uttar Pradesh,"Auton. State Med Coll,Ghazipur",MBBS,AI,24000,350,2,1000000,12000
+Uttar Pradesh,"Govt Med Coll, Gonda",MBBS,AI,24000,420,2,1000000,12000
+Uttar Pradesh,"Auton. State Med Coll, Hardoi",MBBS,AI,24000,332,2,1000000,12000
+Uttar Pradesh,"Auto. State MedColl, Kanpur Dehat",MBBS,AI,24000,Info Not Available,2,1000000,12000
+Uttar Pradesh,"Govt Med Coll, Kaushambi",MBBS,AI,24000,Info Not Available,2,1000000,12000
+Uttar Pradesh,"Govt Med Coll, Lakhimpur Kheri",MBBS,AI,24000,Info Not Available,2,1000000,12000
+Uttar Pradesh,"Auto. State Med Coll, Lalitpur",MBBS,AI,24000,Info Not Available,2,1000000,12000
+Uttar Pradesh,"Auton. State Med Coll,Mirzapur",MBBS,AI,24000,Info Not Available,2,1000000,12000
+Uttar Pradesh,"Auto. State Med Coll, Pilibhit",MBBS,AI,24000,Info Not Available,2,1000000,12000
+Uttar Pradesh,"Auton.State MedColl,Pratapgarh",MBBS,AI,24000,Info Not Available,2,1000000,12000
+Uttar Pradesh,"Auton. StateMed,Siddharthnagar",MBBS,AI,24000,350,2,1000000,12000
+Uttar Pradesh,"Autonomous Med Coll, Sonebhadra",MBBS,AI,24000,Info Not Available,2,1000000,12000
+Uttar Pradesh,"Auto. State Med Coll, Sultanpur",MBBS,AI,24000,Info Not Available,2,1000000,12000
+Uttar Pradesh,"Govt Med Coll, Chandauli",MBBS,AI,24000,420,2,1000000,12000
+Uttar Pradesh,"BRD Med Coll, Gorakhpur",MBBS,AI,24000,1050,2,1000000,12000
+Uttar Pradesh,"Dr RML IMS, Lucknow",MBBS,AI,24000,Info Not Available,2,1000000,12000
+Uttar Pradesh,"Govt Allopathic Med Coll,Banda",MBBS,AI,24000,430,2,1000000,12000
+Uttar Pradesh,"Govt IMS, Kasna",MBBS,AI,24000,500,2,1000000,12000
+Uttar Pradesh,"Govt Med Coll, Azamgarh",MBBS,AI,24000,550,2,1000000,12000
+Uttar Pradesh,"Govt Med Coll, Bahraich",MBBS,AI,24000,Info Not Available,2,1000000,12000
+Uttar Pradesh,"Govt Med Coll, Faizabad",MBBS,AI,24000,Info Not Available,2,1000000,12000
+Uttar Pradesh,"Govt Med Coll, Firozobad",MBBS,AI,24000,517,2,1000000,12000
+Uttar Pradesh,"Govt Med Coll, Kannauj",MBBS,AI,24000,470,2,1000000,12000
+Uttar Pradesh,"Govt Med Coll, Rampur, Basti",MBBS,AI,24000,500,2,1000000,12000
+Uttar Pradesh,"Govt Med Coll, Shahjhanpur",MBBS,AI,24000,460,2,1000000,12000
+Uttar Pradesh,"Govt Med Coll, Badaun",MBBS,AI,24000,Info Not Available,2,1000000,12000
+Uttar Pradesh,"GSVM Med Coll, Kanpur",MBBS,AI,24000,2083,2,1000000,12000
+Uttar Pradesh,"Govt Med Coll, Bulandshahr",MBBS,AI,24000,430,2,1000000,12000
+Uttar Pradesh,"KGMU, Lucknow",MBBS,AI,47600,4500,2,1000000,12000
+Uttar Pradesh,"LLRM Med Coll, Meerut",MBBS,AI,24000,1090,2,1000000,12000
+Uttar Pradesh,"MLB Med Coll, Jhansi",MBBS,AI,24000,700,2,1000000,12000
+Uttar Pradesh,"Auton. State Med Coll, Deoria",MBBS,AI,24000,340,2,1000000,12000
+Uttar Pradesh,"Auto. State Med Coll, Bijnor",MBBS,AI,24000,Info Not Available,2,1000000,12000
+Uttar Pradesh,"MLN Med Coll, Allahabad",MBBS,AI,24000,Info Not Available,2,1000000,12000
+Uttar Pradesh,"MRA Med Coll, Ambedkarnagar",MBBS,AI,24000,490,2,1000000,12000
+Uttar Pradesh,"Rajkiya Med Coll, Jalaun",MBBS,AI,24000,Info Not Available,2,1000000,12000
+Uttar Pradesh,"S N Med Coll, Agra",MBBS,AI,24000,976,2,1000000,12000
+Uttar Pradesh,"Shaik-ul-Hind, Saharanpur",MBBS,AI,24000,500,2,1000000,12000
+Uttar Pradesh,"Auton. State Med Coll, Jaunpur",MBBS,AI,24000,394,2,1000000,12000
+Uttar Pradesh,"UP Univ of Med Sci, Etawah",MBBS,AI,24000,1268,2,1000000,12000
+Uttarakhand,"Govt Med Coll, Haldwani",MBBS,AI,150000,600,Info Not Available,Info not available,17000
+Uttarakhand,"Soban Singh Govt Inst, Almora",MBBS,AI,150000,Info Not Available,Info Not Available,Info not available,17000
+Uttarakhand,"VCSG Med Coll, Pauri Garhwal",MBBS,AI,150000,Info Not Available,Info Not Available,Info not available,17000
+Uttarakhand,"Doon Med Coll, Dehradun",MBBS,AI,150000,436,Info Not Available,Info not available,17000
+Uttarakhand,"Government Med Coll, Haridwar",MBBS,AI,150000,Info Not Available,Info Not Available,Info not available,17000
+West Bengal,Bankura Sammilani Med Coll,MBBS,AI,9000,1441,0,0,30855
+West Bengal,"Barasat Govt Med Coll, Barasat",MBBS,AI,9000,600,0,0,30855
+West Bengal,Burdwan Medical College,MBBS,AI,9000,1099,0,0,30855
+West Bengal,Calcutta National Med Coll,MBBS,AI,9000,1470,0,0,30855
+West Bengal,"College of Med & JNM, Kalyani",MBBS,AI,9000,450,0,0,30855
+West Bengal,"College of Med & SDH, Kolkata",MBBS,AI,9000,500,0,0,30855
+West Bengal,"Diamond Harbour Govt MC, WB",MBBS,AI,9000,420,0,0,30855
+West Bengal,"IPGMER, Kolkata",MBBS,AI,9000,2300,0,0,30855
+West Bengal,Jalpaiguri Govt Med Coll,MBBS,AI,9000,Info Not Available,0,0,30855
+West Bengal,"Jhargram Govt Med Coll,Jhargram",MBBS,AI,9000,600,0,0,30855
+West Bengal,"MJN Med Coll, Coochbehar",MBBS,AI,9000,400,0,0,30855
+West Bengal,Malda Med Coll,MBBS,AI,9000,Info Not Available,0,0,30855
+West Bengal,"Medical College, Kolkata",MBBS,AI,9000,2668,0,0,30855
+West Bengal,Midnapore Medical College,MBBS,AI,9000,1051,0,0,30855
+West Bengal,Murshidabad Med Coll,MBBS,AI,9000,1208,0,0,30855
+West Bengal,"Nilratan Sircar, Kolkata",MBBS,AI,9000,1920,0,0,30855
+West Bengal,"NBMC, Darjeeling",MBBS,AI,9000,843,0,0,30855
+West Bengal,"Prafulla CS Govt Med, Arambagh",MBBS,AI,9000,Info Not Available,0,0,30855
+West Bengal,Purulia Govt Med Coll,MBBS,AI,9000,548,0,0,30855
+Himachal Pradesh,"LalBahShastri Govt Med, Mandi",MBBS,AI,50000,500,Info Not Available,Info not available,20000
+West Bengal,"Govt Med Coll, Raiganj",MBBS,AI,9000,542,0,0,30855
+West Bengal,"Govt Med Coll, Rampurhat",MBBS,AI,9000,Info Not Available,0,0,30855
+West Bengal,"RG Kar Med Coll, Kolkata",MBBS,AI,9000,1663,0,0,30855
+West Bengal,"Sarat CC Govt Med Coll, Howrah",MBBS,AI,9000,1033,0,0,30855
+West Bengal,"TamraliptoGovtMed,PurbaMedinpur",MBBS,AI,9000,507,0,0,30855
+Uttar Pradesh,"Auton. State Med Coll,Amethi",MBBS,AI,24000,Info Not Available,2,1000000,12000
+Madhya Pradesh,"ESIC Med Coll, Indore",MBBS,AI,100000,Info Not Available,1,500000,26300
+Rajasthan,"ESIC Med Coll, Jaipur",MBBS,AI,100000,Info Not Available,1,500000,26300
+Meghalaya,"Shillong MedColl, Meghalaya",MBBS,AI,14000,Info Not Available,2,Info not available,Info not available
+Assam,"ESIC, Beltola",MBBS,AI,100000,Info Not Available,1,500000,26300
+Uttar Pradesh,"ESIC, Varanasi",MBBS,AI,100000,Info Not Available,1,500000,26300
+Odisha,"AIIMS, Bhubaneswar",MBBS,AIIMS SO,1350,1165,0,0,30700
+Andhra Pradesh,"AIIMS, Mangalagiri",MBBS,AIIMS SO,1350,960,0,0,30700
+Assam,"AIIMS, Guwahati",MBBS,AIIMS SO,1350,750,0,0,30700
+Bihar,"AIIMS, Patna",MBBS,AIIMS SO,1350,960,0,0,30700
+Chhattisgarh,"AIIMS, Raipur",MBBS,AIIMS SO,1350,960,0,0,30700
+Delhi,"AIIMS, Delhi",MBBS,AIIMS SO,1350,3194,0,0,30700
+Gujarat,"AIIMS, Rajkot",MBBS,AIIMS SO,1350,750,0,0,30700
+Himachal Pradesh,"AIIMS, Bilaspur, Himachal",MBBS,AIIMS SO,1350,750,0,0,30700
+Jammu and Kashmir,"AIIMS, Jammu",MBBS,AIIMS SO,1350,750,0,0,30700
+Jharkhand,"AIIMS, Deoghar",MBBS,AIIMS SO,1350,Info Not Available,0,0,30700
+Madhya Pradesh,"AIIMS, Bhopal",MBBS,AIIMS SO,1350,833,0,0,30700
+Maharashtra,"AIIMS, Nagpur",MBBS,AIIMS SO,1350,500,0,0,30700
+Punjab,"AIIMS, Bathinda",MBBS,AIIMS SO,1350,750,0,0,30700
+Rajasthan,"AIIMS, Jodhpur",MBBS,AIIMS SO,1350,960,0,0,30700
+Tamil Nadu,"AIIMS, Madurai",MBBS,AIIMS SO,1350,Info Not Available,0,0,30700
+Telangana,"AIIMS, Bibinagar",MBBS,AIIMS SO,1350,750,0,0,30700
+Uttar Pradesh,"AIIMS, Rai Bareli",MBBS,AIIMS SO,1350,Info Not Available,0,0,30700
+Uttar Pradesh,"AIIMS, Gorakhpur",MBBS,AIIMS SO,1350,Info Not Available,0,0,30700
+Uttarakhand,"AIIMS, Rishikesh",MBBS,AIIMS SO,1350,960,0,0,30700
+West Bengal,"AIIMS, Kalyani",MBBS,AIIMS SO,1350,300,0,0,30700
+Uttar Pradesh,"JNMC (AMU), Aligarh",MBBS,AM,60300,1269,Info Not Available,Info not available,Info not available
+Uttar Pradesh,"JNMC (AMU), Aligarh",MBBS,AMU NR,2293362,1269,Info Not Available,Info not available,Info not available
+Uttar Pradesh,"JNMC (AMU), Aligarh",MBBS,AMU SO,60300,1269,Info Not Available,Info not available,Info not available
+Uttar Pradesh,"IMS(BHU), Varanasi",MBBS,BHU SO,33739,1165,0,0,Info not available
+Delhi,"Lady Hardinge, Delhi",MBBS,DU,1665,877,1,1500000,24000
+Delhi,"MAMC, Delhi",MBBS,DU,2095,2800,1,1500000,23000
+Delhi,"UCMS, Delhi",MBBS,DU,31340,1000,1,1500000,28000
+Uttar Pradesh,"ESIC MedCollHosp,Noida",MBBS,ES,24000,Info Not Available,1,500000,26300
+Telangana,"ESIC Med Coll,Sanath Nagar",MBBS,ES,24000,690,1,500000,26300
+Rajasthan,"ESIC Med Coll, Alwar",MBBS,ES,24000,Info Not Available,1,500000,26300
+Karnataka,"ESI, Bangalore",MBBS,ES,24000,530,1,500000,26300
+Karnataka,"ESIC Med Coll,Gulbarga",MBBS,ES,24000,480,1,500000,26300
+West Bengal,"ESI, Joka, Kolkata",MBBS,ES,24000,470,1,500000,26300
+Bihar,"ESIC Med Coll, Patna",MBBS,ES,24000,Info Not Available,1,500000,26300
+Haryana,"ESI Med Coll, Faridabad",MBBS,ES,24000,Info Not Available,1,500000,26300
+Tamil Nadu,"ESI PGIMSR, KK Nagar, Chennai",MBBS,ES,24000,470,1,500000,26300
+Tamil Nadu,"Govt Med Coll & ESI,Coimbatore",MBBS,ES,24000,300,1,500000,27315
+Kerala,"Govt Med Coll, Kollam",MBBS,ES,24000,500,1,500000,27300
+Himachal Pradesh,"LalBahShastri Govt Med, Mandi",MBBS,ES,24000,500,1,500000,20000
+Punjab,"ESIC MedCollHosp,Ludhiana",MBBS,ES,24000,Info Not Available,1,500000,26300
+Gujarat,"ESIC Med Coll, Naroda",MBBS,ES,24000,Info Not Available,1,500000,26300
+Maharashtra,"ESI, Andheri, Mumbai",MBBS,ES,24000,Info Not Available,1,500000,26300
+Madhya Pradesh,"ESIC Med Coll, Indore",MBBS,ES,24000,Info Not Available,1,500000,26300
+Rajasthan,"ESIC Med Coll, Jaipur",MBBS,ES,24000,Info Not Available,1,500000,26300
+Assam,"ESIC, Beltola",MBBS,ES,24000,Info Not Available,1,500000,26300
+Uttar Pradesh,"ESIC, Varanasi",MBBS,ES,24000,Info Not Available,1,500000,26300
+Delhi,"ABVIMS (Dr RML Hosp), Delhi",MBBS,IP,41000,1626,1,1500000,30070
+Delhi,"VMMC, Delhi",MBBS,IP,41000,1550,1,1500000,26300
+Delhi,"ESI, Basaidarpur, Delhi",MBBS,IP,100000,Info Not Available,1,500000,26300
+Pondicherry,"JIPMER, Puducherry",MBBS,JP,1200,2059,0,0,26300
+Pondicherry,"JIPMER, Karaikal",MBBS,JP,1200,506,0,0,26300
+Gujarat,"SBKS, Vadadora",MBBS,JAIN MIN,2275000,1340,0,0,Info not available
+Pondicherry,"JIPMER, Puducherry",MBBS,JPMR SO,1200,2059,0,0,26300
+Pondicherry,"JIPMER, Karaikal",MBBS,JPMR SO,1200,506,0,0,26300
+Delhi,"Hamdard Institute, Delhi",MBBS,MUSLIM MIN,1630000,710,0,0,26500
+Karnataka,"Yenepoya Med Coll, Mangalore",MBBS,MUSLIM MIN,2300000,910,Info Not Available,Info not available,12000
+Maharashtra,"DY Patil UniversitySclofMed,Taluka Maval",MBBS,DEEMED PS,2500000,Info Not Available,0,0,Info not available
+Odisha,"IMS & SUM, Bhubaneswar",MBBS,DEEMED PS,2195000,1410,0,0,29500
+Odisha,"IMS & SH, Campus II, Phulnakhara",MBBS,DEEMED PS,1795000,1500,0,0,Info not available
+Pondicherry,"Aarupadai Veedu, Pondicherry",MBBS,DEEMED PS,2388000,584,0,0,5000
+Maharashtra,"BVDU, Sangli",MBBS,DEEMED PS,2552550,853,0,0,Info not available
+Maharashtra,"BVDU, Pune",MBBS,DEEMED PS,2855600,856,0,0,Info not available
+Maharashtra,"Datta Meghe Med Coll, Nagpur",MBBS,DEEMED PS,2325000,925,0,0,10000
+Maharashtra,"DY Patil, Pimpri, Pune",MBBS,DEEMED PS,2700000,2011,0,0,Info not available
+Maharashtra,"DY Patil, Kolhapur",MBBS,DEEMED PS,2400000,800,0,0,Info not available
+Uttarakhand,"Graphic Era IMS, Dehradun",MBBS,DEEMED PS,2520000,900,0,0,Info not available
+Maharashtra,"JN Med College, Meghe, Wardha",MBBS,DEEMED PS,2325000,2150,0,0,10000
+Maharashtra,"Krishna IMS, Karad",MBBS,DEEMED PS,2450000,1125,0,0,18000
+Pondicherry,"MGMC & RI, Pondicherry",MBBS,DEEMED PS,2702000,1380,0,0,2500
+Maharashtra,"MGM Med Coll, Nerul",MBBS,DEEMED PS,2350000,1200,0,0,Info not available
+Maharashtra,Mahatma Gandhi Mission Vashi,MBBS,DEEMED PS,2350000,440,0,0,18000
+Maharashtra,"MGM Med Coll, Aurangabad",MBBS,DEEMED PS,2350000,700,0,0,18000
+Maharashtra,"MGM Med Coll, Navi Mumbai",MBBS,DEEMED PS,2350000,1740,0,0,10000
+Telangana,"Malla Reddy IMS, Hyderabad",MBBS,DEEMED PS,2150000,940,0,0,Info not available
+Telangana,"Malla Reddy(Women), Hyderabad",MBBS,DEEMED PS,2050000,1050,0,0,Info not available
+Maharashtra,"DY Patil, Navi Mumbai",MBBS,DEEMED PS,2700000,1662,0,0,18000
+Uttar Pradesh,"Santosh Med Coll, Ghaziabad",MBBS,DEEMED PS,2400000,800,0,0,Info not available
+Maharashtra,"Rural Med Coll, LONI",MBBS,DEEMED PS,1900000,1275,0,0,8000
+Pondicherry,"SLIMS, Pondicherry",MBBS,DEEMED PS,2600000,1230,0,0,Info not available
+Maharashtra,"Symbiosis Med Coll Women, Pune",MBBS,DEEMED PS,1000000,900,0,0,5000
+Pondicherry,"Vinayaka Missions, Karaikal",MBBS,DEEMED PS,2188000,590,0,0,20000
+Tamil Nadu,"ACS Med Coll, Chennai",MBBS,DEEMED PS,2500000,1050,0,0,25000
+Tamil Nadu,"Bhaarat Med Coll, Chennai",MBBS,DEEMED PS,2750000,500,0,0,Info not available
+Tamil Nadu,"JR Med Coll & Hosp, Avanampattu",MBBS,DEEMED PS,2600000,605,0,0,Info not available
+Tamil Nadu,"Meenakshi Med Coll, Enathur",MBBS,DEEMED PS,2300000,1110,0,0,Info not available
+Tamil Nadu,"Saveetha, Kanchipuram",MBBS,DEEMED PS,2700000,1250,0,0,Info not available
+Tamil Nadu,"Shri Satya Sai, Kancheepuram",MBBS,DEEMED PS,2402000,1120,0,0,2500
+Tamil Nadu,"Sree Balaji Med Coll, Chennai",MBBS,DEEMED PS,3050000,1250,0,0,Info not available
+Tamil Nadu,"Sri Lalithambigai Med, Chennai",MBBS,DEEMED PS,2100000,940,0,0,25000
+Tamil Nadu,"SRMC & RI, Chennai",MBBS,DEEMED PS,3003000,1800,0,0,Info not available
+Tamil Nadu,"SRM Med Coll, Kancheepuram",MBBS,DEEMED PS,2800000,1590,0,0,13500
+Tamil Nadu,"Vels Med Coll, Tiruvallur",MBBS,DEEMED PS,2197000,935,0,0,25000
+Tamil Nadu,"Vinayaka Missions, Salem",MBBS,DEEMED PS,2250000,560,0,0,5000
+Kerala,"Amrita School of Med, Kochi",MBBS,DEEMED PS,2580000,1110,0,0,Info not available
+Haryana,Amrita School of Med. Faridabad,MBBS,DEEMED PS,2594800,Info Not Available,0,0,24310
+Andhra Pradesh,"GITAM IMS, Vizag",MBBS,DEEMED PS,2537000,780,0,0,Info not available
+Delhi,"Hamdard Institute, Delhi",MBBS,DEEMED PS,1630000,710,0,0,26500
+Karnataka,"Jagadguru Gangadhar, Hubli",MBBS,DEEMED PS,1920000,330,Info Not Available,Info not available,Info not available
+Karnataka,"JN Medical College, Belgaum",MBBS,DEEMED PS,1920000,2400,Info Not Available,Info not available,15000
+Karnataka,"JSS Med Coll, Mysore",MBBS,DEEMED PS,2195100,2060,0,0,30000
+Karnataka,"KS Hegde, Mangalore",MBBS,DEEMED PS,1778000,1000,Info Not Available,Info not available,30000
+Karnataka,"Kasturba Med Coll, Mangalore",MBBS,DEEMED PS,1770000,1290,Info Not Available,Info not available,Info not available
+Karnataka,"Kasturba Med Coll, Manipal",MBBS,DEEMED PS,1770000,2032,Info Not Available,Info not available,30000
+Haryana,"MMIMS, Mullana, Ambala",MBBS,DEEMED PS,1818300,940,0,0,12000
+Jharkhand,"Manipal TataMedColl,Jamshedpur",MBBS,DEEMED PS,1609000,983,0,0,Info not available
+Karnataka,"Rajeshwari, Bangalore",MBBS,DEEMED PS,2450000,1460,0,0,Info not available
+Gujarat,"SBKS, Vadadora",MBBS,DEEMED PS,2275000,1340,0,0,Info not available
+Karnataka,"Shri BM Patil, Vijayapura",MBBS,DEEMED PS,1900000,1130,Info Not Available,Info not available,Info not available
+Karnataka,"SDU Med Coll, Kolar",MBBS,DEEMED PS,1940000,1100,Info Not Available,Info not available,17000
+Karnataka,"Sri Siddhartha IMS, T. Begur",MBBS,DEEMED PS,1880000,720,Info Not Available,Info not available,Info not available
+Karnataka,"Siddhartha Med Coll, Tumkur",MBBS,DEEMED PS,1880000,960,Info Not Available,Info not available,Info not available
+Karnataka,"Yenepoya Med Coll, Mangalore",MBBS,DEEMED PS,2300000,910,Info Not Available,Info not available,12000
+Tamil Nadu,"Chettinad Hosp&RI,Kanchipuram",MBBS,DEEMED PS,2700000,1180,0,0,18500
+Maharashtra,"MGM Med Coll,Panvel",MBBS,DEEMED PS,2350000,Info Not Available,0,0,18000
+Odisha,"Kalinga IMS, Bhubaneswar",MBBS,DEEMED PS,1850000,2600,0,0,30000
+Tamil Nadu,"Saveetha, Kanchipuram",MBBS,DEEMED NRI,Info not available,1250,0,0,Info not available
+Maharashtra,"DY Patil UniversitySclofMed,Taluka Maval",MBBS,DEEMED NRI,3870000,Info Not Available,0,0,Info not available
+Odisha,"IMS & SUM, Bhubaneswar",MBBS,DEEMED NRI,4300000,1410,0,0,29500
+Odisha,"IMS & SH, Campus II, Phulnakhara",MBBS,DEEMED NRI,3440000,1500,0,0,Info not available
+Maharashtra,"BVDU, Sangli",MBBS,DEEMED NRI,7426272,853,0,0,Info not available
+Maharashtra,"BVDU, Pune",MBBS,DEEMED NRI,7426272,856,0,0,Info not available
+Maharashtra,"Datta Meghe Med Coll, Nagpur",MBBS,DEEMED NRI,2967000,925,0,0,10000
+Maharashtra,"DY Patil, Pimpri, Pune",MBBS,DEEMED NRI,5160000,2011,0,0,Info not available
+Maharashtra,"DY Patil, Kolhapur",MBBS,DEEMED NRI,3612000,800,0,0,Info not available
+Uttarakhand,"Graphic Era IMS, Dehradun",MBBS,DEEMED NRI,4300000,900,0,0,Info not available
+Maharashtra,"JN Med College, Meghe, Wardha",MBBS,DEEMED NRI,2967000,2150,0,0,10000
+Maharashtra,"Krishna IMS, Karad",MBBS,DEEMED NRI,4300000,1125,0,0,18000
+Pondicherry,"MGMC & RI, Pondicherry",MBBS,DEEMED NRI,4932014,1380,0,0,2500
+Maharashtra,"MGM Med Coll, Nerul",MBBS,DEEMED NRI,5160000,1200,0,0,Info not available
+Maharashtra,Mahatma Gandhi Mission Vashi,MBBS,DEEMED NRI,5160000,440,0,0,18000
+Maharashtra,"MGM Med Coll, Aurangabad",MBBS,DEEMED NRI,5160000,700,0,0,18000
+Maharashtra,"MGM Med Coll, Navi Mumbai",MBBS,DEEMED NRI,5160000,1740,0,0,10000
+Telangana,"Malla Reddy IMS, Hyderabad",MBBS,DEEMED NRI,3612000,940,0,0,Info not available
+Telangana,"Malla Reddy(Women), Hyderabad",MBBS,DEEMED NRI,3612000,1050,0,0,Info not available
+Maharashtra,"DY Patil, Navi Mumbai",MBBS,DEEMED NRI,4730000,1662,0,0,18000
+Uttar Pradesh,"Santosh Med Coll, Ghaziabad",MBBS,DEEMED NRI,4300000,800,0,0,Info not available
+Maharashtra,"Rural Med Coll, LONI",MBBS,DEEMED NRI,9611360,1275,0,0,8000
+Maharashtra,"Symbiosis Med Coll Women, Pune",MBBS,DEEMED NRI,3495470,900,0,0,5000
+Tamil Nadu,"ACS Med Coll, Chennai",MBBS,DEEMED NRI,3784000,1050,0,0,25000
+Tamil Nadu,"Meenakshi Med Coll, Enathur",MBBS,DEEMED NRI,4300000,1110,0,0,Info not available
+Tamil Nadu,"Sree Balaji Med Coll, Chennai",MBBS,DEEMED NRI,5160000,1250,0,0,Info not available
+Tamil Nadu,"Sri Lalithambigai Med, Chennai",MBBS,DEEMED NRI,2838000,940,0,0,25000
+Tamil Nadu,"SRMC & RI, Chennai",MBBS,DEEMED NRI,12900000,1800,0,0,Info not available
+Tamil Nadu,"SRM Med Coll, Kancheepuram",MBBS,DEEMED NRI,4300000,1590,0,0,13500
+Tamil Nadu,"Vels Med Coll, Tiruvallur",MBBS,DEEMED NRI,3594800,935,0,0,25000
+Kerala,"Amrita School of Med, Kochi",MBBS,DEEMED NRI,4379980,1110,0,0,Info not available
+Haryana,Amrita School of Med. Faridabad,MBBS,DEEMED NRI,4394772,Info Not Available,0,0,24310
+Andhra Pradesh,"GITAM IMS, Vizag",MBBS,DEEMED NRI,3870000,780,0,0,Info not available
+Delhi,"Hamdard Institute, Delhi",MBBS,DEEMED NRI,3900014,710,0,0,26500
+Karnataka,"Jagadguru Gangadhar, Hubli",MBBS,DEEMED NRI,3913000,330,Info Not Available,Info not available,Info not available
+Karnataka,"JN Medical College, Belgaum",MBBS,DEEMED NRI,3913000,2400,Info Not Available,Info not available,15000
+Karnataka,"JSS Med Coll, Mysore",MBBS,DEEMED NRI,3545100,2060,0,0,30000
+Karnataka,"KS Hegde, Mangalore",MBBS,DEEMED NRI,2828000,1000,Info Not Available,Info not available,30000
+Karnataka,"Kasturba Med Coll, Mangalore",MBBS,DEEMED NRI,3173400,1290,Info Not Available,Info not available,Info not available
+Karnataka,"Kasturba Med Coll, Manipal",MBBS,DEEMED NRI,4231200,2032,Info Not Available,Info not available,30000
+Haryana,"MMIMS, Mullana, Ambala",MBBS,DEEMED NRI,3440000,940,0,0,12000
+Karnataka,"Rajeshwari, Bangalore",MBBS,DEEMED NRI,3784000,1460,0,0,Info not available
+Gujarat,"SBKS, Vadadora",MBBS,DEEMED NRI,3440000,1340,0,0,Info not available
+Karnataka,"Shri BM Patil, Vijayapura",MBBS,DEEMED NRI,2850000,1130,Info Not Available,Info not available,Info not available
+Karnataka,"SDU Med Coll, Kolar",MBBS,DEEMED NRI,3956000,1100,Info Not Available,Info not available,17000
+Karnataka,"Sri Siddhartha IMS, T. Begur",MBBS,DEEMED NRI,4300000,720,Info Not Available,Info not available,Info not available
+Karnataka,"Siddhartha Med Coll, Tumkur",MBBS,DEEMED NRI,4200000,960,Info Not Available,Info not available,Info not available
+Jharkhand,"Manipal TataMedColl,Jamshedpur",MBBS,DEEMED NRI,2390800,983,0,0,Info not available
+Karnataka,"Yenepoya Med Coll, Mangalore",MBBS,DEEMED NRI,5504000,910,Info Not Available,Info not available,12000
+Maharashtra,"MGM Med Coll,Panvel",MBBS,DEEMED NRI,5160000,Info Not Available,0,0,18000
+Odisha,"Kalinga IMS, Bhubaneswar",MBBS,DEEMED NRI,4300000,2600,0,0,30000
+Delhi,"AIIMS, Delhi",MBBS,AMS-FRGNOCI,1433362,3194,0,0,30700
+Delhi,"Lady Hardinge, Delhi",MBBS,DEL CW,1665,877,1,1500000,24000
+Delhi,"MAMC, Delhi",MBBS,DEL CW,2095,2800,1,1500000,23000
+Delhi,"UCMS, Delhi",MBBS,DEL CW,31340,1000,1,1500000,28000
+Delhi,"ABVIMS (Dr RML Hosp), Delhi",MBBS,IP CW,41000,1626,1,1500000,30070
+Delhi,"VMMC, Delhi",MBBS,IP CW,41000,1550,1,1500000,26300
+Delhi,"ESI, Basaidarpur, Delhi",MBBS,IP CW,100000,Info Not Available,1,500000,26300
+Rajasthan,"GDC, Jodhpur",BDS,AI,35077,Info Not Available,Info Not Available,Info not available,Info not available
+Odisha,"SCB Dental Coll, Cuttack",BDS,AI,22000,100,2,2500000,42075
+Andhra Pradesh,"Govt Dental Coll, Vijayawada",BDS,AI,9000,Info Not Available,0,0,Info not available
+Andhra Pradesh,"Govt Dental Coll, Kadapa",BDS,AI,9000,750,0,0,Info not available
+Assam,"Regional Dental Coll, Guwahati",BDS,AI,5000,Info Not Available,5,2000000,Info not available
+Assam,"Govt Dental College, Dibrugarh",BDS,AI,5000,Info Not Available,5,2000000,Info not available
+Assam,"Govt Dental College, Silchar",BDS,AI,5000,Info Not Available,5,2000000,Info not available
+Bihar,Government Dental Coll Paithna,BDS,AI,9500,100,Info Not Available,Info not available,Info not available
+Bihar,"Patna Dental Coll, Patna",BDS,AI,9500,Info Not Available,Info Not Available,Info not available,Info not available
+Chhattisgarh,"Govt Dental Coll, Raipur",BDS,AI,20500,Info Not Available,0,0,Info not available
+Delhi,"Maulana Azad IDS, New Delhi",BDS,AI,5395,Info Not Available,Info Not Available,Info not available,Info not available
+Goa,"Govt Dental Coll, Goa",BDS,AI,152450,Info Not Available,1,1000000,Info not available
+Gujarat,"Govt Dental Coll, Ahmedabad",BDS,AI,20000,Info Not Available,Info Not Available,Info not available,20160
+Gujarat,"Govt Dental Coll, Jamnagar",BDS,AI,20000,1400,Info Not Available,Info not available,20160
+Haryana,"Govt Dental Coll, Rohtak",BDS,AI,37500,48,Info Not Available,Info not available,24000
+Himachal Pradesh,"Govt Dental Coll, Shimla",BDS,AI,37000,Info Not Available,Info Not Available,Info not available,20000
+Jammu and Kashmir,"Indira Gandhi Govt Dental,Jammu",BDS,AI,26250,Info Not Available,0,0,Info not available
+Jammu and Kashmir,"Government Dental Coll, Srinagar",BDS,AI,35680,Info Not Available,0,0,Info not available
+Jharkhand,"Dental Institute, RIMS, Ranchi",BDS,AI,10050,100,Info Not Available,Info not available,Info not available
+Karnataka,"Govt Dental Coll, Bangalore",BDS,AI,49350,Info Not Available,Info Not Available,Info not available,Info not available
+Karnataka,"Govt Dental Coll, Bellary",BDS,AI,49350,Info Not Available,Info Not Available,Info not available,Info not available
+Karnataka,"ESIC Dental Coll, Gulbarga",BDS,AI,100000,Info Not Available,1,500000,Info not available
+Delhi,"ESIC Dental Coll, New Delhi",BDS,AI,100000,Info Not Available,1,500000,Info not available
+Kerala,"Govt Dental Coll, Alappuzha",BDS,AI,20840,Info Not Available,0,0,27300
+Kerala,"Govt Dental Coll, Kottayam",BDS,AI,20840,Info Not Available,0,0,27300
+Kerala,"Govt Dental Coll, Kozhikode",BDS,AI,20840,Info Not Available,0,0,27300
+Kerala,"Govt Dental Coll, Thrissur",BDS,AI,20840,Info Not Available,0,0,27300
+Kerala,"Govt Dental Coll, Trivandrum",BDS,AI,20840,Info Not Available,0,0,27300
+Kerala,"Pariyaram Dental Coll, Kannur",BDS,AI,20840,Info Not Available,0,0,27300
+Madhya Pradesh,"Govt Coll of Dentistry, Indore",BDS,AI,100000,Info Not Available,0,0,13409
+Maharashtra,"Govt Dental Coll, Aurangabad",BDS,AI,118900,Info Not Available,1,1000000,Info not available
+Maharashtra,"Govt Dental Coll, Mumbai",BDS,AI,118900,21,1,1000000,Info not available
+Maharashtra,"Govt Dental Coll, Nagpur",BDS,AI,118900,Info Not Available,1,1000000,Info not available
+Maharashtra,"Nair Hosp Dental Coll, Mumbai",BDS,AI,118900,Info Not Available,1,1000000,Info not available
+Manipur,"Dental College, RIMS, Imphal",BDS,AI,3000,Info Not Available,Info Not Available,Info not available,Info not available
+Manipur,"JN Inst of Dental Sci, Imphal",BDS,AI,6000,276,Info Not Available,Info not available,Info not available
+Pondicherry,"MG Dental Coll, Pondicherry",BDS,AI,43420,146,0,0,20000
+Punjab,"Govt Dental Coll, Patiala",BDS,AI,80000,Info Not Available,1,200000,Info not available
+Punjab,"Govt Dental Coll, Amritsar",BDS,AI,80000,Info Not Available,1,200000,Info not available
+Rajasthan,"RUHS Coll of Dental Sci,Jaipur",BDS,AI,35077,40,Info Not Available,Info not available,Info not available
+Tamil Nadu,"Govt Dental Coll, Pudukkottai",BDS,AI,16073,Info Not Available,0,0,Info not available
+Tamil Nadu,"Rajah Muthiah DC, Annamalai",BDS,AI,16073,Info Not Available,0,0,Info not available
+Tamil Nadu,"Govt Dental Coll, Chennai",BDS,AI,16073,Info Not Available,0,0,Info not available
+Telangana,"Govt Dental Coll, Hyderabad",BDS,AI,14000,Info Not Available,0,0,25960
+Tripura,"Government Dental Coll, Agartala",BDS,AI,42000,Info Not Available,5,2000000,20500
+Uttar Pradesh,"Faculty of Dental Sci, Lucknow",BDS,AI,47600,Info Not Available,2,1000000,Info not available
+West Bengal,"Burdwan Dental Coll, Burdwan",BDS,AI,7800,450,Info Not Available,Info not available,Info not available
+West Bengal,"Dr R Ahmed Dental Coll,Kolkata",BDS,AI,7800,Info Not Available,Info Not Available,Info not available,Info not available
+West Bengal,"North Bengal Dental,Darjeeling",BDS,AI,7800,Info Not Available,Info Not Available,Info not available,Info not available
+Maharashtra,"Govt. Dental Coll, Jalgaon",BDS,AI,118900,Info Not Available,1,1000000,Info not available
+Uttar Pradesh,"Dr ZA Dental Coll, AMU,Aligarh",BDS,AM,53000,Info Not Available,Info Not Available,Info not available,Info not available
+Uttar Pradesh,"Dr ZA Dental Coll, AMU,Aligarh",BDS,AMU NR,860000,Info Not Available,Info Not Available,Info not available,Info not available
+Uttar Pradesh,"Dr ZA Dental Coll, AMU,Aligarh",BDS,AMU SO,53000,Info Not Available,Info Not Available,Info not available,Info not available
+Uttar Pradesh,"IMS-Faculty of Dental, BHU",BDS,BHU SO,33739,Info Not Available,0,0,Info not available
+Delhi,"Maulana Azad IDS, New Delhi",BDS,DU,5395,Info Not Available,Info Not Available,Info not available,Info not available
+Karnataka,"ESIC Dental Coll, Gulbarga",BDS,ES,24000,Info Not Available,1,500000,Info not available
+Delhi,"ESIC Dental Coll, New Delhi",BDS,IP,100000,Info Not Available,1,500000,Info not available
+Delhi,"Faculty of Dent,Jamial Millia",BDS,JI,41775,100,0,0,3000
+Gujarat,"KM Shah Dental Coll, Vadadora",BDS,JAIN MIN,250000,1500,0,0,Info not available
+Delhi,"Faculty of Dent,Jamial Millia",BDS,MJ,41775,100,0,0,3000
+Delhi,"Faculty of Dent,Jamial Millia",BDS,Jamia SO,41775,100,0,0,3000
+Karnataka,"Yenepoya Dental Coll, Yenepoya",BDS,MUSLIM MIN,526000,Info Not Available,Info Not Available,Info not available,5500
+Odisha,"Inst of Dental Sci,Bhubaneswar",BDS,DEEMED PS,600000,Info Not Available,0,0,11000
+Odisha,"Kalinga IDS, Bhubaneswar",BDS,DEEMED PS,650000,268,0,0,17000
+Maharashtra,"BV Dental Coll, Sangli",BDS,DEEMED PS,414750,280,0,0,Info not available
+Maharashtra,"BV Dental Coll, Navi Mumbai",BDS,DEEMED PS,591250,Info Not Available,0,0,Info not available
+Maharashtra,"BVDU Dental Coll, Pune",BDS,DEEMED PS,591250,Info Not Available,0,0,Info not available
+Maharashtra,"DYPatil Dent Coll, Navi Mumbai",BDS,DEEMED PS,875000,428,0,0,Info not available
+Maharashtra,"DY Patil Dental Coll, Pune",BDS,DEEMED PS,650000,12,0,0,Info not available
+Pondicherry,"IG Inst Dental Sci,Pondicherry",BDS,DEEMED PS,342000,Info Not Available,0,0,Info not available
+Telangana,"MallaReddy DentalColl Women,HYD",BDS,DEEMED PS,375000,Info Not Available,0,0,Info not available
+Telangana,"Malla Reddy InstofDent Sci,HYD",BDS,DEEMED PS,400000,Info Not Available,0,0,Info not available
+Uttar Pradesh,"Santosh Dental Coll, Ghaziabad",BDS,DEEMED PS,280000,900,0,0,Info not available
+Maharashtra,"Rural Dental Coll, Loni",BDS,DEEMED PS,350000,340,0,0,Info not available
+Maharashtra,"School of DentSci, KIMS, Karad",BDS,DEEMED PS,425000,283,0,0,Info not available
+Maharashtra,"Sharad Pawar Dent Coll, Wardha",BDS,DEEMED PS,460000,350,0,0,Info not available
+Tamil Nadu,"Meenakshi Ammal Dental,Chennai",BDS,DEEMED PS,550000,Info Not Available,0,0,Info not available
+Tamil Nadu,"Sathyabhama DentalColl,Chennai",BDS,DEEMED PS,400000,100,0,0,Info not available
+Tamil Nadu,"Saveetha Dental Coll, Chennai",BDS,DEEMED PS,910000,Info Not Available,0,0,15000
+Tamil Nadu,"Sree Balaji DentalColl,Chennai",BDS,DEEMED PS,500000,Info Not Available,0,0,Info not available
+Tamil Nadu,"Sri Ramachandra Dental,Chennai",BDS,DEEMED PS,600000,1800,0,0,Info not available
+Tamil Nadu,"SRM Dental Coll, Chennai",BDS,DEEMED PS,390000,486,0,0,Info not available
+Tamil Nadu,"SRM Katt DentColl,Kancheepuram",BDS,DEEMED PS,390000,1600,0,0,Info not available
+Tamil Nadu,"Thaimoogambigai Dental,Chennai",BDS,DEEMED PS,450000,330,0,0,Info not available
+Tamil Nadu,"VinayakaMissionsDentColl,Salem",BDS,DEEMED PS,400000,Info Not Available,0,0,Info not available
+Karnataka,"AB Shetty Mem IDS, Mangalore",BDS,DEEMED PS,507000,1000,Info Not Available,Info not available,Info not available
+Kerala,"Amrita SchoolofDentistry,Kochi",BDS,DEEMED PS,480010,Info Not Available,0,0,3500
+Karnataka,"JSS Dental Coll, Mysore",BDS,DEEMED PS,551100,350,0,0,Info not available
+Gujarat,"KM Shah Dental Coll, Vadadora",BDS,DEEMED PS,375000,1500,0,0,Info not available
+Karnataka,"KLE VK Inst of DentSci,Belgaum",BDS,DEEMED PS,373000,Info Not Available,Info Not Available,Info not available,Info not available
+Haryana,"MM Coll Dental, Mullana,Ambala",BDS,DEEMED PS,318300,350,0,0,3000
+Haryana,"Manav Rachna Dental, Faridabad",BDS,DEEMED PS,415000,Info Not Available,0,0,Info not available
+Karnataka,"Manipal Coll Dental, Mangalore",BDS,DEEMED PS,490000,Info Not Available,Info Not Available,Info not available,Info not available
+Karnataka,"Manipal Coll Dental, Manipal",BDS,DEEMED PS,550000,Info Not Available,Info Not Available,Info not available,Info not available
+Karnataka,"Sri Siddhartha DentColl,Tumkur",BDS,DEEMED PS,311000,Info Not Available,Info Not Available,Info not available,Info not available
+Karnataka,"Yenepoya Dental Coll, Yenepoya",BDS,DEEMED PS,526000,Info Not Available,Info Not Available,Info not available,5500
+Delhi,"Faculty of Dent,Jamial Millia",BDS,MW,41775,100,0,0,3000
+Maharashtra,"BV Dental Coll, Sangli",BDS,DEEMED NRI,1833090,280,0,0,Info not available
+Maharashtra,"BV Dental Coll, Navi Mumbai",BDS,DEEMED NRI,2024440,Info Not Available,0,0,Info not available
+Maharashtra,"BVDU Dental Coll, Pune",BDS,DEEMED NRI,2024440,Info Not Available,0,0,Info not available
+Maharashtra,"DY Patil Dental Coll, Pune",BDS,DEEMED NRI,1462000,12,0,0,Info not available
+Maharashtra,"School of DentSci, KIMS, Karad",BDS,DEEMED NRI,602000,283,0,0,Info not available
+Karnataka,"AB Shetty Mem IDS, Mangalore",BDS,DEEMED NRI,807000,1000,Info Not Available,Info not available,Info not available
+Kerala,"Amrita SchoolofDentistry,Kochi",BDS,DEEMED NRI,516000,Info Not Available,0,0,3500
+Karnataka,"KLE VK Inst of DentSci,Belgaum",BDS,DEEMED NRI,1075000,Info Not Available,Info Not Available,Info not available,Info not available
+Karnataka,"Sri Siddhartha DentColl,Tumkur",BDS,DEEMED NRI,561000,Info Not Available,Info Not Available,Info not available,Info not available
+Karnataka,"Yenepoya Dental Coll, Yenepoya",BDS,DEEMED NRI,626000,Info Not Available,Info Not Available,Info not available,5500
+Maharashtra,"DYPatil Dent Coll, Navi Mumbai",BDS,DEEMED NRI,Info not available,428,0,0,Info not available
+Haryana,"Manav Rachna Dental, Faridabad",BDS,DEEMED NRI,Info not available,Info Not Available,0,0,Info not available
+Maharashtra,"Rural Dental Coll, Loni",BDS,DEEMED NRI,1770740,340,0,0,Info not available
+Tamil Nadu,"Saveetha Dental Coll, Chennai",BDS,DEEMED NRI,Info not available,Info Not Available,0,0,15000
+Tamil Nadu,"Sri Ramachandra Dental,Chennai",BDS,DEEMED NRI,2150000,1800,0,0,Info not available
+Delhi,"Maulana Azad IDS, New Delhi",BDS,DEL CW,5395,Info Not Available,Info Not Available,Info not available,Info not available
+Delhi,"Faculty of Dent,Jamial Millia",BDS,JamiaNRI,4300000,100,0,0,3000
+Uttar Pradesh,"Dr ZA Dental Coll, AMU,Aligarh",BDS,AMU - SF Open,53000,Info Not Available,Info Not Available,Info not available,Info not available
+Uttar Pradesh,"Dr ZA Dental Coll, AMU,Aligarh",BDS,AMU - SF Internal,53000,Info Not Available,Info Not Available,Info not available,Info not available

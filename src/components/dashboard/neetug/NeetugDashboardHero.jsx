@@ -37,7 +37,66 @@ const CARDS = [
   },
 ];
 
-const YEARS = ["2024", "2025"];
+// Per-card period data, mirroring the NEET PG dashboard pattern
+const ALLOTMENTS_PERIODS = [
+  {
+    id: "2025",
+    label: "Year",
+    value: "2025",
+    link: "/dashboard/neetug-allotments-2025",
+  },
+  // {
+  //   id: "2024",
+  //   label: "Year",
+  //   value: "2024",
+  //   link: "/dashboard/neetug-allotments-2024",
+  // },
+];
+
+const CLOSING_RANKS_PERIODS = [
+  {
+    id: "2025",
+    label: "Year",
+    value: "2025",
+    link: "/dashboard/neetug-closing-ranks-2025",
+  },
+  // {
+  //   id: "2024",
+  //   label: "Year",
+  //   value: "2024",
+  //   link: "/dashboard/neetug-closing-ranks-2024",
+  // },
+];
+
+const SEAT_MATRIX_PERIODS = [
+  {
+    id: "2025",
+    label: "Year",
+    value: "2025",
+    link: "/dashboard/neetug-seat-matrix-2025",
+  },
+  // {
+  //   id: "2024",
+  //   label: "Year",
+  //   value: "2024",
+  //   link: "/dashboard/neetug-seat-matrix-2024",
+  // },
+];
+
+const FEE_STIPEND_BOND_PERIODS = [
+  {
+    id: "2025",
+    label: "Year",
+    value: "2025",
+    link: "/dashboard/neetug-fee-stipend-bond-2025",
+  },
+  // {
+  //   id: "2024",
+  //   label: "Year",
+  //   value: "2024",
+  //   link: "/dashboard/neetug-fee-stipend-bond-2024",
+  // },
+];
 
 function NeetugDashboardHero() {
   const rootRef = useRef(null);
@@ -49,7 +108,7 @@ function NeetugDashboardHero() {
   const modalRef = useRef(null);
 
   const [activeCard, setActiveCard] = useState(null);
-  const [selectedYear, setSelectedYear] = useState(null);
+  const [selectedPeriod, setSelectedPeriod] = useState(null);
 
   // Entrance animation + ambient background motion
   useEffect(() => {
@@ -119,10 +178,15 @@ function NeetugDashboardHero() {
 
   const openModal = (card) => {
     setActiveCard(card);
-    setSelectedYear(null);
+    setSelectedPeriod(null);
   };
 
   const closeModal = () => {
+    if (!modalRef.current || !overlayRef.current) {
+      setActiveCard(null);
+      return;
+    }
+
     gsap.to(modalRef.current, {
       opacity: 0,
       y: 18,
@@ -152,7 +216,7 @@ function NeetugDashboardHero() {
         { opacity: 1, y: 0, scale: 1, duration: 0.4, ease: "back.out(1.6)" },
       );
       gsap.fromTo(
-        ".nugd-hero-year-btn",
+        ".nugd-hero-period-btn",
         { opacity: 0, y: 10 },
         {
           opacity: 1,
@@ -166,14 +230,33 @@ function NeetugDashboardHero() {
     }
   }, [activeCard]);
 
-  const handleYearSelect = (year, e) => {
-    setSelectedYear(year);
+  const handlePeriodSelect = (period, e) => {
+    setSelectedPeriod(period);
     gsap.fromTo(
       e.currentTarget,
       { scale: 0.92 },
       { scale: 1, duration: 0.35, ease: "back.out(3)" },
     );
+
+    setTimeout(() => {
+      window.location.href = period.link;
+    }, 250);
   };
+
+  // Map each card id to its own dataset
+  const currentPeriods = (() => {
+    switch (activeCard?.id) {
+      case "closing-ranks":
+        return CLOSING_RANKS_PERIODS;
+      case "seat-matrix":
+        return SEAT_MATRIX_PERIODS;
+      case "fee-stipend-bond":
+        return FEE_STIPEND_BOND_PERIODS;
+      case "allotments":
+      default:
+        return ALLOTMENTS_PERIODS;
+    }
+  })();
 
   return (
     <div className="nugd-hero-root" ref={rootRef}>
@@ -281,28 +364,33 @@ function NeetugDashboardHero() {
             </span>
 
             <h2 className="nugd-hero-modal-title">{activeCard.title}</h2>
-            <p className="nugd-hero-modal-hint">Select year</p>
+            <p className="nugd-hero-modal-hint">
+              {activeCard.id === "allotments" ? "Select round" : "Select year"}
+            </p>
 
-            <div className="nugd-hero-year-list">
-              {YEARS.map((year) => (
+            <div className="nugd-hero-period-list">
+              {currentPeriods.map((period) => (
                 <button
-                  key={year}
+                  key={period.id}
                   type="button"
                   className={
-                    "nugd-hero-year-btn" +
-                    (selectedYear === year ? " nugd-hero-year-btn-active" : "")
+                    "nugd-hero-period-btn" +
+                    (selectedPeriod?.id === period.id
+                      ? " nugd-hero-period-btn-active"
+                      : "")
                   }
-                  onClick={(e) => handleYearSelect(year, e)}
+                  onClick={(e) => handlePeriodSelect(period, e)}
                 >
-                  <span className="nugd-hero-year-label">Year</span>
-                  <span className="nugd-hero-year-value">{year}</span>
+                  <span className="nugd-hero-period-label">{period.label}</span>
+                  <span className="nugd-hero-period-value">{period.value}</span>
                 </button>
               ))}
             </div>
 
-            {selectedYear && (
+            {selectedPeriod && (
               <p className="nugd-hero-modal-footnote">
-                Showing {activeCard.title.toLowerCase()} for {selectedYear}.
+                Opening {activeCard.title.toLowerCase()} for{" "}
+                {selectedPeriod.label} {selectedPeriod.value}.
               </p>
             )}
           </div>

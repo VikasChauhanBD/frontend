@@ -38,6 +38,7 @@ import InicetClosingRanks2025Page from "../pages/inicetDataPages/inicet2025/Inic
 import InicetClosingRanks2026Page from "../pages/inicetDataPages/inicet2026/InicetClosingRanks2026Page";
 import InicetAllotmentsJuly2026Page from "../pages/inicetDataPages/inicet2026/InicetAllotmentsJuly2026Page";
 import InicetAllotmentsJan2026Page from "../pages/inicetDataPages/inicet2026/InicetAllotmentsJan2026Page";
+import InicetAllotmentsJuly2025Page from "../pages/inicetDataPages/inicet2025/InicetAllotmentsJuly2025Page";
 
 function AppRoutes() {
   return (
@@ -109,6 +110,10 @@ function AppRoutes() {
       <Route
         path="/dashboard/inicet-allotments-jan-2026"
         element={<InicetAllotmentsJan2026Page />}
+      />
+      <Route
+        path="/dashboard/inicet-allotments-july-2025"
+        element={<InicetAllotmentsJuly2025Page />}
       />
     </Routes>
   );

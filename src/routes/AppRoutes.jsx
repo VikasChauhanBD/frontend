@@ -33,13 +33,16 @@ import NeetpgDashboard from "../pages/dashboard/NeetpgDashboard";
 import NeetugDashboard from "../pages/dashboard/NeetugDashboard";
 import InicetDashboard from "../pages/dashboard/InicetDashboard";
 
-// Data Pages
+// INICET Data Pages
 import InicetClosingRanks2025Page from "../pages/inicetDataPages/inicet2025/InicetClosingRanks2025Page";
 import InicetClosingRanks2026Page from "../pages/inicetDataPages/inicet2026/InicetClosingRanks2026Page";
 import InicetAllotmentsJuly2026Page from "../pages/inicetDataPages/inicet2026/InicetAllotmentsJuly2026Page";
 import InicetAllotmentsJan2026Page from "../pages/inicetDataPages/inicet2026/InicetAllotmentsJan2026Page";
 import InicetAllotmentsJuly2025Page from "../pages/inicetDataPages/inicet2025/InicetAllotmentsJuly2025Page";
 import InicetAllotmentsJan2025Page from "../pages/inicetDataPages/inicet2025/InicetAllotmentsJan2025Page";
+
+// NEET PG Data Pages
+import PgFeesStipendBond2024Page from "../pages/neetpgDataPages/neetpg2024/PgFeesStipendBond2024Page";
 
 function AppRoutes() {
   return (
@@ -96,6 +99,7 @@ function AppRoutes() {
       </Route>
 
       {/* ================= Protected Data Route ================= */}
+      {/* INICET */}
       <Route
         path="/dashboard/inicet-closing-ranks-2025"
         element={<InicetClosingRanks2025Page />}
@@ -119,6 +123,12 @@ function AppRoutes() {
       <Route
         path="/dashboard/inicet-allotments-jan-2025"
         element={<InicetAllotmentsJan2025Page />}
+      />
+
+      {/* NEET PG */}
+      <Route
+        path="/dashboard/neetpg-allotments-2024"
+        element={<PgFeesStipendBond2024Page />}
       />
     </Routes>
   );

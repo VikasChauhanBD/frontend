@@ -284,18 +284,18 @@
   color: #334155;
 }
 
-.npgd-hero-year-list {
-  display: flex;
+.npgd-hero-period-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   gap: 12px;
 }
 
-.npgd-hero-year-btn {
-  flex: 1;
+.npgd-hero-period-btn {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 2px;
-  padding: 16px 10px;
+  padding: 14px 10px;
   background: #f8fafc;
   border: 1.5px solid #e2e8f0;
   border-radius: 14px;
@@ -306,17 +306,17 @@
     transform 0.2s ease;
 }
 
-.npgd-hero-year-btn:hover {
+.npgd-hero-period-btn:hover {
   border-color: #cfe0ff;
   background: #eaf1ff;
 }
 
-.npgd-hero-year-btn-active {
+.npgd-hero-period-btn-active {
   border-color: #f59e0b;
   background: #f59e0b;
 }
 
-.npgd-hero-year-label {
+.npgd-hero-period-label {
   font-size: 11px;
   font-weight: 600;
   letter-spacing: 0.08em;
@@ -324,7 +324,7 @@
   color: #334155;
 }
 
-.npgd-hero-year-value {
+.npgd-hero-period-value {
   font-size: 20px;
   font-weight: 700;
   color: #0f172a;
@@ -364,10 +364,6 @@
 @media (max-width: 568px) {
   .npgd-hero-cards {
     grid-template-columns: 1fr;
-  }
-
-  .npgd-hero-year-list {
-    flex-direction: column;
   }
 }
 

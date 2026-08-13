@@ -258,7 +258,7 @@
 .pg25-cr-records-count {
   display: block;
   color: #ffffff;
-  font-size: 0.75rem;
+  font-size: 14px;
   line-height: 1rem;
   font-weight: 600;
   background-color: rgba(255, 255, 255, 0.18);
@@ -290,17 +290,6 @@
   gap: 0.5rem;
   flex-wrap: wrap;
   margin-bottom: 0;
-}
-
-.pg25-cr-pill-label {
-  font-size: 0.72rem;
-  line-height: 1rem;
-  color: #94a3b8;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.03em;
-  margin-right: 0.3rem;
-  white-space: nowrap;
 }
 
 .pg25-cr-pill {
@@ -1000,10 +989,6 @@
 }
 
 @media (max-width: 768px) {
-  .pg25-cr-records-count {
-    display: none;
-  }
-
   .pg25-cr-filters-row {
     flex-direction: column;
     align-items: stretch;

@@ -349,7 +349,7 @@
 }
 
 .pg25-fsb-quota-btn-all-active {
-  background-color: #7c3aed;
+  background-color: #155dfc;
   color: #ffffff;
 }
 
@@ -376,7 +376,7 @@
   transition:
     transform 0.15s ease,
     box-shadow 0.15s ease;
-  margin-left: 0.5rem;
+  margin-left: auto;
   white-space: nowrap;
   border: none;
   cursor: pointer;

@@ -488,7 +488,6 @@ const PgClosingRanks2025Page = () => {
 
         {/* ── Round pills ── */}
         <div className="pg25-cr-pills-row">
-          <span className="pg25-cr-pill-label">Round:</span>
           {["1", "2", "3", "4", "all"].map((round) => (
             <button
               type="button"
@@ -496,7 +495,7 @@ const PgClosingRanks2025Page = () => {
               onClick={() => applyRound(round)}
               className={`pg25-cr-pill ${selRound === round ? "pg25-cr-pill-active" : "pg25-cr-pill-inactive"}`}
             >
-              {round === "all" ? "All" : `R${round}`}
+              {round === "all" ? "All Rounds" : `R${round}`}
             </button>
           ))}
           <button

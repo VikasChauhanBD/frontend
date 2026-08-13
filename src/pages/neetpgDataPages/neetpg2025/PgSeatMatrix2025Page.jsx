@@ -11,10 +11,7 @@ import {
   ChevronDown,
   ChevronLeft,
   ChevronRight,
-  Building2,
-  MapPin,
   BarChart2,
-  GraduationCap,
 } from "lucide-react";
 
 // ─────────────────────────────────────────────
@@ -366,27 +363,86 @@ const PgSeatMatrix2025Page = () => {
   // ─────────────────────────────────────────
   // CUSTOM SELECT COMPONENT
   // ─────────────────────────────────────────
-  const CustomSelect = ({ value, onChange, options, allLabel, icon }) => (
-    <div className="pg25-sm-cs-wrapper">
-      {icon && <span className="pg25-sm-cs-icon">{icon}</span>}
-      <select
-        value={value}
-        onChange={(e) => {
-          onChange(e.target.value);
-          setPage(1);
-        }}
-        className={`pg25-sm-cs-select ${icon ? "pg25-sm-cs-select-icon" : "pg25-sm-cs-select-noicon"}`}
-      >
-        <option value="all">{allLabel}</option>
-        {options.map((o) => (
-          <option key={o} value={o}>
-            {o}
-          </option>
-        ))}
-      </select>
-      <ChevronDown className="pg25-sm-cs-chevron" />
-    </div>
-  );
+  const CustomSelect = ({ value, onChange, options, allLabel, icon }) => {
+    const [isOpen, setIsOpen] = useState(false);
+    const [searchTerm, setSearchTerm] = useState("");
+
+    const filteredOptions = options.filter((o) =>
+      o.toLowerCase().includes(searchTerm.toLowerCase()),
+    );
+
+    return (
+      <div className="pg25-sm-cs-wrapper">
+        <button
+          onClick={() => setIsOpen(!isOpen)}
+          className="pg25-sm-cs-trigger"
+        >
+          {icon && <span className="pg25-sm-cs-icon-inline">{icon}</span>}
+          <span className="pg25-sm-cs-value">
+            {value === "all" ? allLabel : value}
+          </span>
+          <ChevronDown
+            className={`pg25-sm-cs-chevron-static ${isOpen ? "pg25-sm-rotate-open" : ""}`}
+          />
+        </button>
+
+        {isOpen && (
+          <>
+            <div
+              className="pg25-sm-select-overlay"
+              onClick={() => {
+                setIsOpen(false);
+                setSearchTerm("");
+              }}
+            />
+            <div className="pg25-sm-select-dropdown">
+              <div className="pg25-sm-select-search-wrap">
+                <input
+                  type="text"
+                  placeholder="Search..."
+                  value={searchTerm}
+                  onChange={(e) => setSearchTerm(e.target.value)}
+                  className="pg25-sm-select-search-input"
+                  onClick={(e) => e.stopPropagation()}
+                />
+              </div>
+              <div className="pg25-sm-select-options">
+                <div
+                  onClick={() => {
+                    onChange("all");
+                    setPage(1);
+                    setIsOpen(false);
+                    setSearchTerm("");
+                  }}
+                  className={`pg25-sm-select-option ${
+                    value === "all" ? "pg25-sm-select-option-selected" : ""
+                  }`}
+                >
+                  {allLabel}
+                </div>
+                {filteredOptions.map((o) => (
+                  <div
+                    key={o}
+                    onClick={() => {
+                      onChange(o);
+                      setPage(1);
+                      setIsOpen(false);
+                      setSearchTerm("");
+                    }}
+                    className={`pg25-sm-select-option ${
+                      value === o ? "pg25-sm-select-option-selected" : ""
+                    }`}
+                  >
+                    {o}
+                  </div>
+                ))}
+              </div>
+            </div>
+          </>
+        )}
+      </div>
+    );
+  };
 
   // ─────────────────────────────────────────
   // LOADING STATE
@@ -477,6 +533,10 @@ const PgSeatMatrix2025Page = () => {
                 <p className="pg25-sm-header-subtitle">NEET PG 2025</p>
               </div>
             </div>
+
+            <span className="pg25-sm-records-count">
+              {filtered.length.toLocaleString()} Records
+            </span>
           </div>
         </div>
 
@@ -491,15 +551,6 @@ const PgSeatMatrix2025Page = () => {
         {/* Degree-type quick filters */}
         <div className="pg25-sm-quickfilters-section">
           <div className="pg25-sm-quickfilters-row">
-            <button
-              onClick={() => {
-                setSelDegree("all");
-                setPage(1);
-              }}
-              className={`pg25-sm-pill-btn ${selDegree === "all" ? "pg25-sm-pill-blue-active" : "pg25-sm-pill-gray-inactive"}`}
-            >
-              All Courses
-            </button>
             {degreeTypes.map((d) => (
               <button
                 key={d}
@@ -512,7 +563,15 @@ const PgSeatMatrix2025Page = () => {
                 {d}
               </button>
             ))}
-
+            <button
+              onClick={() => {
+                setSelDegree("all");
+                setPage(1);
+              }}
+              className={`pg25-sm-pill-btn ${selDegree === "all" ? "pg25-sm-pill-blue-active" : "pg25-sm-pill-gray-inactive"}`}
+            >
+              All Courses
+            </button>
             <div className="pg25-sm-quickfilters-actions">
               <button
                 onClick={() => setShowColModal(true)}
@@ -557,14 +616,18 @@ const PgSeatMatrix2025Page = () => {
                 onChange={setSelState}
                 options={states}
                 allLabel="All States"
-                icon={<MapPin className="pg25-sm-icon-xs" />}
               />
               <CustomSelect
                 value={selManagement}
                 onChange={setSelManagement}
                 options={managements}
                 allLabel="All Types"
-                icon={<Building2 className="pg25-sm-icon-xs" />}
+              />
+              <CustomSelect
+                value={selInstitute}
+                onChange={setSelInstitute}
+                options={institutes.slice(0, 100)}
+                allLabel="All Colleges"
               />
               <button
                 onClick={() => setShowAdv(!showAdv)}

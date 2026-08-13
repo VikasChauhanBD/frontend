@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import "./UgSeatMatrix2025Page.css";
+import "./PgSeatMatrix2025Page.css";
 import {
   ArrowLeft,
   Search,
@@ -17,6 +17,10 @@ import {
   GraduationCap,
 } from "lucide-react";
 
+// ─────────────────────────────────────────────
+// HELPER: Parse Seats
+// Handles: "5", "0+3(VV)", "12+8(VV)", "Info not available", "-", ""
+// ─────────────────────────────────────────────
 function parseSeats(raw) {
   const trimmed = raw?.trim() ?? "";
   if (
@@ -41,130 +45,61 @@ function parseSeats(raw) {
 }
 
 // ─────────────────────────────────────────────
-// HELPER: Parse Fee
-// Handles: "1350", "₹24,000*", "1770000", "Info not available", "-", ""
+// HELPER: Normalise a raw course name (strip stray
+// newlines that come from multi-line CSV cells)
 // ─────────────────────────────────────────────
-function parseFee(raw) {
-  const trimmed = raw?.trim() ?? "";
-  if (
-    !trimmed ||
-    trimmed === "-" ||
-    trimmed.toLowerCase().includes("info not available") ||
-    trimmed.toLowerCase() === "n/a"
-  ) {
-    return { num: -1, display: "N/A" };
-  }
-
-  // Remove ₹, commas, spaces, * and any non-digit characters
-  const cleaned = trimmed.replace(/[₹,\s*]/g, "");
-  const num = parseInt(cleaned);
-  if (isNaN(num)) return { num: -1, display: trimmed };
-
-  // Format in Indian numbering system
-  return { num, display: `₹${num.toLocaleString("en-IN")}` };
+function cleanCourseName(course) {
+  return (course || "")
+    .replace(/\s*\n\s*/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
 }
 
 // ─────────────────────────────────────────────
 // HELPER: Degree Type
+// Derived from the course name since PG course
+// naming is inconsistent ("MD - X", "M.D. X", "M.D.X")
 // ─────────────────────────────────────────────
 function getDegreeType(course) {
-  const cu = course.toUpperCase().trim();
-  if (cu === "MBBS") return "MBBS";
-  if (cu === "BDS") return "BDS";
-  return cu || "Other";
+  const cleaned = cleanCourseName(course).replace(/\./g, "").toUpperCase();
+  if (cleaned.startsWith("DNB")) return "DNB";
+  if (cleaned.startsWith("DM")) return "DM";
+  if (cleaned.startsWith("MCH") || cleaned.startsWith("M CH")) return "MCh";
+  if (cleaned.startsWith("MD")) return "MD";
+  if (cleaned.startsWith("MS")) return "MS";
+  if (cleaned.startsWith("PG DIPLOMA") || cleaned.startsWith("DIPLOMA"))
+    return "Diploma";
+  return "Other";
 }
 
+// Preferred display order for degree-type quick filters
+const DEGREE_ORDER = ["MD", "MS", "DM", "MCh", "Diploma", "DNB", "Other"];
+
 // ─────────────────────────────────────────────
-// HELPER: Classify Management (derived since CSV has no such column)
-// Uses institute name keywords + fee threshold as fallback
+// HELPER: Management Group
+// CSV already supplies the management type directly,
+// this just normalises it into a small badge group.
 // ─────────────────────────────────────────────
-function classifyManagement(institute, fee) {
-  const name = institute.toLowerCase();
-
-  const govtKeywords = [
-    "aiims",
-    "jipmer",
-    "esic",
-    "ruhs",
-    "govt",
-    "government",
-    "gmc,",
-    "gmc ",
-    "mamc",
-    "vmmc",
-    "ucms",
-    "abvims",
-    "ndmc",
-    "igmc",
-    "igims",
-    "scb,",
-    "mkcg",
-    "vimsar",
-    "bhu",
-    "amu",
-    "kgmu",
-    "rml",
-    "neigrihms",
-    "rims,",
-    "sgpgi",
-    "dr rml",
-    "patna med",
-    "madras med",
-    "medical college",
-    "med coll,",
-    "seth gs",
-    "bjmc,",
-    "grant med",
-    "topiwala",
-    "coimbatore med",
-    "stanley med",
-    "kilkauk",
-    "thanjavur",
-    "tirunelveli",
-    "pt.",
-    "pts.",
-    "lalbahshastri",
-    "rpg,",
-    "doon med",
-    "soban singh",
-    "vcsg",
-    "hbt & rn",
-    "lokkmanya",
-    "s.n. med",
-    "mln med",
-    "mlb med",
-    "llrm",
-    "brd med",
-    "gsv med",
-    "gsVM",
-    "jnm (amu)",
-    "faculty of dental",
-    "dr za dental",
-    "shaik-ul-hind",
-    "rajendra ims",
-    "manipal tata",
-    "ann magadh",
-    "darbhanga,",
-    "sri krishna,",
-    "nalanda med",
-    "vardhman ims",
-    "jawaharlal nehru,",
-    "jannayak karpoori",
-  ];
-
-  for (const kw of govtKeywords) {
-    if (name.includes(kw)) return "Government";
-  }
-
-  // Fee-based fallback
-  if (fee > 0 && fee < 200000) return "Government";
-  return "Private";
+function classifyManagement(raw) {
+  const trimmed = (raw || "").trim();
+  if (!trimmed) return "Other";
+  const low = trimmed.toLowerCase();
+  if (
+    low.includes("govt") ||
+    low.includes("government") ||
+    low.includes("central")
+  )
+    return "Government";
+  if (low.includes("trust")) return "Trust";
+  if (low.includes("deemed")) return "Deemed";
+  if (low.includes("private")) return "Private";
+  return trimmed;
 }
 
 // ─────────────────────────────────────────────
 // MAIN COMPONENT
 // ─────────────────────────────────────────────
-const UgSeatMatrix2025Page = () => {
+const PgSeatMatrix2025Page = () => {
   const navigate = useNavigate();
   const [seatData, setSeatData] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -173,36 +108,31 @@ const UgSeatMatrix2025Page = () => {
   // Filters
   const [searchTerm, setSearchTerm] = useState("");
   const [selState, setSelState] = useState("all");
-  const [selCourse, setSelCourse] = useState("all"); // MBBS / BDS
+  const [selDegree, setSelDegree] = useState("all"); // MD / MS / DM / MCh / Diploma / DNB
   const [selManagement, setSelManagement] = useState("all");
   const [selInstitute, setSelInstitute] = useState("all");
   const [minSeats, setMinSeats] = useState("");
   const [maxSeats, setMaxSeats] = useState("");
-  const [minFee, setMinFee] = useState("");
-  const [maxFee, setMaxFee] = useState("");
   const [showAdv, setShowAdv] = useState(false);
   const [showColModal, setShowColModal] = useState(false);
   const [page, setPage] = useState(1);
-  const [feeCategory, setFeeCategory] = useState("all"); // quick filter
 
   const [colVis, setColVis] = useState({
     sNo: false,
     State: true,
+    Management: true,
     Institute: true,
     Course: true,
     Seats: true,
-    Fee: true,
-    Management: true,
   });
 
   const colDefs = [
     { key: "sNo", label: "S.No" },
     { key: "State", label: "State" },
     { key: "Management", label: "Type" },
-    { key: "Institute", label: "Institute Name" },
-    { key: "Course", label: "Course" },
+    { key: "Institute", label: "College Name" },
+    { key: "Course", label: "Course Name" },
     { key: "Seats", label: "Seats" },
-    { key: "Fee", label: "Fee (Annual)" },
   ];
 
   const toggleCol = (k) => setColVis((p) => ({ ...p, [k]: !p[k] }));
@@ -218,6 +148,7 @@ const UgSeatMatrix2025Page = () => {
 
   // ─────────────────────────────────────────
   // CSV PARSER (RFC 4180 compliant)
+  // Header: S. No.,State,Management of college,College Name,Course Name,Seats
   // ─────────────────────────────────────────
   const parseCSV = (text) => {
     if (text.includes("<html") || text.includes("<!DOCTYPE"))
@@ -283,27 +214,27 @@ const UgSeatMatrix2025Page = () => {
       const { fields: v, next } = parseRow(text, pos);
       pos = next;
 
-      if (v.length < 3) continue;
+      if (v.length < 5) continue;
 
-      const state = (v[0] || "").trim();
-      const institute = (v[1] || "").trim();
-      const course = (v[2] || "").trim();
-      const seatsRaw = (v[3] || "").trim();
-      const feeRaw = (v[4] || "").trim();
+      const state = (v[1] || "").trim();
+      const managementRaw = (v[2] || "").trim();
+      const institute = (v[3] || "").trim();
+      const courseRaw = (v[4] || "").trim();
+      const seatsRaw = (v[5] || "").trim();
 
       // Skip repeated header rows, empty rows, and TOTAL rows
       if (
         state.toLowerCase() === "state" &&
-        institute.toLowerCase() === "institute"
+        institute.toLowerCase() === "college name"
       )
         continue;
       if (!institute || institute.toUpperCase() === "TOTAL") continue;
-      if (!course) continue;
+      if (!courseRaw) continue;
 
+      const course = cleanCourseName(courseRaw);
       const seats = parseSeats(seatsRaw);
-      const fee = parseFee(feeRaw);
       const degreeType = getDegreeType(course);
-      const mgmt = classifyManagement(institute, fee.num);
+      const mgmt = classifyManagement(managementRaw);
 
       rows.push({
         sNo: sNoCounter++,
@@ -312,10 +243,9 @@ const UgSeatMatrix2025Page = () => {
         Course: course,
         Seats: seats.num,
         SeatsRaw: seats.display,
-        Fee: fee.num,
-        FeeRaw: fee.display,
-        DegreeType: degreeType,
+        ManagementRaw: managementRaw,
         ManagementGroup: mgmt,
+        DegreeType: degreeType,
       });
     }
     return rows;
@@ -325,7 +255,7 @@ const UgSeatMatrix2025Page = () => {
   // FETCH CSV
   // ─────────────────────────────────────────
   useEffect(() => {
-    fetch("/data/neetug/ug_seat_matrix_2025.csv")
+    fetch("/data/neetpg/pg_seat_matrix_2025.csv")
       .then((r) => {
         if (!r.ok) throw new Error();
         return r.text();
@@ -347,10 +277,12 @@ const UgSeatMatrix2025Page = () => {
   const states = [
     ...new Set(seatData.map((d) => d.State).filter(Boolean)),
   ].sort();
-  const courses = [
-    ...new Set(seatData.map((d) => d.DegreeType).filter(Boolean)),
+  const degreeTypes = DEGREE_ORDER.filter((d) =>
+    seatData.some((row) => row.DegreeType === d),
+  );
+  const managements = [
+    ...new Set(seatData.map((d) => d.ManagementGroup).filter(Boolean)),
   ].sort();
-  const managements = ["Government", "Private"];
   const institutes = [
     ...new Set(seatData.map((d) => d.Institute).filter(Boolean)),
   ].sort();
@@ -368,28 +300,16 @@ const UgSeatMatrix2025Page = () => {
     if (!matchesSearch) return false;
 
     if (selState !== "all" && item.State !== selState) return false;
-    if (selCourse !== "all" && item.DegreeType !== selCourse) return false;
+    if (selDegree !== "all" && item.DegreeType !== selDegree) return false;
     if (selManagement !== "all" && item.ManagementGroup !== selManagement)
       return false;
     if (selInstitute !== "all" && item.Institute !== selInstitute) return false;
-
-    // Fee category quick filter
-    if (feeCategory === "govt" && item.ManagementGroup !== "Government")
-      return false;
-    if (feeCategory === "private" && item.ManagementGroup === "Government")
-      return false;
-    if (feeCategory === "highfee" && (item.Fee < 0 || item.Fee < 1000000))
-      return false;
 
     // Seats range
     if (minSeats && (item.Seats < 0 || item.Seats < parseInt(minSeats)))
       return false;
     if (maxSeats && item.Seats >= 0 && item.Seats > parseInt(maxSeats))
       return false;
-
-    // Fee range
-    if (minFee && (item.Fee < 0 || item.Fee < parseInt(minFee))) return false;
-    if (maxFee && item.Fee >= 0 && item.Fee > parseInt(maxFee)) return false;
 
     return true;
   });
@@ -401,14 +321,11 @@ const UgSeatMatrix2025Page = () => {
   const clearAll = () => {
     setSearchTerm("");
     setSelState("all");
-    setSelCourse("all");
+    setSelDegree("all");
     setSelManagement("all");
     setSelInstitute("all");
     setMinSeats("");
     setMaxSeats("");
-    setMinFee("");
-    setMaxFee("");
-    setFeeCategory("all");
     setPage(1);
   };
 
@@ -419,49 +336,46 @@ const UgSeatMatrix2025Page = () => {
     (s, r) => s + (r.Seats > 0 ? r.Seats : 0),
     0,
   );
-  const mbbsCount = filtered.filter((r) => r.DegreeType === "MBBS").length;
-  const bdsCount = filtered.filter((r) => r.DegreeType === "BDS").length;
+  const collegeCount = new Set(filtered.map((r) => r.Institute)).size;
+  const mdCount = filtered.filter((r) => r.DegreeType === "MD").length;
+  const msCount = filtered.filter((r) => r.DegreeType === "MS").length;
   const govtCount = filtered.filter(
     (r) => r.ManagementGroup === "Government",
-  ).length;
-  const pvtCount = filtered.filter(
-    (r) => r.ManagementGroup === "Private",
   ).length;
 
   // ─────────────────────────────────────────
   // BADGE COLORS
   // ─────────────────────────────────────────
   const mgmtColor = (m) => {
-    if (m === "Government") return "ug25-sm-badge-mgmt-govt";
-    return "ug25-sm-badge-mgmt-private";
+    if (m === "Government") return "pg25-sm-badge-mgmt-govt";
+    if (m === "Trust") return "pg25-sm-badge-mgmt-trust";
+    if (m === "Deemed") return "pg25-sm-badge-mgmt-deemed";
+    return "pg25-sm-badge-mgmt-private";
   };
 
   const degreeColor = (d) => {
-    if (d === "MBBS") return "ug25-sm-badge-degree-mbbs";
-    if (d === "BDS") return "ug25-sm-badge-degree-bds";
-    return "ug25-sm-badge-degree-other";
-  };
-
-  const feeColor = (fee) => {
-    if (fee < 0) return "ug25-sm-fee-neg";
-    if (fee < 100000) return "ug25-sm-fee-low";
-    if (fee < 500000) return "ug25-sm-fee-mid";
-    return "ug25-sm-fee-high";
+    if (d === "MD") return "pg25-sm-badge-degree-md";
+    if (d === "MS") return "pg25-sm-badge-degree-ms";
+    if (d === "DM") return "pg25-sm-badge-degree-dm";
+    if (d === "MCh") return "pg25-sm-badge-degree-mch";
+    if (d === "Diploma") return "pg25-sm-badge-degree-diploma";
+    if (d === "DNB") return "pg25-sm-badge-degree-dnb";
+    return "pg25-sm-badge-degree-other";
   };
 
   // ─────────────────────────────────────────
   // CUSTOM SELECT COMPONENT
   // ─────────────────────────────────────────
   const CustomSelect = ({ value, onChange, options, allLabel, icon }) => (
-    <div className="ug25-sm-cs-wrapper">
-      {icon && <span className="ug25-sm-cs-icon">{icon}</span>}
+    <div className="pg25-sm-cs-wrapper">
+      {icon && <span className="pg25-sm-cs-icon">{icon}</span>}
       <select
         value={value}
         onChange={(e) => {
           onChange(e.target.value);
           setPage(1);
         }}
-        className={`ug25-sm-cs-select ${icon ? "ug25-sm-cs-select-icon" : "ug25-sm-cs-select-noicon"}`}
+        className={`pg25-sm-cs-select ${icon ? "pg25-sm-cs-select-icon" : "pg25-sm-cs-select-noicon"}`}
       >
         <option value="all">{allLabel}</option>
         {options.map((o) => (
@@ -470,7 +384,7 @@ const UgSeatMatrix2025Page = () => {
           </option>
         ))}
       </select>
-      <ChevronDown className="ug25-sm-cs-chevron" />
+      <ChevronDown className="pg25-sm-cs-chevron" />
     </div>
   );
 
@@ -479,10 +393,10 @@ const UgSeatMatrix2025Page = () => {
   // ─────────────────────────────────────────
   if (loading)
     return (
-      <div className="ug25-sm-loading-screen">
-        <div className="ug25-sm-loading-content">
-          <div className="ug25-sm-loading-spinner" />
-          <p className="ug25-sm-loading-text">Loading NEET UG Seat Matrix...</p>
+      <div className="pg25-sm-loading-screen">
+        <div className="pg25-sm-loading-content">
+          <div className="pg25-sm-loading-spinner" />
+          <p className="pg25-sm-loading-text">Loading NEET PG Seat Matrix...</p>
         </div>
       </div>
     );
@@ -491,54 +405,54 @@ const UgSeatMatrix2025Page = () => {
   // RENDER
   // ─────────────────────────────────────────
   return (
-    <div className="ug25-sm-page-root">
+    <div className="pg25-sm-page-root">
       {/* Column Visibility Modal */}
       {showColModal && (
-        <div className="ug25-sm-modal-overlay">
-          <div className="ug25-sm-modal-box">
-            <div className="ug25-sm-modal-header">
-              <h3 className="ug25-sm-modal-title">Show / Hide Columns</h3>
+        <div className="pg25-sm-modal-overlay">
+          <div className="pg25-sm-modal-box">
+            <div className="pg25-sm-modal-header">
+              <h3 className="pg25-sm-modal-title">Show / Hide Columns</h3>
               <button
                 onClick={() => setShowColModal(false)}
-                className="ug25-sm-modal-close-btn"
+                className="pg25-sm-modal-close-btn"
               >
-                <X className="ug25-sm-modal-close-icon" />
+                <X className="pg25-sm-modal-close-icon" />
               </button>
             </div>
-            <div className="ug25-sm-modal-body">
-              <div className="ug25-sm-modal-actions">
-                <button onClick={showAll} className="ug25-sm-btn-show-all">
+            <div className="pg25-sm-modal-body">
+              <div className="pg25-sm-modal-actions">
+                <button onClick={showAll} className="pg25-sm-btn-show-all">
                   Show All
                 </button>
-                <button onClick={hideAll} className="ug25-sm-btn-hide-all">
+                <button onClick={hideAll} className="pg25-sm-btn-hide-all">
                   Hide All
                 </button>
               </div>
-              <div className="ug25-sm-col-grid">
+              <div className="pg25-sm-col-grid">
                 {colDefs.map(({ key, label }) => (
-                  <div key={key} className="ug25-sm-col-row">
-                    <label className="ug25-sm-col-row-label">
+                  <div key={key} className="pg25-sm-col-row">
+                    <label className="pg25-sm-col-row-label">
                       <input
                         type="checkbox"
                         checked={colVis[key]}
                         onChange={() => toggleCol(key)}
-                        className="ug25-sm-col-checkbox"
+                        className="pg25-sm-col-checkbox"
                       />
-                      <span className="ug25-sm-col-row-text">{label}</span>
+                      <span className="pg25-sm-col-row-text">{label}</span>
                     </label>
                     {colVis[key] ? (
-                      <Eye className="ug25-sm-col-eye-icon" />
+                      <Eye className="pg25-sm-col-eye-icon" />
                     ) : (
-                      <EyeOff className="ug25-sm-col-eyeoff-icon" />
+                      <EyeOff className="pg25-sm-col-eyeoff-icon" />
                     )}
                   </div>
                 ))}
               </div>
             </div>
-            <div className="ug25-sm-modal-footer">
+            <div className="pg25-sm-modal-footer">
               <button
                 onClick={() => setShowColModal(false)}
-                className="ug25-sm-btn-apply"
+                className="pg25-sm-btn-apply"
               >
                 Apply
               </button>
@@ -547,96 +461,83 @@ const UgSeatMatrix2025Page = () => {
         </div>
       )}
 
-      <div className="ug25-sm-content-wrapper">
+      <div className="pg25-sm-content-wrapper">
         {/* Header */}
-        <div className="ug25-sm-header">
-          <div className="ug25-sm-header-row">
-            <div className="ug25-sm-header-left">
+        <div className="pg25-sm-header">
+          <div className="pg25-sm-header-row">
+            <div className="pg25-sm-header-left">
               <button
-                onClick={() => navigate("/dashboard/neet-ug")}
-                className="ug25-sm-back-btn"
+                onClick={() => navigate("/dashboard/neet-pg")}
+                className="pg25-sm-back-btn"
               >
-                <ArrowLeft className="ug25-sm-icon-sm" />
+                <ArrowLeft className="pg25-sm-icon-sm" />
               </button>
               <div>
-                <h1 className="ug25-sm-header-title">Seat Matrix</h1>
-                <p className="ug25-sm-header-subtitle">NEET UG 2025</p>
+                <h1 className="pg25-sm-header-title">Seat Matrix</h1>
+                <p className="pg25-sm-header-subtitle">NEET PG 2025</p>
               </div>
             </div>
           </div>
         </div>
 
         {dataError && (
-          <div className="ug25-sm-error-banner">
+          <div className="pg25-sm-error-banner">
             ⚠️ Data file not found. Add{" "}
-            <code>/data/neetug/ug_seat_matrix_2025.csv</code> to enable this
+            <code>/data/neetpg/pg_seat_matrix_2025.csv</code> to enable this
             page.
           </div>
         )}
 
-        {/* Course-type quick filters + Fee category */}
-        <div className="ug25-sm-quickfilters-section">
-          <div className="ug25-sm-quickfilters-row">
-            {/* Course filter */}
-            {["all", "MBBS", "BDS"].map((d) => (
+        {/* Degree-type quick filters */}
+        <div className="pg25-sm-quickfilters-section">
+          <div className="pg25-sm-quickfilters-row">
+            <button
+              onClick={() => {
+                setSelDegree("all");
+                setPage(1);
+              }}
+              className={`pg25-sm-pill-btn ${selDegree === "all" ? "pg25-sm-pill-blue-active" : "pg25-sm-pill-gray-inactive"}`}
+            >
+              All Courses
+            </button>
+            {degreeTypes.map((d) => (
               <button
                 key={d}
                 onClick={() => {
-                  setSelCourse(d);
+                  setSelDegree(d);
                   setPage(1);
                 }}
-                className={`ug25-sm-pill-btn ${selCourse === d ? "ug25-sm-pill-blue-active" : "ug25-sm-pill-gray-inactive"}`}
+                className={`pg25-sm-pill-btn ${selDegree === d ? "pg25-sm-pill-blue-active" : "pg25-sm-pill-gray-inactive"}`}
               >
-                {d === "all" ? "All Courses" : d}
+                {d}
               </button>
             ))}
 
-            <span className="ug25-sm-pill-separator">|</span>
-
-            {/* Fee category filter */}
-            {[
-              { key: "all", label: "All Types" },
-              { key: "govt", label: "🏛️ Government" },
-              { key: "private", label: "🏢 Private" },
-              { key: "highfee", label: "💰 High Fee (>10L)" },
-            ].map((f) => (
-              <button
-                key={f.key}
-                onClick={() => {
-                  setFeeCategory(f.key);
-                  setPage(1);
-                }}
-                className={`ug25-sm-pill-btn ${feeCategory === f.key ? "ug25-sm-pill-indigo-active" : "ug25-sm-pill-gray-inactive"}`}
-              >
-                {f.label}
-              </button>
-            ))}
-
-            <div className="ug25-sm-quickfilters-actions">
+            <div className="pg25-sm-quickfilters-actions">
               <button
                 onClick={() => setShowColModal(true)}
-                className="ug25-sm-columns-btn"
+                className="pg25-sm-columns-btn"
               >
-                <Eye className="ug25-sm-icon-sm" /> Columns
+                <Eye className="pg25-sm-icon-sm" /> Columns
               </button>
             </div>
           </div>
         </div>
 
         {/* Search & Filters */}
-        <div className="ug25-sm-filters-section">
-          <div className="ug25-sm-filters-row">
-            <div className="ug25-sm-search-wrapper">
-              <Search className="ug25-sm-search-icon" />
+        <div className="pg25-sm-filters-section">
+          <div className="pg25-sm-filters-row">
+            <div className="pg25-sm-search-wrapper">
+              <Search className="pg25-sm-search-icon" />
               <input
                 type="text"
-                placeholder="Search institute, course or state…"
+                placeholder="Search college, course or state…"
                 value={searchTerm}
                 onChange={(e) => {
                   setSearchTerm(e.target.value);
                   setPage(1);
                 }}
-                className="ug25-sm-search-input"
+                className="pg25-sm-search-input"
               />
               {searchTerm && (
                 <button
@@ -644,34 +545,34 @@ const UgSeatMatrix2025Page = () => {
                     setSearchTerm("");
                     setPage(1);
                   }}
-                  className="ug25-sm-search-clear-btn"
+                  className="pg25-sm-search-clear-btn"
                 >
-                  <X className="ug25-sm-search-clear-icon" />
+                  <X className="pg25-sm-search-clear-icon" />
                 </button>
               )}
             </div>
-            <div className="ug25-sm-selects-wrapper">
+            <div className="pg25-sm-selects-wrapper">
               <CustomSelect
                 value={selState}
                 onChange={setSelState}
                 options={states}
                 allLabel="All States"
-                icon={<MapPin className="ug25-sm-icon-xs" />}
+                icon={<MapPin className="pg25-sm-icon-xs" />}
               />
               <CustomSelect
                 value={selManagement}
                 onChange={setSelManagement}
                 options={managements}
                 allLabel="All Types"
-                icon={<Building2 className="ug25-sm-icon-xs" />}
+                icon={<Building2 className="pg25-sm-icon-xs" />}
               />
               <button
                 onClick={() => setShowAdv(!showAdv)}
-                className={`ug25-sm-morefilters-btn ${showAdv ? "ug25-sm-morefilters-active" : "ug25-sm-morefilters-inactive"}`}
+                className={`pg25-sm-morefilters-btn ${showAdv ? "pg25-sm-morefilters-active" : "pg25-sm-morefilters-inactive"}`}
               >
-                <Filter className="ug25-sm-icon-sm" /> More Filters
+                <Filter className="pg25-sm-icon-sm" /> More Filters
                 <ChevronDown
-                  className={`ug25-sm-morefilters-chevron ${showAdv ? "ug25-sm-rotate-open" : ""}`}
+                  className={`pg25-sm-morefilters-chevron ${showAdv ? "pg25-sm-rotate-open" : ""}`}
                 />
               </button>
             </div>
@@ -679,94 +580,64 @@ const UgSeatMatrix2025Page = () => {
 
           {/* Advanced Filters */}
           {showAdv && (
-            <div className="ug25-sm-advfilters">
-              <p className="ug25-sm-advfilters-heading">Advanced Filters</p>
-              <div className="ug25-sm-advfilters-grid">
+            <div className="pg25-sm-advfilters">
+              <p className="pg25-sm-advfilters-heading">Advanced Filters</p>
+              <div className="pg25-sm-advfilters-grid">
                 {/* Specific Institute */}
                 <div>
-                  <label className="ug25-sm-field-label">
-                    Specific Institute
+                  <label className="pg25-sm-field-label">
+                    Specific College
                   </label>
                   <CustomSelect
                     value={selInstitute}
                     onChange={setSelInstitute}
                     options={institutes.slice(0, 100)}
-                    allLabel="All Institutes"
+                    allLabel="All Colleges"
                   />
                 </div>
                 {/* Min Seats */}
                 <div>
-                  <label className="ug25-sm-field-label">Min Seats</label>
+                  <label className="pg25-sm-field-label">Min Seats</label>
                   <input
                     type="number"
-                    placeholder="e.g. 5"
+                    placeholder="e.g. 2"
                     value={minSeats}
                     onChange={(e) => {
                       setMinSeats(e.target.value);
                       setPage(1);
                     }}
-                    className="ug25-sm-field-input"
+                    className="pg25-sm-field-input"
                   />
                 </div>
                 {/* Max Seats */}
                 <div>
-                  <label className="ug25-sm-field-label">Max Seats</label>
+                  <label className="pg25-sm-field-label">Max Seats</label>
                   <input
                     type="number"
-                    placeholder="e.g. 200"
+                    placeholder="e.g. 20"
                     value={maxSeats}
                     onChange={(e) => {
                       setMaxSeats(e.target.value);
                       setPage(1);
                     }}
-                    className="ug25-sm-field-input"
-                  />
-                </div>
-                {/* Min Fee */}
-                <div>
-                  <label className="ug25-sm-field-label">Min Fee (₹)</label>
-                  <input
-                    type="number"
-                    placeholder="e.g. 10000"
-                    value={minFee}
-                    onChange={(e) => {
-                      setMinFee(e.target.value);
-                      setPage(1);
-                    }}
-                    className="ug25-sm-field-input"
+                    className="pg25-sm-field-input"
                   />
                 </div>
               </div>
-              <div className="ug25-sm-advfilters-grid">
-                {/* Max Fee */}
-                <div>
-                  <label className="ug25-sm-field-label">Max Fee (₹)</label>
-                  <input
-                    type="number"
-                    placeholder="e.g. 500000"
-                    value={maxFee}
-                    onChange={(e) => {
-                      setMaxFee(e.target.value);
-                      setPage(1);
-                    }}
-                    className="ug25-sm-field-input"
-                  />
-                </div>
-              </div>
-              <div className="ug25-sm-advfilters-footer">
-                <div className="ug25-sm-advfilters-stats">
-                  <span className="ug25-sm-stats-num-blue">
+              <div className="pg25-sm-advfilters-footer">
+                <div className="pg25-sm-advfilters-stats">
+                  <span className="pg25-sm-stats-num-blue">
                     {filtered.length.toLocaleString()}
                   </span>
-                  <span className="ug25-sm-stats-label">results</span>
-                  <span className="ug25-sm-stats-dot">·</span>
-                  <span className="ug25-sm-stats-num-emerald">
+                  <span className="pg25-sm-stats-label">results</span>
+                  <span className="pg25-sm-stats-dot">·</span>
+                  <span className="pg25-sm-stats-num-emerald">
                     {totalSeats.toLocaleString()}
                   </span>
-                  <span className="ug25-sm-stats-label">total seats</span>
+                  <span className="pg25-sm-stats-label">total seats</span>
                 </div>
-                <button onClick={clearAll} className="ug25-sm-clearall-btn">
-                  <X className="ug25-sm-icon-xs" /> Clear All
+                <button onClick={clearAll} className="pg25-sm-clearall-btn">
+                  <X className="pg25-sm-icon-xs" /> Clear All
                 </button>
               </div>
             </div>
@@ -774,34 +645,33 @@ const UgSeatMatrix2025Page = () => {
         </div>
 
         {/* Table */}
-        <div className="ug25-sm-table-wrapper">
-          <table className="ug25-sm-table">
-            <thead className="ug25-sm-table-head">
+        <div className="pg25-sm-table-wrapper">
+          <table className="pg25-sm-table">
+            <thead className="pg25-sm-table-head">
               <tr>
-                {colVis.sNo && <th className="ug25-sm-th">#</th>}
-                {colVis.State && <th className="ug25-sm-th">State</th>}
-                {colVis.Management && <th className="ug25-sm-th">Type</th>}
+                {colVis.sNo && <th className="pg25-sm-th">#</th>}
+                {colVis.State && <th className="pg25-sm-th">State</th>}
+                {colVis.Management && <th className="pg25-sm-th">Type</th>}
                 {colVis.Institute && (
-                  <th className="ug25-sm-th">Institute Name</th>
+                  <th className="pg25-sm-th">College Name</th>
                 )}
-                {colVis.Course && <th className="ug25-sm-th">Course</th>}
-                {colVis.Seats && <th className="ug25-sm-th-seats">Seats</th>}
-                {colVis.Fee && <th className="ug25-sm-th">Fee (Annual)</th>}
+                {colVis.Course && <th className="pg25-sm-th">Course Name</th>}
+                {colVis.Seats && <th className="pg25-sm-th-seats">Seats</th>}
               </tr>
             </thead>
-            <tbody className="ug25-sm-table-body">
+            <tbody className="pg25-sm-table-body">
               {paged.length === 0 ? (
                 <tr>
                   <td
                     colSpan={Object.values(colVis).filter(Boolean).length}
-                    className="ug25-sm-table-empty"
+                    className="pg25-sm-table-empty"
                   >
-                    <div className="ug25-sm-table-empty-content">
-                      <BarChart2 className="ug25-sm-table-empty-icon" />
-                      <p className="ug25-sm-table-empty-title">
+                    <div className="pg25-sm-table-empty-content">
+                      <BarChart2 className="pg25-sm-table-empty-icon" />
+                      <p className="pg25-sm-table-empty-title">
                         No results found
                       </p>
-                      <p className="ug25-sm-table-empty-subtitle">
+                      <p className="pg25-sm-table-empty-subtitle">
                         Try adjusting your filters
                       </p>
                     </div>
@@ -810,64 +680,56 @@ const UgSeatMatrix2025Page = () => {
               ) : (
                 paged.map((item, i) => {
                   return (
-                    <tr key={i} className="ug25-sm-table-row">
+                    <tr key={i} className="pg25-sm-table-row">
                       {colVis.sNo && (
-                        <td className="ug25-sm-td-sno">
+                        <td className="pg25-sm-td-sno">
                           {(page - 1) * PER_PAGE + i + 1}
                         </td>
                       )}
                       {colVis.State && (
-                        <td className="ug25-sm-td-state">
+                        <td className="pg25-sm-td-state">
                           {item.State || "N/A"}
                         </td>
                       )}
                       {colVis.Management && (
-                        <td className="ug25-sm-td-mgmt">
+                        <td className="pg25-sm-td-mgmt">
                           <span
-                            className={`ug25-sm-badge-mgmt-base ${mgmtColor(item.ManagementGroup)}`}
+                            className={`pg25-sm-badge-mgmt-base ${mgmtColor(item.ManagementGroup)}`}
                           >
                             {item.ManagementGroup}
                           </span>
                         </td>
                       )}
                       {colVis.Institute && (
-                        <td className="ug25-sm-td-institute">
-                          <span className="ug25-sm-institute-clamp">
+                        <td className="pg25-sm-td-institute">
+                          <span className="pg25-sm-institute-clamp">
                             {item.Institute}
                           </span>
                         </td>
                       )}
                       {colVis.Course && (
-                        <td className="ug25-sm-td-course">
+                        <td className="pg25-sm-td-course">
                           <span
-                            className={`ug25-sm-badge-degree-base ${degreeColor(item.DegreeType)}`}
+                            className={`pg25-sm-badge-degree-base ${degreeColor(item.DegreeType)}`}
                           >
                             {item.DegreeType}
+                          </span>
+                          <span className="pg25-sm-course-clamp">
+                            {item.Course}
                           </span>
                         </td>
                       )}
                       {colVis.Seats && (
-                        <td className="ug25-sm-td-seats">
+                        <td className="pg25-sm-td-seats">
                           {item.Seats < 0 ? (
-                            <span className="ug25-sm-value-na">N/A</span>
+                            <span className="pg25-sm-value-na">N/A</span>
                           ) : item.Seats === 0 ? (
-                            <span className="ug25-sm-seats-zero">0</span>
+                            <span className="pg25-sm-seats-zero">0</span>
                           ) : (
                             <span
-                              className={`ug25-sm-seats-value ${item.Seats >= 50 ? "ug25-sm-seats-blue" : item.Seats >= 10 ? "ug25-sm-seats-blue" : "ug25-sm-seats-orange"}`}
+                              className={`pg25-sm-seats-value ${item.Seats >= 10 ? "pg25-sm-seats-blue" : "pg25-sm-seats-orange"}`}
                             >
                               {item.SeatsRaw}
-                            </span>
-                          )}
-                        </td>
-                      )}
-                      {colVis.Fee && (
-                        <td className="ug25-sm-td-fee">
-                          {item.Fee < 0 ? (
-                            <span className="ug25-sm-value-na">N/A</span>
-                          ) : (
-                            <span className={feeColor(item.Fee)}>
-                              {item.FeeRaw}
                             </span>
                           )}
                         </td>
@@ -881,28 +743,28 @@ const UgSeatMatrix2025Page = () => {
         </div>
 
         {/* Pagination */}
-        <div className="ug25-sm-pagination">
-          <div className="ug25-sm-pagination-row">
-            <div className="ug25-sm-pagination-info">
+        <div className="pg25-sm-pagination">
+          <div className="pg25-sm-pagination-row">
+            <div className="pg25-sm-pagination-info">
               Showing{" "}
-              <span className="ug25-sm-pagination-info-bold">
+              <span className="pg25-sm-pagination-info-bold">
                 {filtered.length > 0 ? (page - 1) * PER_PAGE + 1 : 0}–
                 {Math.min(page * PER_PAGE, filtered.length)}
               </span>{" "}
               of{" "}
-              <span className="ug25-sm-pagination-info-bold">
+              <span className="pg25-sm-pagination-info-bold">
                 {filtered.length.toLocaleString()}
               </span>
             </div>
-            <div className="ug25-sm-pagination-controls">
+            <div className="pg25-sm-pagination-controls">
               <button
                 onClick={() => setPage(Math.max(1, page - 1))}
                 disabled={page === 1}
-                className="ug25-sm-pagination-nav-btn"
+                className="pg25-sm-pagination-nav-btn"
               >
-                <ChevronLeft className="ug25-sm-icon-xs" />
+                <ChevronLeft className="pg25-sm-icon-xs" />
               </button>
-              <div className="ug25-sm-pagination-numbers">
+              <div className="pg25-sm-pagination-numbers">
                 {Array.from({ length: Math.min(5, totalPages) }, (_, i) => {
                   const n =
                     totalPages <= 5
@@ -913,7 +775,7 @@ const UgSeatMatrix2025Page = () => {
                     <button
                       key={n}
                       onClick={() => setPage(n)}
-                      className={`ug25-sm-pagenum-btn ${page === n ? "ug25-sm-pagenum-active" : "ug25-sm-pagenum-inactive"}`}
+                      className={`pg25-sm-pagenum-btn ${page === n ? "pg25-sm-pagenum-active" : "pg25-sm-pagenum-inactive"}`}
                     >
                       {n}
                     </button>
@@ -923,9 +785,9 @@ const UgSeatMatrix2025Page = () => {
               <button
                 onClick={() => setPage(Math.min(totalPages, page + 1))}
                 disabled={page === totalPages || totalPages === 0}
-                className="ug25-sm-pagination-nav-btn"
+                className="pg25-sm-pagination-nav-btn"
               >
-                <ChevronRight className="ug25-sm-icon-xs" />
+                <ChevronRight className="pg25-sm-icon-xs" />
               </button>
             </div>
           </div>
@@ -935,4 +797,4 @@ const UgSeatMatrix2025Page = () => {
   );
 };
 
-export default UgSeatMatrix2025Page;
+export default PgSeatMatrix2025Page;

@@ -465,8 +465,8 @@ const UgClosingRanks2025Page = () => {
                 <ArrowLeft className="ug25-cr-icon-sm" />
               </button>
               <div className="ug25-cr-header-text">
-                <h1>NEET UG Closing Ranks</h1>
-                <p>2025 closing ranks by round</p>
+                <h1>Closing Ranks</h1>
+                <p>NEET UG 2025</p>
               </div>
             </div>
             <span className="ug25-cr-records-count">

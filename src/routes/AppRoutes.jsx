@@ -28,6 +28,7 @@ import AnnouncementsPage from "../pages/AnnouncementsPage";
 import ContactUsPage from "../pages/ContactUsPage";
 import PrivacyPolicy from "../pages/policies/PrivacyPolicy";
 import TermsConditions from "../pages/policies/TermsConditions";
+import ComingSoonPage from "../pages/ComingSoonPage";
 import NotFound from "../pages/NotFound";
 
 // Dashboard
@@ -70,6 +71,7 @@ function AppRoutes() {
         <Route path="/contact-us" element={<ContactUsPage />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/terms" element={<TermsConditions />} />
+        <Route path="/coming-soon" element={<ComingSoonPage />} />
         <Route path="*" element={<NotFound />} />
       </Route>
 

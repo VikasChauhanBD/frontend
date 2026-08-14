@@ -1,0 +1,134 @@
+.coming-soon {
+  width: 100%;
+  height: 100dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+  background: linear-gradient(135deg, #f8fbff 0%, #eef4ff 100%);
+}
+
+.coming-soon-card {
+  width: 100%;
+  max-width: 720px;
+  padding: 70px 50px;
+  text-align: center;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 28px;
+  box-shadow: 0 20px 60px rgba(15, 23, 42, 0.08);
+}
+
+.coming-soon-icon {
+  width: 82px;
+  height: 82px;
+  margin: 0 auto 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(245, 158, 11, 0.12);
+  color: #f59e0b;
+  font-size: 38px;
+}
+
+.coming-soon-badge {
+  display: inline-block;
+  margin-bottom: 18px;
+  padding: 8px 16px;
+  border-radius: 50px;
+  background: #eef4ff;
+  color: #155dfc;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+
+.coming-soon-card h1 {
+  margin: 0 0 18px;
+  color: #0f172a;
+  font-size: 46px;
+  line-height: 1.15;
+  font-weight: 700;
+}
+
+.coming-soon-card h1 span {
+  color: #155dfc;
+}
+
+.coming-soon-card p {
+  max-width: 560px;
+  margin: 0 auto 32px;
+  color: #64748b;
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+.coming-soon-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  height: 52px;
+  padding: 0 24px;
+  border: none;
+  border-radius: 12px;
+  background: #155dfc;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.coming-soon-btn:hover {
+  background: #0d4fe8;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(21, 93, 252, 0.25);
+}
+
+/* -------------------- Responsive ------------------- */
+
+@media (max-width: 868px) {
+  .coming-soon {
+    padding: 40px 20px;
+  }
+
+  .coming-soon-card {
+    padding: 55px 30px;
+    border-radius: 24px;
+  }
+
+  .coming-soon-card h1 {
+    font-size: 38px;
+  }
+}
+
+@media (max-width: 568px) {
+  .coming-soon {
+    padding: 30px 16px;
+  }
+
+  .coming-soon-card {
+    padding: 45px 20px;
+    border-radius: 20px;
+  }
+
+  .coming-soon-icon {
+    width: 70px;
+    height: 70px;
+    font-size: 32px;
+  }
+
+  .coming-soon-card h1 {
+    font-size: 30px;
+  }
+
+  .coming-soon-card p {
+    font-size: 15px;
+  }
+
+  .coming-soon-btn {
+    width: 100%;
+  }
+}

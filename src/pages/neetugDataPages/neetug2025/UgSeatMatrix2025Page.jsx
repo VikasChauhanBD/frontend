@@ -11,8 +11,6 @@ import {
   ChevronDown,
   ChevronLeft,
   ChevronRight,
-  Building2,
-  MapPin,
   BarChart2,
   GraduationCap,
 } from "lucide-react";
@@ -452,27 +450,86 @@ const UgSeatMatrix2025Page = () => {
   // ─────────────────────────────────────────
   // CUSTOM SELECT COMPONENT
   // ─────────────────────────────────────────
-  const CustomSelect = ({ value, onChange, options, allLabel, icon }) => (
-    <div className="ug25-sm-cs-wrapper">
-      {icon && <span className="ug25-sm-cs-icon">{icon}</span>}
-      <select
-        value={value}
-        onChange={(e) => {
-          onChange(e.target.value);
-          setPage(1);
-        }}
-        className={`ug25-sm-cs-select ${icon ? "ug25-sm-cs-select-icon" : "ug25-sm-cs-select-noicon"}`}
-      >
-        <option value="all">{allLabel}</option>
-        {options.map((o) => (
-          <option key={o} value={o}>
-            {o}
-          </option>
-        ))}
-      </select>
-      <ChevronDown className="ug25-sm-cs-chevron" />
-    </div>
-  );
+  const CustomSelect = ({ value, onChange, options, allLabel, icon }) => {
+    const [isOpen, setIsOpen] = useState(false);
+    const [searchTerm, setSearchTerm] = useState("");
+
+    const filteredOptions = options.filter((o) =>
+      o.toLowerCase().includes(searchTerm.toLowerCase()),
+    );
+
+    return (
+      <div className="ug25-sm-cs-wrapper">
+        <button
+          onClick={() => setIsOpen(!isOpen)}
+          className="ug25-sm-cs-trigger"
+        >
+          {icon && <span className="ug25-sm-cs-icon-inline">{icon}</span>}
+          <span className="ug25-sm-cs-value">
+            {value === "all" ? allLabel : value}
+          </span>
+          <ChevronDown
+            className={`ug25-sm-cs-chevron-static ${isOpen ? "ug25-sm-rotate-open" : ""}`}
+          />
+        </button>
+
+        {isOpen && (
+          <>
+            <div
+              className="ug25-sm-select-overlay"
+              onClick={() => {
+                setIsOpen(false);
+                setSearchTerm("");
+              }}
+            />
+            <div className="ug25-sm-select-dropdown">
+              <div className="ug25-sm-select-search-wrap">
+                <input
+                  type="text"
+                  placeholder="Search..."
+                  value={searchTerm}
+                  onChange={(e) => setSearchTerm(e.target.value)}
+                  className="ug25-sm-select-search-input"
+                  onClick={(e) => e.stopPropagation()}
+                />
+              </div>
+              <div className="ug25-sm-select-options">
+                <div
+                  onClick={() => {
+                    onChange("all");
+                    setPage(1);
+                    setIsOpen(false);
+                    setSearchTerm("");
+                  }}
+                  className={`ug25-sm-select-option ${
+                    value === "all" ? "ug25-sm-select-option-selected" : ""
+                  }`}
+                >
+                  {allLabel}
+                </div>
+                {filteredOptions.map((o) => (
+                  <div
+                    key={o}
+                    onClick={() => {
+                      onChange(o);
+                      setPage(1);
+                      setIsOpen(false);
+                      setSearchTerm("");
+                    }}
+                    className={`ug25-sm-select-option ${
+                      value === o ? "ug25-sm-select-option-selected" : ""
+                    }`}
+                  >
+                    {o}
+                  </div>
+                ))}
+              </div>
+            </div>
+          </>
+        )}
+      </div>
+    );
+  };
 
   // ─────────────────────────────────────────
   // LOADING STATE
@@ -563,6 +620,9 @@ const UgSeatMatrix2025Page = () => {
                 <p className="ug25-sm-header-subtitle">NEET UG 2025</p>
               </div>
             </div>
+            <span className="ug25-sm-records-count">
+              {filtered.length.toLocaleString()} Records
+            </span>
           </div>
         </div>
 
@@ -578,7 +638,7 @@ const UgSeatMatrix2025Page = () => {
         <div className="ug25-sm-quickfilters-section">
           <div className="ug25-sm-quickfilters-row">
             {/* Course filter */}
-            {["all", "MBBS", "BDS"].map((d) => (
+            {["MBBS", "BDS", "all"].map((d) => (
               <button
                 key={d}
                 onClick={() => {
@@ -588,27 +648,6 @@ const UgSeatMatrix2025Page = () => {
                 className={`ug25-sm-pill-btn ${selCourse === d ? "ug25-sm-pill-blue-active" : "ug25-sm-pill-gray-inactive"}`}
               >
                 {d === "all" ? "All Courses" : d}
-              </button>
-            ))}
-
-            <span className="ug25-sm-pill-separator">|</span>
-
-            {/* Fee category filter */}
-            {[
-              { key: "all", label: "All Types" },
-              { key: "govt", label: "🏛️ Government" },
-              { key: "private", label: "🏢 Private" },
-              { key: "highfee", label: "💰 High Fee (>10L)" },
-            ].map((f) => (
-              <button
-                key={f.key}
-                onClick={() => {
-                  setFeeCategory(f.key);
-                  setPage(1);
-                }}
-                className={`ug25-sm-pill-btn ${feeCategory === f.key ? "ug25-sm-pill-indigo-active" : "ug25-sm-pill-gray-inactive"}`}
-              >
-                {f.label}
               </button>
             ))}
 
@@ -656,14 +695,19 @@ const UgSeatMatrix2025Page = () => {
                 onChange={setSelState}
                 options={states}
                 allLabel="All States"
-                icon={<MapPin className="ug25-sm-icon-xs" />}
               />
               <CustomSelect
                 value={selManagement}
                 onChange={setSelManagement}
                 options={managements}
                 allLabel="All Types"
-                icon={<Building2 className="ug25-sm-icon-xs" />}
+              />
+              <CustomSelect
+                value={selInstitute}
+                onChange={setSelInstitute}
+                options={institutes.slice(0, 100)}
+                allLabel="All Institutes"
+                icon={<GraduationCap className="ug25-sm-icon-xs" />}
               />
               <button
                 onClick={() => setShowAdv(!showAdv)}
@@ -682,18 +726,6 @@ const UgSeatMatrix2025Page = () => {
             <div className="ug25-sm-advfilters">
               <p className="ug25-sm-advfilters-heading">Advanced Filters</p>
               <div className="ug25-sm-advfilters-grid">
-                {/* Specific Institute */}
-                <div>
-                  <label className="ug25-sm-field-label">
-                    Specific Institute
-                  </label>
-                  <CustomSelect
-                    value={selInstitute}
-                    onChange={setSelInstitute}
-                    options={institutes.slice(0, 100)}
-                    allLabel="All Institutes"
-                  />
-                </div>
                 {/* Min Seats */}
                 <div>
                   <label className="ug25-sm-field-label">Min Seats</label>
@@ -736,8 +768,6 @@ const UgSeatMatrix2025Page = () => {
                     className="ug25-sm-field-input"
                   />
                 </div>
-              </div>
-              <div className="ug25-sm-advfilters-grid">
                 {/* Max Fee */}
                 <div>
                   <label className="ug25-sm-field-label">Max Fee (₹)</label>
@@ -759,11 +789,6 @@ const UgSeatMatrix2025Page = () => {
                     {filtered.length.toLocaleString()}
                   </span>
                   <span className="ug25-sm-stats-label">results</span>
-                  <span className="ug25-sm-stats-dot">·</span>
-                  <span className="ug25-sm-stats-num-emerald">
-                    {totalSeats.toLocaleString()}
-                  </span>
-                  <span className="ug25-sm-stats-label">total seats</span>
                 </div>
                 <button onClick={clearAll} className="ug25-sm-clearall-btn">
                   <X className="ug25-sm-icon-xs" /> Clear All

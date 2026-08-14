@@ -646,18 +646,6 @@ const PgSeatMatrix2025Page = () => {
             <div className="pg25-sm-advfilters">
               <p className="pg25-sm-advfilters-heading">Advanced Filters</p>
               <div className="pg25-sm-advfilters-grid">
-                {/* Specific Institute */}
-                <div>
-                  <label className="pg25-sm-field-label">
-                    Specific College
-                  </label>
-                  <CustomSelect
-                    value={selInstitute}
-                    onChange={setSelInstitute}
-                    options={institutes.slice(0, 100)}
-                    allLabel="All Colleges"
-                  />
-                </div>
                 {/* Min Seats */}
                 <div>
                   <label className="pg25-sm-field-label">Min Seats</label>
@@ -693,11 +681,6 @@ const PgSeatMatrix2025Page = () => {
                     {filtered.length.toLocaleString()}
                   </span>
                   <span className="pg25-sm-stats-label">results</span>
-                  <span className="pg25-sm-stats-dot">·</span>
-                  <span className="pg25-sm-stats-num-emerald">
-                    {totalSeats.toLocaleString()}
-                  </span>
-                  <span className="pg25-sm-stats-label">total seats</span>
                 </div>
                 <button onClick={clearAll} className="pg25-sm-clearall-btn">
                   <X className="pg25-sm-icon-xs" /> Clear All

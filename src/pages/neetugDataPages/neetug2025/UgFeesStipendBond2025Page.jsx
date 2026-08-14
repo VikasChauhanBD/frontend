@@ -452,37 +452,37 @@ const UgFeesStipendBond2025Page = () => {
 
         <div className="ug25-fsb-quota-bar">
           <div className="ug25-fsb-quota-row">
-            {quotas
-              .filter((q) => q !== "all")
-              .map((quota) => (
+            {bondYearsOptions
+              .filter((y) => y !== "all")
+              .map((year) => (
                 <button
-                  key={quota}
+                  key={year}
                   onClick={() => {
-                    setSelectedQuota(quota);
+                    setSelectedBondYears(year);
                     setCurrentPage(1);
                   }}
                   className={`ug25-fsb-quota-btn ${
-                    selectedQuota === quota
+                    selectedBondYears === year
                       ? "ug25-fsb-quota-btn-active"
                       : "ug25-fsb-quota-btn-inactive"
                   }`}
                 >
-                  {quota}
+                  {year}
                 </button>
               ))}
 
             <button
               onClick={() => {
-                setSelectedQuota("all");
+                setSelectedBondYears("all");
                 setCurrentPage(1);
               }}
               className={`ug25-fsb-quota-btn ${
-                selectedQuota === "all"
+                selectedBondYears === "all"
                   ? "ug25-fsb-quota-btn-all-active"
                   : "ug25-fsb-quota-btn-inactive"
               }`}
             >
-              All Quotas
+              All Years Bond
             </button>
 
             <button
@@ -490,7 +490,7 @@ const UgFeesStipendBond2025Page = () => {
               className="ug25-fsb-showhide-btn"
             >
               <Eye className="ug25-fsb-icon-sm" />
-              Show/Hide
+              Columns
             </button>
           </div>
         </div>
@@ -522,6 +522,17 @@ const UgFeesStipendBond2025Page = () => {
                 />
 
                 <CustomSelect
+                  value={selectedQuota}
+                  onChange={(value) => {
+                    setSelectedQuota(value);
+                    setCurrentPage(1);
+                  }}
+                  options={quotas}
+                  placeholder="Select Quota"
+                  allLabel="All Quotas"
+                />
+
+                <CustomSelect
                   value={selectedCourse}
                   onChange={(value) => {
                     setSelectedCourse(value);
@@ -548,17 +559,6 @@ const UgFeesStipendBond2025Page = () => {
             {showAdvancedFilters && (
               <div className="ug25-fsb-advanced-filters">
                 <div className="ug25-fsb-advanced-grid">
-                  <CustomSelect
-                    value={selectedBondYears}
-                    onChange={(value) => {
-                      setSelectedBondYears(value);
-                      setCurrentPage(1);
-                    }}
-                    options={bondYearsOptions}
-                    placeholder="Select Bond Years"
-                    allLabel="All Bond Years"
-                  />
-
                   <div className="ug25-fsb-range-group">
                     <input
                       type="number"

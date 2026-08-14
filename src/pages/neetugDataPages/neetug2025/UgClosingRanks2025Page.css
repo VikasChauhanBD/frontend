@@ -172,7 +172,6 @@
   overflow-x: hidden;
   padding: 0;
   color: #1f2937;
-  font-family: Inter, system-ui, sans-serif;
   background: linear-gradient(180deg, #f8fafc 0%, #f3f0ff 100%);
 }
 
@@ -241,17 +240,13 @@
 }
 
 .ug25-cr-header-text h1 {
-  margin: 0;
   font-size: 1.25rem;
-  line-height: 1.75rem;
   font-weight: 700;
   letter-spacing: -0.01em;
 }
 
 .ug25-cr-header-text p {
-  margin: 0.15rem 0 0;
-  font-size: 0.75rem;
-  line-height: 1rem;
+  font-size: 14px;
   color: #ede9fe;
   font-weight: 500;
 }

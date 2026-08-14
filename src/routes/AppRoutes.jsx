@@ -1,8 +1,10 @@
 import { Routes, Route } from "react-router-dom";
 
+// Route
 import ProtectedRoute from "./ProtectedRoute";
 import PublicRoute from "./PublicRoute";
 
+// Layout
 import MainLayout from "../layouts/MainLayout";
 import AuthLayout from "../layouts/AuthLayout";
 import DashboardLayout from "../layouts/DashboardLayout";
@@ -28,7 +30,7 @@ import PrivacyPolicy from "../pages/policies/PrivacyPolicy";
 import TermsConditions from "../pages/policies/TermsConditions";
 import NotFound from "../pages/NotFound";
 
-// Protected
+// Dashboard
 import NeetpgDashboard from "../pages/dashboard/NeetpgDashboard";
 import NeetugDashboard from "../pages/dashboard/NeetugDashboard";
 import InicetDashboard from "../pages/dashboard/InicetDashboard";

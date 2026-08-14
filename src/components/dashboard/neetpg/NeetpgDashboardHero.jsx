@@ -45,12 +45,12 @@ const ALLOTMENTS_PERIODS = [
     value: "2025",
     link: "/dashboard/neetpg-allotments-2025",
   },
-  {
-    id: "2024",
-    label: "Year",
-    value: "2024",
-    link: "/dashboard/neetpg-allotments-2024",
-  },
+  // {
+  //   id: "2024",
+  //   label: "Year",
+  //   value: "2024",
+  //   link: "/dashboard/neetpg-allotments-2024",
+  // },
 ];
 
 const CLOSING_RANKS_PERIODS = [
@@ -60,12 +60,12 @@ const CLOSING_RANKS_PERIODS = [
     value: "2025",
     link: "/dashboard/neetpg-closing-ranks-2025",
   },
-  {
-    id: "2024",
-    label: "Year",
-    value: "2024",
-    link: "/dashboard/neetpg-closing-ranks-2024",
-  },
+  // {
+  //   id: "2024",
+  //   label: "Year",
+  //   value: "2024",
+  //   link: "/dashboard/neetpg-closing-ranks-2024",
+  // },
 ];
 
 const SEAT_MATRIX_PERIODS = [
@@ -75,12 +75,12 @@ const SEAT_MATRIX_PERIODS = [
     value: "2025",
     link: "/dashboard/neetpg-seat-matrix-2025",
   },
-  {
-    id: "2024",
-    label: "Year",
-    value: "2024",
-    link: "/dashboard/neetpg-seat-matrix-2024",
-  },
+  // {
+  //   id: "2024",
+  //   label: "Year",
+  //   value: "2024",
+  //   link: "/dashboard/neetpg-seat-matrix-2024",
+  // },
 ];
 
 const FEE_STIPEND_BOND_PERIODS = [
@@ -90,12 +90,12 @@ const FEE_STIPEND_BOND_PERIODS = [
     value: "2025",
     link: "/dashboard/neetpg-fee-stipend-bond-2025",
   },
-  {
-    id: "2024",
-    label: "Year",
-    value: "2024",
-    link: "/dashboard/neetpg-fee-stipend-bond-2024",
-  },
+  // {
+  //   id: "2024",
+  //   label: "Year",
+  //   value: "2024",
+  //   link: "/dashboard/neetpg-fee-stipend-bond-2024",
+  // },
 ];
 
 function NeetpgDashboardHero() {

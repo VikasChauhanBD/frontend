@@ -335,7 +335,7 @@
 }
 
 .inicet-jan26-col-group-label {
-  font-size: 0.7rem;
+  font-size: 14px;
   line-height: 1rem;
   font-weight: 700;
   color: #7c3aed;
@@ -464,7 +464,7 @@
 }
 
 .inicet-jan26-app-subtitle {
-  font-size: 0.75rem;
+  font-size: 14px;
   line-height: 1rem;
   color: #ede9fe;
   font-weight: 500;
@@ -473,7 +473,7 @@
 .inicet-jan26-records-count {
   display: block;
   color: #ffffff;
-  font-size: 0.75rem;
+  font-size: 14px;
   line-height: 1rem;
   font-weight: 600;
   background-color: rgba(255, 255, 255, 0.18);
@@ -481,81 +481,60 @@
   border-radius: 9999px;
 }
 
-.inicet-jan26-error-banner {
-  background-color: #fffbeb;
-  border-bottom: 1px solid #fde68a;
-  padding: 0.6rem 1rem;
-  font-size: 0.75rem;
-  color: #b45309;
-  text-align: center;
-  font-weight: 500;
-}
-
-.inicet-jan26-stats-section {
+.inicet-jan26-round-bar {
   background-color: #ffffff;
   border-bottom: 1px solid #eef2f7;
   padding: 0.85rem 1.25rem;
 }
 
-.inicet-jan26-stats-grid {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 0.75rem;
-}
-
-.inicet-jan26-stat-card {
-  border-radius: 0.85rem;
-  padding: 0.85rem;
-  text-align: center;
-}
-
-.inicet-jan26-stat-card-blue {
-  background: linear-gradient(135deg, #eff6ff, #dbeafe);
-}
-
-.inicet-jan26-stat-card-purple {
-  background: linear-gradient(135deg, #f5f3ff, #ede9fe);
-}
-
-.inicet-jan26-stat-card-amber {
-  background: linear-gradient(135deg, #fffbeb, #fef3c7);
-}
-
-.inicet-jan26-stat-icon-wrap {
-  width: 2rem;
-  height: 2rem;
-  border-radius: 9999px;
+.inicet-jan26-round-row {
   display: flex;
   align-items: center;
-  justify-content: center;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 0.5rem;
+  gap: 0.5rem;
+  flex-wrap: wrap;
 }
 
-.inicet-jan26-stat-icon-blue {
-  background-color: #155dfc;
-}
-
-.inicet-jan26-stat-icon-purple {
-  background-color: #7c3aed;
-}
-
-.inicet-jan26-stat-icon-amber {
-  background-color: #f59e0b;
-}
-
-.inicet-jan26-stat-value {
+.inicet-jan26-round-btn {
+  padding: 0.5rem 1rem;
   font-size: 0.875rem;
   line-height: 1.25rem;
   font-weight: 700;
-  color: #1e293b;
+  border-radius: 9999px;
+  border: none;
+  cursor: pointer;
+  white-space: nowrap;
+  transition:
+    background-color 150ms ease,
+    color 150ms ease;
 }
 
-.inicet-jan26-stat-label {
-  font-size: 0.7rem;
-  line-height: 1rem;
-  color: #64748b;
+.inicet-jan26-round-btn-active {
+  background-color: #155dfc;
+  color: #ffffff;
+}
+
+.inicet-jan26-round-btn-inactive {
+  background-color: #dbeafe;
+  color: #1d4ed8;
+}
+
+.inicet-jan26-round-btn-inactive:hover {
+  background-color: #bfdbfe;
+}
+
+.inicet-jan26-round-actions {
+  margin-left: auto;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.inicet-jan26-error-banner {
+  background-color: #fffbeb;
+  border-bottom: 1px solid #fde68a;
+  padding: 0.6rem 1rem;
+  font-size: 14px;
+  color: #b45309;
+  text-align: center;
   font-weight: 500;
 }
 
@@ -683,10 +662,30 @@
   padding-top: 0.85rem;
 }
 
-.inicet-jan26-adv-filters-grid {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+.inicet-jan26-adv-filters-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
   gap: 0.75rem;
+}
+
+.inicet-jan26-range-input {
+  width: 100%;
+  min-width: 120px;
+  max-width: 160px;
+  padding: 0.6rem 0.9rem;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 0.75rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  color: #0f172a;
+  background-color: #ffffff;
+}
+
+.inicet-jan26-range-input:focus {
+  outline: none;
+  border-color: #7c3aed;
+  box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.15);
 }
 
 .inicet-jan26-clear-btn {
@@ -699,6 +698,7 @@
   line-height: 1.25rem;
   font-weight: 600;
   background-color: #ffffff;
+  white-space: nowrap;
   transition:
     background-color 150ms ease,
     border-color 150ms ease;
@@ -710,20 +710,13 @@
   color: #b91c1c;
 }
 
-.inicet-jan26-filtered-count-row {
+.inicet-jan26-filtered-count-inline {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 0.6rem;
   font-size: 0.875rem;
   line-height: 1.25rem;
   color: #353535;
-  background: linear-gradient(to right, #f5f3ff, #eff6ff);
-  border-radius: 0.75rem;
-  padding: 0.6rem 0.85rem;
-  margin-top: 0.85rem;
-  border: 1px solid #ede9fe;
+  white-space: nowrap;
 }
 
 .inicet-jan26-filtered-count-num {
@@ -961,7 +954,7 @@
 
 .inicet-jan26-page-num-btn {
   padding: 0.3rem 0.6rem;
-  font-size: 0.75rem;
+  font-size: 14px;
   line-height: 1rem;
   font-weight: 600;
   border-radius: 0.55rem;
@@ -1002,10 +995,6 @@
 }
 
 @media (max-width: 768px) {
-  .inicet-jan26-stats-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
   .inicet-jan26-records-count {
     display: none;
   }
@@ -1014,8 +1003,13 @@
     flex-direction: column;
   }
 
-  .inicet-jan26-adv-filters-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+  .inicet-jan26-adv-filters-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .inicet-jan26-range-input {
+    max-width: none;
   }
 
   .inicet-jan26-columns-btn {

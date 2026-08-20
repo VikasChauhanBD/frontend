@@ -1,7 +1,10 @@
 .support-section {
   position: relative;
   padding: 100px 20px;
-  background: #ffffff;
+  background:
+    radial-gradient(circle at top left, #eef4ff 0%, transparent 35%),
+    radial-gradient(circle at bottom right, #fff3ea 0%, transparent 30%),
+    radial-gradient(circle at 80% 20%, #f3ecff 0%, transparent 30%), #f8fbff;
 }
 
 .support-container {

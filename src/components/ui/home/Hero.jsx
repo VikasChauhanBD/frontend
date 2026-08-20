@@ -1,38 +1,16 @@
-import React, { useRef } from "react";
+import React from "react";
 import { Typewriter } from "react-simple-typewriter";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useGSAP } from "@gsap/react";
 import "./Hero.css";
 import { useNavigate } from "react-router-dom";
 
-gsap.registerPlugin(ScrollTrigger);
-
 function Hero() {
   const navigate = useNavigate();
-  const heroRef = useRef(null);
-  const imageRef = useRef(null);
-
-  useGSAP(() => {
-    gsap.to(imageRef.current, {
-      scale: 1.15,
-      ease: "none",
-      scrollTrigger: {
-        trigger: heroRef.current,
-        start: "top top",
-        end: "+=1000", // Increase for slower zoom
-        scrub: true,
-        pin: true,
-        anticipatePin: 1,
-      },
-    });
-  }, []);
 
   return (
     <section className="hero">
       <div className="hero-container">
         <div className="hero-content">
-          <span className="hero-badge">🎓 100% FREE Medical Counselling</span>
+          <span className="hero-badge">100% FREE Medical Counselling</span>
 
           <h1>
             Your Ultimate Guide to
@@ -72,14 +50,6 @@ function Hero() {
               Get Started &rarr;
             </button>
           </div>
-        </div>
-
-        <div className="hero-image">
-          <img
-            ref={imageRef}
-            src="https://cdn.dribbble.com/userupload/47828308/file/096f4fed81b7a6ef11d4504fbfc973ae.png"
-            alt="Medical Counselling"
-          />
         </div>
       </div>
 

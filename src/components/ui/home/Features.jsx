@@ -100,13 +100,6 @@ function Features() {
         });
       });
 
-      gsap.to(".floating-ring", {
-        rotate: 360,
-        duration: 25,
-        ease: "none",
-        repeat: -1,
-      });
-
       gsap.to(".floating-dot", {
         y: -15,
         repeat: -1,
@@ -123,16 +116,13 @@ function Features() {
 
   return (
     <section className="feature-section" ref={sectionRef}>
-      <div className="floating-ring ring1"></div>
-      <div className="floating-ring ring2"></div>
-
       <span className="floating-dot dot1"></span>
       <span className="floating-dot dot2"></span>
       <span className="floating-dot dot3"></span>
 
       <div className="feature-container">
         <div className="feature-heading">
-          <h2> Say hello 👋 to Believers Consultancy</h2>
+          <h2> Say hello to Believers Consultancy</h2>
           <p>The most effective way to choose your best seat.</p>
         </div>
 

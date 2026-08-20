@@ -138,6 +138,9 @@ const RankCell = ({ val }) => {
   return <span className={`inicet-jul25-rank-value ${tier}`}>{val}</span>;
 };
 
+// ── Round pill label (Round 1 → R1) ─────────────────────────────────────
+const roundLabel = (r) => r.replace(/round\s*/i, "R").trim();
+
 // ── Main component ─────────────────────────────────────────────────────────
 const InicetAllotmentsJuly2025Page = () => {
   const navigate = useNavigate();
@@ -151,6 +154,8 @@ const InicetAllotmentsJuly2025Page = () => {
   const [selCourse, setSelCourse] = useState("all");
   const [selQuota, setSelQuota] = useState("all");
   const [selCategory, setSelCategory] = useState("all");
+  const [minRank, setMinRank] = useState("");
+  const [maxRank, setMaxRank] = useState("");
 
   // UI state
   const [page, setPage] = useState(1);
@@ -295,6 +300,15 @@ const InicetAllotmentsJuly2025Page = () => {
       if (selQuota !== "all" && item.Quota !== selQuota) return false;
       if (selCategory !== "all" && item.Category !== selCategory) return false;
 
+      if (minRank || maxRank) {
+        const rankNum = parseInt(
+          String(item["AI Rank"]).replace(/[^0-9]/g, ""),
+        );
+        if (isNaN(rankNum)) return false;
+        if (minRank && rankNum < parseInt(minRank)) return false;
+        if (maxRank && rankNum > parseInt(maxRank)) return false;
+      }
+
       if (s) {
         const hay =
           `${item.Round} ${item["AI Rank"]} ${item.State} ${item.Institute} ${item.Course} ${item.Quota} ${item.Category}`.toLowerCase();
@@ -302,11 +316,30 @@ const InicetAllotmentsJuly2025Page = () => {
       }
       return true;
     });
-  }, [data, selRound, selState, selCourse, selQuota, selCategory, searchTerm]);
+  }, [
+    data,
+    selRound,
+    selState,
+    selCourse,
+    selQuota,
+    selCategory,
+    minRank,
+    maxRank,
+    searchTerm,
+  ]);
 
   useEffect(() => {
     setPage(1);
-  }, [selRound, selState, selCourse, selQuota, selCategory, searchTerm]);
+  }, [
+    selRound,
+    selState,
+    selCourse,
+    selQuota,
+    selCategory,
+    minRank,
+    maxRank,
+    searchTerm,
+  ]);
 
   const totalPages = Math.max(1, Math.ceil(filtered.length / PER_PAGE));
   const paged = filtered.slice((page - 1) * PER_PAGE, page * PER_PAGE);
@@ -318,6 +351,8 @@ const InicetAllotmentsJuly2025Page = () => {
     setSelCourse("all");
     setSelQuota("all");
     setSelCategory("all");
+    setMinRank("");
+    setMaxRank("");
     setPage(1);
     setColVis(DEFAULT_VIS);
   };
@@ -416,7 +451,7 @@ const InicetAllotmentsJuly2025Page = () => {
                 <h1 className="inicet-jul25-app-title">
                   INICET Allotments Data
                 </h1>
-                <p className="inicet-jul25-app-subtitle">July 2026</p>
+                <p className="inicet-jul25-app-subtitle">July 2025</p>
               </div>
             </div>
             <span className="inicet-jul25-records-count">
@@ -425,41 +460,49 @@ const InicetAllotmentsJuly2025Page = () => {
           </div>
         </div>
 
-        {/* ── Stats cards ── */}
-        <div className="inicet-jul25-stats-section">
-          <div className="inicet-jul25-stats-grid">
-            <div className="inicet-jul25-stat-card inicet-jul25-stat-card-blue">
-              <div className="inicet-jul25-stat-icon-wrap inicet-jul25-stat-icon-blue">
-                <Users className="inicet-jul25-icon-sm" />
-              </div>
-              <div className="inicet-jul25-stat-value">{data.length}</div>
-              <div className="inicet-jul25-stat-label">Total Allotments</div>
-            </div>
+        {/* ── Round pills + Columns ── */}
+        <div className="inicet-jul25-round-bar">
+          <div className="inicet-jul25-round-row">
+            {rounds
+              .filter((r) => r !== "all")
+              .map((r) => (
+                <button
+                  key={r}
+                  onClick={() => {
+                    setSelRound(r);
+                    setPage(1);
+                  }}
+                  className={`inicet-jul25-round-btn ${
+                    selRound === r
+                      ? "inicet-jul25-round-btn-active"
+                      : "inicet-jul25-round-btn-inactive"
+                  }`}
+                >
+                  {roundLabel(r)}
+                </button>
+              ))}
 
-            <div className="inicet-jul25-stat-card inicet-jul25-stat-card-blue">
-              <div className="inicet-jul25-stat-icon-wrap inicet-jul25-stat-icon-blue">
-                <GraduationCap className="inicet-jul25-icon-sm" />
-              </div>
-              <div className="inicet-jul25-stat-value">
-                {courses.length - 1}
-              </div>
-              <div className="inicet-jul25-stat-label">Courses</div>
-            </div>
+            <button
+              onClick={() => {
+                setSelRound("all");
+                setPage(1);
+              }}
+              className={`inicet-jul25-round-btn ${
+                selRound === "all"
+                  ? "inicet-jul25-round-btn-active"
+                  : "inicet-jul25-round-btn-inactive"
+              }`}
+            >
+              All Rounds
+            </button>
 
-            <div className="inicet-jul25-stat-card inicet-jul25-stat-card-purple">
-              <div className="inicet-jul25-stat-icon-wrap inicet-jul25-stat-icon-purple">
-                <Building2 className="inicet-jul25-icon-sm" />
-              </div>
-              <div className="inicet-jul25-stat-value">{totalInstitutes}</div>
-              <div className="inicet-jul25-stat-label">Institutes</div>
-            </div>
-
-            <div className="inicet-jul25-stat-card inicet-jul25-stat-card-amber">
-              <div className="inicet-jul25-stat-icon-wrap inicet-jul25-stat-icon-amber">
-                <Award className="inicet-jul25-icon-sm" />
-              </div>
-              <div className="inicet-jul25-stat-value">{states.length - 1}</div>
-              <div className="inicet-jul25-stat-label">States</div>
+            <div className="inicet-jul25-round-actions">
+              <button
+                onClick={() => setShowColModal(true)}
+                className="inicet-jul25-columns-btn"
+              >
+                <Eye className="inicet-jul25-icon-sm" /> Columns
+              </button>
             </div>
           </div>
         </div>
@@ -471,7 +514,7 @@ const InicetAllotmentsJuly2025Page = () => {
               <Search className="inicet-jul25-search-icon" />
               <input
                 type="text"
-                placeholder="Search allotments, institutes, courses, states..."
+                placeholder="Search institute, course, state..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
                 className="inicet-jul25-search-input"
@@ -487,12 +530,24 @@ const InicetAllotmentsJuly2025Page = () => {
                 options={states}
                 allLabel="All States"
               />
-              <button
-                onClick={() => setShowColModal(true)}
-                className="inicet-jul25-columns-btn"
-              >
-                <Eye className="inicet-jul25-icon-sm" /> Columns
-              </button>
+              <CustomSelect
+                value={selQuota}
+                onChange={(v) => {
+                  setSelQuota(v);
+                  setPage(1);
+                }}
+                options={quotas}
+                allLabel="All Quotas"
+              />
+              <CustomSelect
+                value={selCategory}
+                onChange={(v) => {
+                  setSelCategory(v);
+                  setPage(1);
+                }}
+                options={categories}
+                allLabel="All Categories"
+              />
               <button
                 onClick={() => setShowAdv(!showAdv)}
                 className="inicet-jul25-filter-toggle-btn"
@@ -508,16 +563,7 @@ const InicetAllotmentsJuly2025Page = () => {
 
           {showAdv && (
             <div className="inicet-jul25-adv-filters">
-              <div className="inicet-jul25-adv-filters-grid">
-                <CustomSelect
-                  value={selRound}
-                  onChange={(v) => {
-                    setSelRound(v);
-                    setPage(1);
-                  }}
-                  options={rounds}
-                  allLabel="All Rounds"
-                />
+              <div className="inicet-jul25-adv-filters-row">
                 <CustomSelect
                   value={selCourse}
                   onChange={(v) => {
@@ -527,35 +573,29 @@ const InicetAllotmentsJuly2025Page = () => {
                   options={courses}
                   allLabel="All Courses"
                 />
-                <CustomSelect
-                  value={selQuota}
-                  onChange={(v) => {
-                    setSelQuota(v);
-                    setPage(1);
-                  }}
-                  options={quotas}
-                  allLabel="All Quotas"
+                <input
+                  type="number"
+                  placeholder="Min Rank"
+                  value={minRank}
+                  onChange={(e) => setMinRank(e.target.value)}
+                  className="inicet-jul25-range-input"
                 />
-                <CustomSelect
-                  value={selCategory}
-                  onChange={(v) => {
-                    setSelCategory(v);
-                    setPage(1);
-                  }}
-                  options={categories}
-                  allLabel="All Categories"
+                <input
+                  type="number"
+                  placeholder="Max Rank"
+                  value={maxRank}
+                  onChange={(e) => setMaxRank(e.target.value)}
+                  className="inicet-jul25-range-input"
                 />
-              </div>
-              <div className="inicet-jul25-filtered-count-row">
                 <button onClick={clearAll} className="inicet-jul25-clear-btn">
-                  Clear All Filters
+                  Clear Filters
                 </button>
-                <span>
+                <span className="inicet-jul25-filtered-count-inline">
                   <span className="inicet-jul25-filtered-count-num">
                     {filtered.length.toLocaleString()}
                   </span>
                   <span className="inicet-jul25-filtered-count-label">
-                    allotments found
+                    filtered results
                   </span>
                 </span>
               </div>

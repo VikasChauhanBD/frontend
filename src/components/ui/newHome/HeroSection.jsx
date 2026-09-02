@@ -1,207 +1,128 @@
 import { useEffect, useRef } from "react";
 import "./HeroSection.css";
+import gsap from "gsap";
 
 const HeroSection = () => {
-  const canvasRef = useRef(null);
+  const heroRef = useRef(null);
+  const marqueeRef = useRef(null);
 
   useEffect(() => {
-    const canvas = canvasRef.current;
-    const ctx = canvas.getContext("2d");
+    const ctx = gsap.context(() => {
+      const blobs = gsap.utils.toArray(".bg-blob");
 
-    let width = 0;
-    let height = 0;
-    let blobs = [];
-    let animationFrame;
+      blobs.forEach((blob, index) => {
+        const xMovement = [80, -70, 90, -80, 70, -60][index] || 60;
+        const yMovement = [50, 80, -60, 70, -50, 60][index] || 50;
 
-    const COLORS = {
-      navy: "#01092d",
-      azure: "#032c7b",
-      blue: "#0464de",
-      orange: "#E85002",
-      frost: "#aee37b",
-    };
+        gsap.to(blob, {
+          x: xMovement,
+          y: yMovement,
+          scale: 1.08,
+          duration: 5 + index * 0.8,
+          repeat: -1,
+          yoyo: true,
+          ease: "sine.inOut",
+          delay: index * 0.3,
+        });
 
-    const hexToRgb = (hex) => {
-      hex = hex.replace("#", "");
-
-      return {
-        r: parseInt(hex.substring(0, 2), 16),
-        g: parseInt(hex.substring(2, 4), 16),
-        b: parseInt(hex.substring(4, 6), 16),
-      };
-    };
-
-    const resizeCanvas = () => {
-      const ratio = Math.min(window.devicePixelRatio || 1, 2);
-
-      width = window.innerWidth;
-      height = window.innerHeight;
-
-      canvas.width = width * ratio;
-      canvas.height = height * ratio;
-
-      canvas.style.width = `${width}px`;
-      canvas.style.height = `${height}px`;
-
-      ctx.setTransform(ratio, 0, 0, ratio, 0, 0);
-    };
-
-    const createBlobs = () => {
-      blobs = [
-        {
-          color: COLORS.blue,
-          x: width * 0.72,
-          y: -height * 0.15,
-          size: Math.max(width * 0.38, 420),
-          speed: 0.32,
-          amplitude: width * 0.1,
-          frequency: 0.00055,
-          phase: 0,
-        },
-        {
-          color: COLORS.azure,
-          x: width * 0.88,
-          y: height * 0.05,
-          size: Math.max(width * 0.34, 380),
-          speed: 0.24,
-          amplitude: width * 0.13,
-          frequency: 0.00042,
-          phase: 2,
-        },
-        {
-          color: COLORS.orange,
-          x: width * 0.76,
-          y: height * 0.25,
-          size: Math.max(width * 0.28, 300),
-          speed: 0.28,
-          amplitude: width * 0.12,
-          frequency: 0.0005,
-          phase: 4,
-        },
-        {
-          color: COLORS.frost,
-          x: width * 0.6,
-          y: height * 0.46,
-          size: Math.max(width * 0.22, 240),
-          speed: 0.2,
-          amplitude: width * 0.15,
-          frequency: 0.00045,
-          phase: 5,
-        },
-        {
-          color: COLORS.blue,
-          x: width * 0.82,
-          y: height * 0.72,
-          size: Math.max(width * 0.4, 430),
-          speed: 0.26,
-          amplitude: width * 0.12,
-          frequency: 0.00048,
-          phase: 7,
-        },
-        {
-          color: COLORS.azure,
-          x: width * 0.52,
-          y: height * 0.95,
-          size: Math.max(width * 0.35, 380),
-          speed: 0.18,
-          amplitude: width * 0.16,
-          frequency: 0.00038,
-          phase: 9,
-        },
-      ];
-    };
-
-    const drawBlob = (blob, time) => {
-      const wave1 =
-        Math.sin(time * blob.frequency + blob.phase) * blob.amplitude;
-
-      const wave2 =
-        Math.sin(time * 0.00025 + blob.phase) * blob.amplitude * 0.35;
-
-      const x = blob.x + wave1 + wave2;
-      const y = blob.y;
-
-      const gradient = ctx.createRadialGradient(x, y, 0, x, y, blob.size);
-
-      const rgb = hexToRgb(blob.color);
-
-      gradient.addColorStop(0, `rgba(${rgb.r}, ${rgb.g}, ${rgb.b}, 0.95)`);
-
-      gradient.addColorStop(0.22, `rgba(${rgb.r}, ${rgb.g}, ${rgb.b}, 0.75)`);
-
-      gradient.addColorStop(0.45, `rgba(${rgb.r}, ${rgb.g}, ${rgb.b}, 0.42)`);
-
-      gradient.addColorStop(0.7, `rgba(${rgb.r}, ${rgb.g}, ${rgb.b}, 0.16)`);
-
-      gradient.addColorStop(1, `rgba(${rgb.r}, ${rgb.g}, ${rgb.b}, 0)`);
-
-      ctx.fillStyle = gradient;
-
-      ctx.beginPath();
-      ctx.arc(x, y, blob.size, 0, Math.PI * 2);
-      ctx.fill();
-    };
-
-    const animate = (time) => {
-      ctx.fillStyle = COLORS.navy;
-      ctx.fillRect(0, 0, width, height);
-
-      ctx.save();
-
-      ctx.filter = "blur(75px)";
-      ctx.globalCompositeOperation = "screen";
-
-      blobs.forEach((blob) => {
-        blob.y += blob.speed;
-
-        if (blob.y > height + blob.size) {
-          blob.y = -blob.size * 1.8;
-          blob.x = width * (0.55 + Math.random() * 0.35);
-        }
-
-        drawBlob(blob, time);
+        gsap.to(blob, {
+          rotation: index % 2 === 0 ? 8 : -8,
+          duration: 7 + index,
+          repeat: -1,
+          yoyo: true,
+          ease: "sine.inOut",
+          delay: index * 0.5,
+        });
       });
 
-      ctx.restore();
+      const heroContent = gsap.utils.toArray(".hero-content > *");
 
-      const atmosphere = ctx.createRadialGradient(
-        width * 0.7,
-        height * 0.35,
-        0,
-        width * 0.7,
-        height * 0.35,
-        width * 0.75,
-      );
+      gsap.from(heroContent, {
+        opacity: 0,
+        y: 35,
+        duration: 0.8,
+        stagger: 0.1,
+        ease: "power3.out",
+        delay: 0.2,
+      });
 
-      atmosphere.addColorStop(0, "rgba(4, 100, 222, 0.08)");
+      const marquee = marqueeRef.current;
 
-      atmosphere.addColorStop(1, "rgba(1, 9, 45, 0)");
+      const marqueeTween = gsap.to(marquee, {
+        xPercent: -50,
+        duration: 18,
+        repeat: -1,
+        ease: "none",
+      });
 
-      ctx.fillStyle = atmosphere;
-      ctx.fillRect(0, 0, width, height);
+      let currentDirection = 1;
 
-      animationFrame = requestAnimationFrame(animate);
-    };
+      const handleWheel = (event) => {
+        const direction = event.deltaY > 0 ? 1 : -1;
 
-    resizeCanvas();
-    createBlobs();
+        if (direction === currentDirection) {
+          return;
+        }
 
-    window.addEventListener("resize", () => {
-      resizeCanvas();
-      createBlobs();
-    });
+        currentDirection = direction;
 
-    animationFrame = requestAnimationFrame(animate);
+        gsap.to(marqueeTween, {
+          timeScale: direction,
+          duration: 0.4,
+          ease: "power2.out",
+        });
 
-    return () => {
-      cancelAnimationFrame(animationFrame);
-      window.removeEventListener("resize", resizeCanvas);
-    };
+        gsap.to(".marquee-line img", {
+          rotation: direction === 1 ? 180 : 0,
+          duration: 0.3,
+          overwrite: true,
+          ease: "power2.out",
+        });
+      };
+
+      window.addEventListener("wheel", handleWheel, {
+        passive: true,
+      });
+
+      const buttons = gsap.utils.toArray(".primary-btn, .secondary-btn");
+
+      buttons.forEach((button) => {
+        button.addEventListener("mouseenter", () => {
+          gsap.to(button, {
+            y: -4,
+            duration: 0.25,
+            ease: "power2.out",
+          });
+        });
+
+        button.addEventListener("mouseleave", () => {
+          gsap.to(button, {
+            y: 0,
+            duration: 0.25,
+            ease: "power2.out",
+          });
+        });
+      });
+
+      return () => {
+        window.removeEventListener("wheel", handleWheel);
+        marqueeTween.kill();
+      };
+    }, heroRef);
+
+    return () => ctx.revert();
   }, []);
 
   return (
-    <section className="hero-section">
-      <canvas ref={canvasRef} className="liquid-canvas" />
+    <section className="hero-section" ref={heroRef}>
+      <div className="hero-background">
+        <div className="bg-blob blob-blue"></div>
+        <div className="bg-blob blob-azure"></div>
+        <div className="bg-blob blob-orange"></div>
+        <div className="bg-blob blob-frost"></div>
+        <div className="bg-blob blob-blue-bottom"></div>
+        <div className="bg-blob blob-azure-bottom"></div>
+      </div>
 
       <div className="soft-overlay"></div>
 
@@ -236,6 +157,98 @@ const HeroSection = () => {
           <a href="#free-counselling" className="secondary-btn">
             Book Free Counselling
           </a>
+        </div>
+      </div>
+
+      <div className="marquee-section">
+        {/* <h4>Trusted by thousands of NEET PG aspirants</h4> */}
+
+        <div className="marquee-wrapper">
+          <div className="marquee-track" ref={marqueeRef}>
+            {/* FIRST SET */}
+
+            <div className="marquee-line">
+              <h2>Expert Counselling</h2>
+              <img
+                src="https://www.brandium.nl/wp-content/uploads/2023/07/arrow-br.svg"
+                alt=""
+              />
+            </div>
+
+            <div className="marquee-line">
+              <h2>Previous Year Seat Matrix</h2>
+              <img
+                src="https://www.brandium.nl/wp-content/uploads/2023/07/arrow-br.svg"
+                alt=""
+              />
+            </div>
+
+            <div className="marquee-line">
+              <h2>AIQ & State Counselling Support</h2>
+              <img
+                src="https://www.brandium.nl/wp-content/uploads/2023/07/arrow-br.svg"
+                alt=""
+              />
+            </div>
+
+            <div className="marquee-line">
+              <h2>College Prediction</h2>
+              <img
+                src="https://www.brandium.nl/wp-content/uploads/2023/07/arrow-br.svg"
+                alt=""
+              />
+            </div>
+
+            <div className="marquee-line">
+              <h2>Choice Filling Assistance</h2>
+              <img
+                src="https://www.brandium.nl/wp-content/uploads/2023/07/arrow-br.svg"
+                alt=""
+              />
+            </div>
+
+            {/* DUPLICATE SET */}
+
+            <div className="marquee-line">
+              <h2>Expert Counselling</h2>
+              <img
+                src="https://www.brandium.nl/wp-content/uploads/2023/07/arrow-br.svg"
+                alt=""
+              />
+            </div>
+
+            <div className="marquee-line">
+              <h2>Previous Year Seat Matrix</h2>
+              <img
+                src="https://www.brandium.nl/wp-content/uploads/2023/07/arrow-br.svg"
+                alt=""
+              />
+            </div>
+
+            <div className="marquee-line">
+              <h2>AIQ & State Counselling Support</h2>
+              <img
+                src="https://www.brandium.nl/wp-content/uploads/2023/07/arrow-br.svg"
+                alt=""
+              />
+            </div>
+
+            <div className="marquee-line">
+              <h2>College Prediction</h2>
+              <img
+                src="https://www.brandium.nl/wp-content/uploads/2023/07/arrow-br.svg"
+                alt=""
+              />
+            </div>
+
+            <div className="marquee-line">
+              <h2>Choice Filling Assistance</h2>
+              <img
+                src="https://www.brandium.nl/wp-content/uploads/2023/07/arrow-br.svg"
+                alt=""
+              />
+            </div>
+          </div>
         </div>
       </div>
     </section>

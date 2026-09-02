@@ -69,9 +69,9 @@
 .hero p {
   font-size: 20px;
   line-height: 1.8;
-  color: #334155;
+  color: #334155 !important;
   max-width: 680px;
-  margin: auto;
+  margin: auto !important;
   margin-bottom: 25px;
 }
 

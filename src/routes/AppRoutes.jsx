@@ -55,12 +55,15 @@ import UgFeesStipendBond2025Page from "../pages/neetugDataPages/neetug2025/UgFee
 import UgSeatMatrix2025Page from "../pages/neetugDataPages/neetug2025/UgSeatMatrix2025Page";
 import UgClosingRanks2025Page from "../pages/neetugDataPages/neetug2025/UgClosingRanks2025Page";
 
+import NewHomePage from "../pages/NewHomePage";
+
 function AppRoutes() {
   return (
     <Routes>
       {/* ================= PUBLIC WEBSITE ================= */}
       <Route element={<MainLayout />}>
         <Route path="/" element={<HomePage />} />
+        <Route path="/home" element={<NewHomePage />} />
         <Route path="/neet-ug" element={<NeetugPage />} />
         <Route path="/neet-pg" element={<NeetpgPage />} />
         <Route path="/inicet" element={<InicetPage />} />

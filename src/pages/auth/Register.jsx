@@ -14,7 +14,7 @@ function Register() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    age: "",
+    phone: "",
     password: "",
     confirmPassword: "",
   });
@@ -29,9 +29,9 @@ function Register() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const { name, email, age, password, confirmPassword } = formData;
+    const { name, email, phone, password, confirmPassword } = formData;
 
-    if (!name || !email || !age || !password || !confirmPassword) {
+    if (!name || !email || !phone || !password || !confirmPassword) {
       return toast.error("Please fill all fields");
     }
 
@@ -49,7 +49,7 @@ function Register() {
       const payload = {
         name,
         email,
-        age,
+        phone,
         password,
       };
 
@@ -105,10 +105,10 @@ function Register() {
           <br />
 
           <input
-            type="number"
-            name="age"
-            placeholder="Age"
-            value={formData.age}
+            type="tel"
+            name="phone"
+            placeholder="Phone Number"
+            value={formData.phone}
             onChange={handleChange}
           />
 

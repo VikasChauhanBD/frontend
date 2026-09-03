@@ -80,29 +80,21 @@ const EverythingSection = () => {
     <section>
       <div className="questions-section">
         <div className="questions-container">
-          <h2>
-            WHAT'S GOING THROUGH
-            <br />
-            <span>YOUR MIND RIGHT NOW?</span>
-          </h2>
+          {/* <h2>After NEET PG, the questions begin…</h2> */}
           <div className="questions-content">
-            <p className="questions-intro">
-              You've finished your exam... <br /> Now the real questions begin.
-            </p>
+            <h2>After NEET PG, the questions begin…</h2>
             <div className="questions-list">
               <p>Can I get MD Medicine?</p>
               <p>Can I get Radiology?</p>
-              <p>Will I get a Government Medical College?</p>
-              <p>Should I choose DNB?</p>
               <p>Should I wait for Round 2?</p>
-              <p>Is it better to upgrade?</p>
-              <p>Which college should I fill first?</p>
-              <p>Which state gives me the best chance?</p>
-              <p>How many colleges should I list?</p>
+              <p>Should I choose DNB?</p>
+              <p>Should I upgrade?</p>
+              <p>Will I get a Government Seat?</p>
             </div>
-            <p className="questions-ending">
-              We've helped students answer these exact questions—with
-              confidence, not guesswork.
+            <p className="questions-intro">
+              These are not just counselling questions.
+              <br />
+              They are career decisions.
             </p>
           </div>
           <div className="questions-image">
@@ -114,7 +106,7 @@ const EverythingSection = () => {
         </div>
       </div>
 
-      <div className="everything-section">
+      {/* <div className="everything-section">
         <div className="everything-container">
           <div className="everything-header">
             <h2>
@@ -158,7 +150,7 @@ const EverythingSection = () => {
             ))}
           </div>
         </div>
-      </div>
+      </div> */}
     </section>
   );
 };

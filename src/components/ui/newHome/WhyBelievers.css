@@ -1,0 +1,268 @@
+.why-believers-section {
+  position: relative;
+  width: 100%;
+  padding: 100px 20px;
+  overflow: hidden;
+}
+
+.why-believers-container {
+  position: relative;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.why-believers-header {
+  margin-bottom: 55px;
+}
+
+.why-believers-header h2 {
+  font-size: 42px;
+  color: #032c7b;
+  margin-bottom: 20px;
+  line-height: 1.25;
+}
+
+.why-believers-header h2 span {
+  color: #0464de;
+}
+
+.comparison-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+}
+
+.comparison-card {
+  position: relative;
+  min-height: 480px;
+  padding: 40px;
+  overflow: hidden;
+  border-radius: 28px;
+  transition:
+    transform 0.4s ease,
+    box-shadow 0.4s ease;
+}
+
+.comparison-card:hover {
+  transform: translateY(-8px);
+}
+
+.comparison-card-inner {
+  position: relative;
+  z-index: 2;
+}
+
+.without-guidance {
+  background: #ffffff;
+  border: 1px solid #e7eaf0;
+  box-shadow: 0 10px 40px rgba(3, 44, 123, 0.05);
+}
+
+.without-guidance:hover {
+  box-shadow: 0 20px 55px rgba(3, 44, 123, 0.1);
+}
+
+.card-glow {
+  position: absolute;
+  top: -100px;
+  right: -100px;
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  background: rgba(232, 80, 2, 0.06);
+  filter: blur(50px);
+}
+
+.with-believers {
+  background: #032c7b;
+  box-shadow: 0 15px 50px rgba(3, 44, 123, 0.18);
+}
+
+.with-believers:hover {
+  box-shadow: 0 25px 65px rgba(3, 44, 123, 0.25);
+}
+
+.blue-glow {
+  position: absolute;
+  top: -120px;
+  right: -100px;
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  background: rgba(4, 100, 222, 0.3);
+  filter: blur(70px);
+}
+
+.orange-glow {
+  position: absolute;
+  bottom: -140px;
+  left: -100px;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: rgba(232, 80, 2, 0.18);
+  filter: blur(70px);
+}
+
+.comparison-title {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 35px;
+}
+
+.title-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  flex-shrink: 0;
+  border-radius: 16px;
+  background: #fff0ec;
+  color: #e85002;
+}
+
+.with-believers .title-icon {
+  background: rgba(255, 255, 255, 0.1);
+  color: #aee37b;
+}
+
+.comparison-title h3 {
+  margin: 0;
+  font-size: 28px;
+  line-height: 1.2;
+  font-weight: 700;
+  color: #032c7b;
+}
+
+.with-believers .comparison-title h3 {
+  color: #ffffff;
+}
+
+.comparison-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.comparison-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-height: 58px;
+  padding: 10px 15px;
+  border-radius: 15px;
+  background: #f7f8fa;
+  transition:
+    background 0.3s ease,
+    transform 0.3s ease;
+}
+
+.comparison-item:hover {
+  background: #fff2ee;
+  transform: translateX(5px);
+}
+
+.with-believers .comparison-item {
+  background: rgba(255, 255, 255, 0.07);
+}
+
+.with-believers .comparison-item:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.item-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: #ffe4dd;
+  color: #e85002;
+}
+
+.with-believers .item-icon {
+  background: #aee37b;
+  color: #032c7b;
+}
+
+.comparison-item span {
+  font-size: 15px;
+  line-height: 1.4;
+  font-weight: 500;
+  color: #475569;
+}
+
+.with-believers .comparison-item span {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* -------------------------------- Responsive Styles ------------------------------ */
+
+@media (max-width: 1024px) {
+  .why-believers-section {
+    padding: 80px 20px;
+  }
+
+  .comparison-card {
+    padding: 30px;
+  }
+}
+
+@media (max-width: 868px) {
+  .why-believers-section {
+    padding: 60px 16px;
+  }
+
+  .why-believers-header {
+    margin-bottom: 40px;
+  }
+
+  .why-believers-header h2 {
+    font-size: 33px;
+  }
+
+  .comparison-wrapper {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .comparison-card {
+    min-height: auto;
+    padding: 28px 22px;
+    border-radius: 22px;
+  }
+
+  .comparison-title {
+    margin-bottom: 25px;
+  }
+
+  .comparison-title h3 {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 568px) {
+  .comparison-card {
+    padding: 24px 18px;
+  }
+
+  .title-icon {
+    width: 46px;
+    height: 46px;
+    border-radius: 14px;
+  }
+
+  .comparison-item {
+    min-height: 54px;
+    padding: 9px 12px;
+  }
+
+  .comparison-item span {
+    font-size: 14px;
+  }
+}

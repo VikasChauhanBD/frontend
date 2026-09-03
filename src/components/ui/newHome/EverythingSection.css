@@ -40,6 +40,7 @@
   display: grid;
   grid-template-columns: 1fr;
   gap: 14px 30px;
+  margin: 20px 0;
 }
 
 .questions-list p {
@@ -90,7 +91,7 @@
 
 /* ------------------------- Everything Section  */
 
-.everything-section {
+/* .everything-section {
   width: 100%;
   padding: 100px 20px;
   background: #01092d;
@@ -212,7 +213,7 @@
   font-size: 17px;
   line-height: 1.5;
   color: #3f3f3f;
-}
+} */
 
 /* -------------------------------- Responsive Styles ------------------------------ */
 

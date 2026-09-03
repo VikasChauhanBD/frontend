@@ -1,37 +1,96 @@
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
 import "./HeroSection.css";
 
 const HeroSection = () => {
+  const heroRef = useRef(null);
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      const timeline = gsap.timeline({
+        defaults: {
+          ease: "power3.out",
+        },
+      });
+
+      timeline
+        .from(".hero-content h1", {
+          opacity: 0,
+          y: 60,
+          duration: 1,
+        })
+        .from(
+          ".hero-content h3",
+          {
+            opacity: 0,
+            y: 35,
+            duration: 0.8,
+          },
+          "-=0.5",
+        )
+        .from(
+          ".hero-content h4",
+          {
+            opacity: 0,
+            y: 35,
+            duration: 0.8,
+          },
+          "-=0.45",
+        )
+        .from(
+          ".hero-content p",
+          {
+            opacity: 0,
+            y: 30,
+            duration: 0.8,
+          },
+          "-=0.45",
+        )
+        .from(
+          ".hero-actions",
+          {
+            opacity: 0,
+            y: 25,
+            duration: 0.7,
+          },
+          "-=0.4",
+        )
+        .from(
+          ".hero-image",
+          {
+            opacity: 0,
+            x: 80,
+            duration: 1,
+          },
+          "-=0.7",
+        );
+    }, heroRef);
+
+    return () => ctx.revert();
+  }, []);
+
   return (
-    <section className="hero-section">
-      <video className="hero-video" autoPlay loop muted playsInline>
-        <source
-          src="https://cdn.dribbble.com/userupload/48906112/file/5b557c635909f4a5154d251429a861a9.mp4"
-          // src="https://cdn.dribbble.com/userupload/48906113/file/bc4f018f6478b34278ebec425c8f724f.mp4"
-          type="video/mp4"
-        />
-      </video>
-
-      <div className="hero-overlay"></div>
-
+    <section className="hero-section" ref={heroRef}>
       <div className="hero-content">
-        <h3>Your NEET PG Exam Is Over.</h3>
+        <h1>BELIEVERS CONSULTANCY</h1>
 
-        <h1>Now Every Choice Matters.</h1>
+        <h3>CoreBTR’s Trusted Career Counselling Partner</h3>
 
-        <h4>Your rank doesn't decide your future.</h4>
-
-        <h3>Your counselling decisions do.</h3>
+        <h4>
+          Your NEET PG Exam Is Over
+          <br />
+          Now Every Choice Matters
+        </h4>
 
         <p>
-          Choosing the right college is often more important than improving your
-          rank by a few hundred places. Every counselling brings new
-          opportunities—and one wrong decision can cost you the seat you've
-          worked so hard for.
+          Your rank doesn't decide your future.
+          <br />
+          Your counselling decisions do.
+          <br />
+          Helping medical aspirants make confident career decisions through:
           <br />
           <br />
-          At <strong>Believers Consultancy</strong>, we help NEET PG aspirants
-          make informed, confident counselling decisions using real data,
-          previous years' trends, and expert guidance.
+          <b>Genuine Mentorship | Transparent Guidance | Reliable Data</b>
         </p>
 
         <div className="hero-actions">
@@ -43,6 +102,14 @@ const HeroSection = () => {
             Book Free Counselling
           </a>
         </div>
+      </div>
+
+      <div className="hero-image-wrapper">
+        <img
+          className="hero-image"
+          src="https://cdn.dribbble.com/userupload/48909905/file/29da357ef4f06d5755b46cec2ee54658.webp"
+          alt=""
+        />
       </div>
     </section>
   );

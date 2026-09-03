@@ -2,46 +2,32 @@ import "./Chaos.css";
 
 const chaosReasons = [
   {
-    title: "Unpredictable Trends",
+    title: "UNDERSTAND",
     description:
-      "Last Year's Cutoffs Won't Save You. You need multi-year trends, current seat data, and insights on how others are choosing.",
+      "Your Rank & Realistic Options\nPrevious-year closing ranks, cut-offs and realistic possibilities.",
     image:
       "https://cdn.dribbble.com/userupload/48540668/file/f33831be7837167cb7a7e72ee96da473.png",
   },
   {
-    title: "The Rules Vary. A Lot.",
+    title: "EVALUATE",
     description:
-      "Every state/counselling/quota has its own rules, fees, and eligibility, and they change every round.",
+      "Colleges & Branches\nCompare what each option actually means for your career.",
     image:
       "https://cdn.dribbble.com/userupload/48540669/file/1a2e4b1fda6acc8c412d4838d7065e2c.png",
   },
   {
-    title: "Decoding Quotas & Options",
+    title: "PLAN",
     description:
-      "All India Quota, State Quota, Deemed, Private, MBBS or BDS? Each path affects your fees, choices and future.",
+      "Your Counselling Strategy\nAIQ, State counselling, quotas, upgrades and preference planning.",
     image:
       "https://cdn.dribbble.com/userupload/48540667/file/21ce21aa8cd786cd246b51be30a26c1d.png",
   },
   {
-    title: "Which College? Which Seat?",
+    title: "DECIDE",
     description:
-      "160,000+ seats. 1000+ colleges. You need to find the ones that fit your rank, budget, and goals.",
+      "With Confidence\nMove forward with clarity — not confusion or guesswork.",
     image:
       "https://cdn.dribbble.com/userupload/48540672/file/360b74d464973f28bbeda8a039f7c837.png",
-  },
-  {
-    title: "Myths, PDFs and WhatsApp Advice",
-    description:
-      "From Telegram tips to WhatsApp groups, everyone has unreliable opinions while official data is scattered and hard to decode.",
-    image:
-      "https://cdn.dribbble.com/userupload/48540670/file/f8e7ed488883abd3106b367111f56396.png",
-  },
-  {
-    title: "Make Confident Choices",
-    description:
-      "A single mistake in your choice list can set you back. You're expected to make confident decisions on the 1st try.",
-    image:
-      "https://cdn.dribbble.com/userupload/48540671/file/b17cce4e11ed35ca39d1797ef7f89a22.png",
   },
 ];
 
@@ -51,7 +37,7 @@ function Chaos() {
       <div className="chaos-section">
         {/* -------------------- Section Heading -------------------- */}
         <div className="chaos-header">
-          <h1 className="chaos-title">From Rank to the Right Decision</h1>
+          <h1 className="chaos-title">From Rank to the Right Decision.</h1>
 
           {/* <p className="chaos-subtitle">
             To get the best seat, here's everything you're expected to figure
@@ -94,7 +80,9 @@ function Chaos() {
                 </div>
 
                 <div className="chaos-meta">
-                  <p className="chaos-challenge">Challenge #{index + 1}</p>
+                  <p className="chaos-challenge">
+                    {String(index + 1).padStart(2, "0")} —
+                  </p>
 
                   <h2 className="chaos-headline">
                     <span className="chaos-text-highlight">{reason.title}</span>

@@ -41,7 +41,9 @@ function Marquee() {
 
   return (
     <section className="marquee-container">
-      <h2>Trusted by thousands of NEET PG aspirants</h2>
+      <h2>
+        Trusted by thousands of <span>NEET PG aspirants</span>
+      </h2>
       <div className="marquee-track" ref={marqueeRef}>
         {/* FIRST SET */}
         <div className="marquee-line">

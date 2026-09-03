@@ -111,15 +111,6 @@
   margin-bottom: 50px;
 }
 
-.everything-label {
-  display: inline-block;
-  margin-bottom: 18px;
-  font-size: 13px;
-  font-weight: 700;
-  letter-spacing: 2px;
-  color: #e85002;
-}
-
 .everything-header h2 {
   font-size: 42px;
   color: #e85002;
@@ -131,13 +122,13 @@
   color: #0464de;
 }
 
-.carousel-controls {
+.everything-carousel-controls {
   display: flex;
   gap: 10px;
   flex-shrink: 0;
 }
 
-.carousel-controls button {
+.everything-carousel-controls button {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -155,13 +146,13 @@
     transform 0.3s ease;
 }
 
-.carousel-controls button:hover {
+.everything-carousel-controls button:hover {
   background: #032c7b;
   color: #ffffff;
   transform: translateY(-3px);
 }
 
-.feature-carousel {
+.everything-carousel {
   display: flex;
   gap: 20px;
   overflow-x: auto;
@@ -170,79 +161,57 @@
   padding-bottom: 10px;
 }
 
-.feature-carousel::-webkit-scrollbar {
+.everything-carousel::-webkit-scrollbar {
   display: none;
 }
 
-.feature-card {
-  position: relative;
+.everything-card {
   flex: 0 0 calc(33.333% - 14px);
-  min-height: 330px;
-  padding: 30px;
-  border: 1px solid #e2e7ef;
-  border-radius: 20px;
+  padding: 28px 30px 32px;
   background: #ffffff;
   scroll-snap-align: start;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  transition:
-    transform 0.35s ease,
-    box-shadow 0.35s ease,
-    border-color 0.35s ease;
+  transition: transform 0.35s ease;
+  border-radius: 12px 60px 12px 12px;
 }
 
-.feature-card:hover {
-  transform: translateY(-8px);
-  border-color: #032c7b;
-  box-shadow: 0 20px 50px rgba(3, 44, 123, 0.12);
+.everything-card:hover {
+  border-radius: 12px;
 }
 
-.feature-card-top {
+.everything-number {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-}
-
-.feature-card-top > span {
-  font-size: 14px;
-  font-weight: 700;
-  color: #8a96a8;
-}
-
-.feature-arrow {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 42px;
-  height: 42px;
-  border-radius: 50%;
-  background: #eef3fb;
-  color: #032c7b;
-  font-size: 20px;
-  transition:
-    background 0.3s ease,
-    color 0.3s ease;
-}
-
-.feature-card:hover .feature-arrow {
-  background: #032c7b;
-  color: #ffffff;
-}
-
-.feature-card-content h3 {
-  margin: 0 0 15px;
-  font-size: 25px;
-  line-height: 1.2;
-  color: #032c7b;
-  font-weight: 750;
-}
-
-.feature-card-content p {
-  margin: 0;
+  gap: 8px;
+  color: #01092d;
   font-size: 16px;
-  line-height: 1.65;
-  color: #64748b;
+  line-height: 1;
+}
+
+.number-line {
+  width: 38px;
+  height: 1px;
+  background: #01092d;
+}
+
+.everything-card-content h3 {
+  max-width: 330px;
+  margin: 0 0 35px;
+  font-size: 42px;
+  line-height: 1.05;
+  letter-spacing: -1.5px;
+  font-weight: 500;
+  color: #01092d;
+}
+
+.everything-card-content p {
+  max-width: 360px;
+  margin: 0;
+  font-size: 17px;
+  line-height: 1.5;
+  color: #3f3f3f;
 }
 
 /* -------------------------------- Responsive Styles ------------------------------ */
@@ -267,7 +236,7 @@
     gap: 12px 20px;
   }
 
-  .feature-card {
+  .everything-card {
     flex: 0 0 calc(50% - 10px);
   }
 }
@@ -305,11 +274,11 @@
     margin-bottom: 35px;
   }
 
-  .carousel-controls {
+  .everything-carousel-controls {
     align-self: flex-end;
   }
 
-  .feature-card {
+  .everything-card {
     flex: 0 0 80%;
     min-height: 300px;
   }
@@ -330,17 +299,17 @@
     border-radius: 18px;
   }
 
-  .feature-card {
+  .everything-card {
     flex: 0 0 88%;
     min-height: 290px;
     padding: 24px;
   }
 
-  .feature-card-content h3 {
+  .everything-card-content h3 {
     font-size: 22px;
   }
 
-  .carousel-controls button {
+  .everything-carousel-controls button {
     width: 46px;
     height: 46px;
   }

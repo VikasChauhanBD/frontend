@@ -117,15 +117,13 @@ const EverythingSection = () => {
       <div className="everything-section">
         <div className="everything-container">
           <div className="everything-header">
-            <div>
-              <h2>
-                EVERYTHING YOU NEED.
-                <br />
-                <span>ALL IN ONE PLACE.</span>
-              </h2>
-            </div>
+            <h2>
+              EVERYTHING YOU NEED.
+              <br />
+              <span>ALL IN ONE PLACE.</span>
+            </h2>
 
-            <div className="carousel-controls">
+            <div className="everything-carousel-controls">
               <button
                 type="button"
                 onClick={() => scroll("prev")}
@@ -144,15 +142,15 @@ const EverythingSection = () => {
             </div>
           </div>
 
-          <div className="feature-carousel" ref={carouselRef}>
+          <div className="everything-carousel" ref={carouselRef}>
             {features.map((feature) => (
-              <article className="feature-card" key={feature.number}>
-                <div className="feature-card-top">
+              <article className="everything-card" key={feature.number}>
+                <div className="everything-number">
                   <span>{feature.number}</span>
-                  <div className="feature-arrow">↗</div>
+                  <span className="number-line"></span>
                 </div>
 
-                <div className="feature-card-content">
+                <div className="everything-card-content">
                   <h3>{feature.title}</h3>
                   <p>{feature.description}</p>
                 </div>

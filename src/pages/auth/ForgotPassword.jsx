@@ -31,9 +31,7 @@ function ForgotPassword() {
     }));
   };
 
-  // ======================================================
-  // Step 1 - Send OTP
-  // ======================================================
+  // ===================Step 1 - Send OTP ====================================
 
   const handleSendOTP = async (e) => {
     e.preventDefault();
@@ -59,9 +57,7 @@ function ForgotPassword() {
     }
   };
 
-  // ======================================================
-  // Step 2 - Verify OTP
-  // ======================================================
+  // =================== Step 2 - Verify OTP =================================
 
   const handleVerifyOTP = async (e) => {
     e.preventDefault();
@@ -92,9 +88,7 @@ function ForgotPassword() {
     }
   };
 
-  // ======================================================
-  // Step 3 - Reset Password
-  // ======================================================
+  // ======================= Step 3 - Reset Password =============================
 
   const handleResetPassword = async (e) => {
     e.preventDefault();
@@ -116,7 +110,7 @@ function ForgotPassword() {
 
       const res = await resetPassword({
         email: formData.email,
-        newPassword: formData.password,
+        password: formData.password,
       });
 
       toast.success(res.message || "Password reset successfully");
@@ -143,9 +137,7 @@ function ForgotPassword() {
           alt=""
         />
 
-        {/* ==================================================
-            STEP 1
-        ================================================== */}
+        {/* =================STEP 1 ======================= */}
 
         {step === 1 && (
           <form onSubmit={handleSendOTP}>
@@ -179,9 +171,7 @@ function ForgotPassword() {
           </form>
         )}
 
-        {/* ==================================================
-            STEP 2
-        ================================================== */}
+        {/* ===================== STEP 2 ========================= */}
 
         {step === 2 && (
           <form onSubmit={handleVerifyOTP}>
@@ -216,9 +206,7 @@ function ForgotPassword() {
           </form>
         )}
 
-        {/* ==================================================
-            STEP 3
-        ================================================== */}
+        {/* ===================== STEP 3 ======================== */}
 
         {step === 3 && (
           <form onSubmit={handleResetPassword}>

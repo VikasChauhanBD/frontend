@@ -4,7 +4,7 @@
   min-height: 100vh;
   overflow: hidden;
   background: #ffffff;
-  color: #082d6b;
+  color: #032c7b;
   padding: 80px 0 80px;
 }
 
@@ -67,7 +67,7 @@
   width: 7px;
   height: 7px;
   border-radius: 50%;
-  background: #0967df;
+  background: #0464de;
   opacity: 0.2;
   pointer-events: none;
   z-index: 1;

@@ -19,21 +19,12 @@
   flex: 1;
 }
 
-.mentor-header-left {
-  text-align: center;
-}
-
-.mentor-header-right {
-  text-align: center;
-}
-
 .mentor-heading {
   margin: 0 0 20px;
   font-size: 52px;
   line-height: 1.25;
   font-weight: 700;
   color: #032c7b;
-  text-align: center;
 }
 
 .mentor-description {
@@ -41,7 +32,7 @@
   font-size: 18px;
   line-height: 1.7;
   color: #3f3f3f;
-  text-align: center;
+  text-align: end;
 }
 
 .mentor-sub-heading {
@@ -50,7 +41,7 @@
   line-height: 1.2;
   font-weight: 700;
   color: #0464de;
-  text-align: center;
+  text-align: end;
 }
 
 .mentor-container {

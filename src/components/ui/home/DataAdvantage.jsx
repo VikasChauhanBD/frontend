@@ -167,8 +167,8 @@ const DataAdvantage = () => {
       <div className="data-wrapper">
         <div className="data-header">
           <h2 className="data-heading">
-            THE BELIEVERS DATA{" "}
-            <span className="data-heading-highlight">ADVANTAGE</span>
+            The Believers Data
+            <span className="data-heading-highlight">Advantage</span>
           </h2>
 
           <h3 className="data-subheading">Reliable Data. Better Decisions.</h3>

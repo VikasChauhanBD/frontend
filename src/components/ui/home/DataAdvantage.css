@@ -101,24 +101,19 @@
   margin: 0 auto;
 }
 
-/* Main heading */
-
 .data-heading {
-  margin: 0;
   font-size: 38px;
-  line-height: 1.05;
-  font-weight: 800;
-  letter-spacing: -2.5px;
-  color: #07367f;
+  font-weight: 700;
+  letter-spacing: -0.8px;
+  line-height: 1.2;
+  color: #032c7b;
 }
 
 .data-heading-highlight {
   display: inline-block;
   margin-left: 14px;
-  color: #0769e6;
+  color: #0464de;
 }
-
-/* Subheading */
 
 .data-subheading {
   margin: 28px 0 0;
@@ -126,10 +121,8 @@
   line-height: 1.2;
   font-weight: 700;
   letter-spacing: -0.6px;
-  color: #0868df;
+  color: #0464de;
 }
-
-/* Intro text */
 
 .data-intro {
   margin: 24px auto 0;
@@ -143,8 +136,6 @@
 .analysis-section {
   margin-top: 105px;
 }
-
-/* Analysis heading */
 
 .analysis-heading {
   display: flex;
@@ -161,7 +152,7 @@
   width: 42px;
   height: 42px;
   border-radius: 50%;
-  background: #0769e6;
+  background: #0464de;
   color: #ffffff;
   font-size: 14px;
   font-weight: 700;
@@ -171,7 +162,7 @@
 .analysis-heading-text {
   font-size: 27px;
   font-weight: 700;
-  color: #092f6d;
+  color: #032c7b;
 }
 
 .analysis-layout {
@@ -179,8 +170,6 @@
   max-width: 1000px;
   margin: 0 auto;
 }
-
-/* Center vertical line */
 
 .analysis-line {
   position: absolute;
@@ -232,36 +221,20 @@
     0 2px 5px rgba(6, 54, 127, 0.04);
 }
 
-/* Card number */
-
 .analysis-number {
   flex-shrink: 0;
   width: 38px;
   font-size: 13px;
   font-weight: 700;
-  color: #0769e6;
+  color: #0464de;
 }
-
-/* Card dot */
-
-.analysis-card-dot {
-  flex-shrink: 0;
-  width: 7px;
-  height: 7px;
-  margin-right: 15px;
-  border-radius: 50%;
-  background: #0769e6;
-  box-shadow: 0 0 0 5px rgba(7, 105, 230, 0.08);
-}
-
-/* Card text */
 
 .analysis-card p {
   margin: 0;
   font-size: 15px;
   line-height: 1.45;
   font-weight: 500;
-  color: #3f3f3f;
+  color: #334155;
 }
 
 .data-statement {
@@ -281,17 +254,13 @@
   box-shadow: 0 20px 60px rgba(6, 54, 127, 0.07);
 }
 
-/* Accent */
-
 .statement-accent {
   width: 5px;
   flex-shrink: 0;
   margin-right: 28px;
   border-radius: 10px;
-  background: linear-gradient(to bottom, #0769e6, #0b4da5);
+  background: linear-gradient(to bottom, #0464de, #0b4da5);
 }
-
-/* Content */
 
 .statement-content {
   flex: 1;
@@ -301,7 +270,7 @@
   margin: 0;
   font-size: 22px;
   line-height: 1.55;
-  color: #092f6d;
+  color: #032c7b;
 }
 
 .statement-main + .statement-main {
@@ -314,8 +283,6 @@
   line-height: 1.6;
   color: #64748b;
 }
-
-/* Plus mark */
 
 .statement-mark {
   position: absolute;
@@ -336,7 +303,7 @@
   padding: 15px 22px 15px 26px;
   border: none;
   border-radius: 50px;
-  background: #0769e6;
+  background: #0464de;
   color: #ffffff;
   font-family: inherit;
   font-size: 15px;
@@ -359,8 +326,6 @@
   transform: translateY(-1px);
 }
 
-/* CTA arrow */
-
 .data-cta-arrow {
   display: inline-flex;
   align-items: center;
@@ -376,7 +341,7 @@
   transform: translateX(4px);
 }
 
-/* ------------------------------------ Responsive ------------------------------- */
+/* --------------------------------- Responsive -------------------------- */
 
 @media (max-width: 900px) {
   .data-advantage {
@@ -419,8 +384,6 @@
     width: calc(100% - 30px);
   }
 
-  /* Header */
-
   .data-heading-highlight {
     margin-left: 8px;
   }
@@ -430,8 +393,6 @@
     font-size: 15px;
     line-height: 1.7;
   }
-
-  /* Analysis */
 
   .analysis-section {
     margin-top: 65px;
@@ -452,8 +413,6 @@
     font-size: 22px;
   }
 
-  /* Remove center line on mobile */
-
   .analysis-line {
     display: none;
   }
@@ -473,18 +432,9 @@
     font-size: 12px;
   }
 
-  .analysis-card-dot {
-    width: 6px;
-    height: 6px;
-    margin-right: 12px;
-    box-shadow: 0 0 0 4px rgba(7, 105, 230, 0.08);
-  }
-
   .analysis-card p {
     font-size: 14px;
   }
-
-  /* Statement */
 
   .data-statement {
     margin-top: 65px;
@@ -513,16 +463,12 @@
     font-size: 25px;
   }
 
-  /* CTA */
-
   .data-cta {
     width: 100%;
     max-width: 330px;
     margin-top: 32px;
     font-size: 14px;
   }
-
-  /* Decorative elements */
 
   .data-orb-one {
     width: 200px;

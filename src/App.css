@@ -10,6 +10,15 @@
 
 body {
   font-family: "Lora", serif;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+img {
+  -webkit-user-drag: none;
+  user-select: none;
 }
 
 /* heading → font-size:38px; / color: #032c7b
